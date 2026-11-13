@@ -3,21 +3,69 @@ name: CI
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"                     # weekly, Monday 06:00 UTC: the macOS jobs run at least once a week
 
 permissions:
   contents: read
 
 jobs:
-  test:
-    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+  secret-scan:
+    name: Secret scan (whole history)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0                    # every commit: the scan reads every version of every file and every commit identity
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Scan (fails on any finding or commit identity not in scripts/secret_scan_allowlist.txt)
+        run: python scripts/secret_scan.py . --allowlist scripts/secret_scan_allowlist.txt
+
+  test-linux:
+    name: Python ${{ matrix.python-version }} on ubuntu-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-node@v4          # the widget snapshot tests run their JavaScript in Node: the same major version as the machine the suite was written on
+        with:
+          node-version: "22"
+      - name: Install (package, every extra, and the dev tools)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+      - name: Lint
+        run: ruff check asof scripts demo --select E9,F,B
+      - name: Types
+        run: mypy asof --ignore-missing-imports
+      - name: Tests
+        run: python -m pytest -q
+      - name: Build the wheel
+        run: python -m pip wheel . --no-deps -w dist
+
+  test-macos:
+    name: Python ${{ matrix.python-version }} on macos-latest
+    # macOS minutes count 10x against a private repository's free allowance, so macOS runs only on pushes to main, by hand, and weekly.
+    # When the repository is public (Actions minutes are free), delete this `if:` line so macOS runs on every push and pull request again.
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: macos-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:                                  # the same steps as test-linux (tests/test_docs.py checks that they stay the same)
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:

@@ -98,7 +98,7 @@ def test_the_readme_states_what_asof_does_not_prove():
 
 def test_the_readme_is_honest_about_what_was_not_verified():
     low = README.lower()
-    for needle in ("the author has not confirmed which is right against live edgar", "is **skipped**", "has not been run on github", "the author has not run them against the live services",
+    for needle in ("the author has not confirmed which is right against live edgar", "is **skipped**", "**windows has not been run.**", "the author has not run them against the live services",
                    "no deployed strathora endpoint exists yet"):
         assert needle in low, needle
 
@@ -110,19 +110,28 @@ def test_the_readme_python_matrix_matches_pyproject_and_ci():
         assert f'"{v}"' in ci, v
 
 
-def test_the_ci_workflow_runs_every_step_on_linux_and_macos_for_every_python():
+def test_the_ci_workflow_runs_every_step_on_linux_always_and_on_macos_on_main_by_hand_and_weekly():
     yaml = pytest.importorskip("yaml")
-    w = yaml.safe_load((ROOT / ".github" / "workflows" / "ci.yml").read_text())
+    text = (ROOT / ".github" / "workflows" / "ci.yml").read_text()
+    w = yaml.safe_load(text)
     on = w.get("on", w.get(True))                                                                   # YAML 1.1 reads a bare `on:` as True
-    assert set(on) == {"push", "pull_request"} and w["permissions"] == {"contents": "read"}
-    job = w["jobs"]["test"]
-    m = job["strategy"]["matrix"]
-    assert m["os"] == ["ubuntu-latest", "macos-latest"] and m["python-version"] == ["3.10", "3.11", "3.12", "3.13", "3.14"]
-    assert job["runs-on"] == "${{ matrix.os }}" and job["strategy"]["fail-fast"] is False
-    runs = [s.get("run", "") for s in job["steps"]]
-    assert "python -m pip install -e '.[dev]'" in "\n".join(runs)                                    # every extra, hypothesis included: the property tests run
-    for step in ("ruff check asof scripts demo --select E9,F,B", "mypy asof --ignore-missing-imports", "python -m pytest -q", "python -m pip wheel . --no-deps -w dist"):
-        assert step in runs, step
-    uses = [s.get("uses", "") for s in job["steps"]]
-    assert {"actions/checkout@v4", "actions/setup-python@v5", "actions/setup-node@v4"} <= set(uses)
+    assert set(on) == {"push", "pull_request", "workflow_dispatch", "schedule"} and w["permissions"] == {"contents": "read"}
+    assert on["schedule"] == [{"cron": "0 6 * * 1"}]                                                # weekly
+    assert set(w["jobs"]) == {"secret-scan", "test-linux", "test-macos"}
+    linux, mac = w["jobs"]["test-linux"], w["jobs"]["test-macos"]
+    assert linux["runs-on"] == "ubuntu-latest" and mac["runs-on"] == "macos-latest"
+    assert "if" not in linux and "if" not in w["jobs"]["secret-scan"]                              # every push and pull request
+    assert mac["if"] == "github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')"
+    assert "delete this `if:` line so macOS runs on every push and pull request again" in text      # the note for when the repository is public
+    for job in (linux, mac):
+        assert job["strategy"]["matrix"] == {"python-version": ["3.10", "3.11", "3.12", "3.13", "3.14"]} and job["strategy"]["fail-fast"] is False
+        runs = [s.get("run", "") for s in job["steps"]]
+        assert "python -m pip install -e '.[dev]'" in "\n".join(runs)                                # every extra, hypothesis included: the property tests run
+        for step in ("ruff check asof scripts demo --select E9,F,B", "mypy asof --ignore-missing-imports", "python -m pytest -q", "python -m pip wheel . --no-deps -w dist"):
+            assert step in runs, step
+        assert {"actions/checkout@v4", "actions/setup-python@v5", "actions/setup-node@v4"} <= {s.get("uses", "") for s in job["steps"]}
+    assert linux["steps"] == mac["steps"]                                                           # the same steps on both
+    scan = w["jobs"]["secret-scan"]
+    assert scan["steps"][0] == {"uses": "actions/checkout@v4", "with": {"fetch-depth": 0}}
+    assert scan["steps"][-1]["run"] == "python scripts/secret_scan.py . --allowlist scripts/secret_scan_allowlist.txt"
     assert not any(k in json.dumps(w) for k in ("secrets.", "GITHUB_TOKEN", "pypi", "upload"))       # no secret, no publishing: it only tests

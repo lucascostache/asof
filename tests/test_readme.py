@@ -100,7 +100,7 @@ def test_what_it_doesnt_do_names_the_bypass_model_memory_and_the_rest():
     bullets = [ln for ln in section.splitlines() if ln.startswith("* **")]
     assert len(bullets) == 8
     low = section.lower()
-    for needle in ("loads each source into memory, whole", "docs/baseline.md", "`max_listed_blocked`", "linux and windows are untested"):      # the size limit, with where its numbers come from
+    for needle in ("loads each source into memory, whole", "docs/baseline.md", "`max_listed_blocked`", "runs on linux and macos in ci", "windows is untested"):      # the size limit, with where its numbers come from
         assert needle in low, needle
     for needle in ("shares its import name with an unrelated package", "you install `strathora-asof` and import `asof`", "a different project on pypi is also called `asof`",
                    "separate virtual environment", "`strathora --version`"):

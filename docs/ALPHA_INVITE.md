@@ -95,7 +95,7 @@ A useful issue has:
 * **Versions:** the output of `.venv/bin/strathora --version` and `python3 --version`, your operating system, and for MCP problems the client and its version, and the model.
 * **The ledger check:** the output of `strathora verify --ledger <your ledger>`, if a ledger is involved.
 
-Reports that something worked are useful too, especially in Claude Desktop, on Linux or on Windows, which the author has not run.
+Reports that something worked are useful too, especially in Claude Desktop (the author has not run it there), on Linux (the test suite runs there in CI, but nobody has used AsOf there by hand) and on Windows (never run).
 
 **Don't paste these into an issue:**
 

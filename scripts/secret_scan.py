@@ -4,22 +4,36 @@ history), the working tree, commit messages, and the author and committer identi
 
     python scripts/secret_scan.py                       # this repository
     python scripts/secret_scan.py /path/to/repo yourname yourlogin yourcompany      # also report these words wherever they appear
+    python scripts/secret_scan.py . --allowlist scripts/secret_scan_allowlist.txt    # CI: exit 1 on anything the allowlist does not name
 
 Read-only: it runs `git` and prints. Secrets are masked in the output. Standard library only.
+
+Without --allowlist it only reports, and exits 0. With it, every finding must match an entry `rule | file | sha256 | why` (the file it is in, and the first 16
+hex digits of the SHA-256 of the exact value, so the list never holds a value itself), and every commit identity's e-mail must match an `identity | <glob>`
+entry; anything else is listed under NOT ALLOWED and the exit code is 1. Entries that matched nothing are listed too, but do not fail the run.
+The history scan needs the whole history: in GitHub Actions, check out with `fetch-depth: 0`.
 
 This is a first pass, not a guarantee. The rules are the common token shapes (provider keys, private-key blocks, JWTs, URLs with credentials, generic
 `secret = "..."` assignments) plus e-mail addresses, home-directory paths, phone numbers and public IP addresses. A dedicated scanner such as gitleaks
 or trufflehog knows more shapes; run one as well before a public release. The test suite deliberately contains fake keys ("canaries") to prove they are
 redacted: they are reported here like anything else, so read each hit.
 """
+import argparse
 import collections
+import fnmatch
+import hashlib
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-repo = sys.argv[1] if len(sys.argv) > 1 else str(Path(__file__).resolve().parent.parent)
-personal_words = [w.lower() for w in sys.argv[2:]]
+ap = argparse.ArgumentParser(description="Scan a git repository for secrets and personal data (history, working tree, commit messages, identities).")
+ap.add_argument("repo", nargs="?", default=str(Path(__file__).resolve().parent.parent), help="the repository (default: this one)")
+ap.add_argument("words", nargs="*", help="personal words to report wherever they appear")
+ap.add_argument("--allowlist", help="exit 1 on any finding or commit identity this file does not name (see the module docstring for the format)")
+args = ap.parse_args()
+repo = args.repo
+personal_words = [w.lower() for w in args.words]
 
 
 def git(*a, binary=False):
@@ -61,7 +75,14 @@ def new_findings():
     return collections.defaultdict(lambda: collections.defaultdict(list))
 
 
-def scan_text(text, where, out):
+def fingerprint(v):
+    return hashlib.sha256(v.encode("utf-8")).hexdigest()[:16]
+
+
+everything = set()                                       # (rule, file, fingerprint, masked value): what --allowlist checks
+
+
+def scan_text(text, where, out, file):
     for n, line in enumerate(text.splitlines(), 1):
         for rule, rx in COMPILED.items():
             for m in rx.finditer(line):
@@ -69,6 +90,7 @@ def scan_text(text, where, out):
                 if rule == "public ipv4" and not all(int(p) <= 255 for p in v.split(".")):
                     continue
                 out[rule][mask(rule, v)].append(f"{where}:{n}")
+                everything.add((rule, file, fingerprint(v), mask(rule, v)))
 
 
 # 1. every version of every file in the history
@@ -86,7 +108,7 @@ for sha, path in versions.items():
     if b"\0" in data[:8000]:
         n_binary += 1
         continue
-    scan_text(data.decode("utf-8", "replace"), f"{path}@{sha[:7]}", hist)
+    scan_text(data.decode("utf-8", "replace"), f"{path}@{sha[:7]}", hist, path)
 
 # 2. the working tree: tracked files as they are now, plus untracked files that are not ignored
 tree = new_findings()
@@ -97,10 +119,10 @@ for f in files:
     except OSError:
         continue
     if b"\0" not in data[:8000]:
-        scan_text(data.decode("utf-8", "replace"), f, tree)
+        scan_text(data.decode("utf-8", "replace"), f, tree, f)
 
 # 3. commit messages and identities
-msgs, idents, n_commits = new_findings(), collections.Counter(), 0
+msgs, idents, emails, n_commits = new_findings(), collections.Counter(), set(), 0
 for entry in git("log", "--all", "--format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%B%x1e").split("\x1e"):
     entry = entry.strip("\n")
     if not entry:
@@ -109,7 +131,8 @@ for entry in git("log", "--all", "--format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%B%
     n_commits += 1
     idents[f"author    {an} <{ae}>"] += 1
     idents[f"committer {cn} <{ce}>"] += 1
-    scan_text(body, f"commit-message@{h[:7]}", msgs)
+    emails.update((ae, ce))
+    scan_text(body, f"commit-message@{h[:7]}", msgs, "commit-message")
 
 
 def report(title, found, limit=8):
@@ -138,3 +161,31 @@ report("COMMIT MESSAGES", msgs)
 print("\n===== COMMIT IDENTITIES (these become public on a push)")
 for k, v in sorted(idents.items()):
     print(f"  {v:4d}  {k}")
+
+if args.allowlist:
+    allowed, identity_globs = {}, []
+    for n, raw in enumerate(Path(args.allowlist).read_text().splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = [p.strip() for p in line.split("|")]
+        if parts[0] == "identity" and len(parts) >= 2 and parts[1]:
+            identity_globs.append(parts[1])
+        elif len(parts) == 4 and parts[0] in RULES and re.fullmatch(r"[0-9a-f]{16}", parts[2]) and parts[3]:
+            allowed[(parts[0], parts[1], parts[2])] = parts[3]
+        else:
+            sys.exit(f"{args.allowlist}:{n}: not `rule | file | 16 hex digits | why` or `identity | <glob>`: {raw!r}")
+    bad = sorted(f for f in everything if f[:3] not in allowed)
+    bad_ids = sorted(e for e in emails if not any(fnmatch.fnmatchcase(e, g) for g in identity_globs))
+    unused = sorted(set(allowed) - {f[:3] for f in everything})
+    print(f"\n===== ALLOWLIST {args.allowlist}: {len(allowed)} entries, {len(identity_globs)} identity patterns")
+    for rule, file, fp, masked in bad:
+        print(f"  NOT ALLOWED  [{rule}] {masked!r} in {file}   (to allow a made-up test value: {rule} | {file} | {fp} | <why it is safe>)")
+    for e in bad_ids:
+        print(f"  NOT ALLOWED  commit identity <{e}>")
+    for rule, file, fp in unused:
+        print(f"  unused entry: {rule} | {file} | {fp}")
+    if bad or bad_ids:
+        print(f"FAIL: {len(bad)} finding(s) and {len(bad_ids)} identity(ies) not in the allowlist")
+        sys.exit(1)
+    print("OK: every finding and every commit identity is in the allowlist")
