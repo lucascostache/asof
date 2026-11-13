@@ -45,7 +45,7 @@ def test_the_claude_desktop_config_and_test_are_the_tested_pages():
 def test_the_install_and_issue_instructions_name_this_repository_and_warn_about_keys_and_the_other_asof():
     assert "git clone https://github.com/strathora/asof" in INVITE and "gh issue create --repo strathora/asof" in INVITE
     assert "**Issues are public:**" in INVITE and "private" not in INVITE.lower() and "invitation" not in INVITE.lower()      # the repository is public
-    assert "pip install -e '.[mcp]'" in INVITE and "do not run `pip install asof`" in INVITE
+    assert "pip install -e '.[mcp]'" in INVITE and "do not run `pip install asof`" in INVITE.lower() and 'pip install "strathora-asof[mcp]"' in INVITE
     low = INVITE.lower()
     assert "api key" in low and "a ledger stores what was served" in low
     import asof

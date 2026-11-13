@@ -235,7 +235,7 @@ def test_every_shell_line_in_every_document_is_checked_or_listed_as_not_run(tmp_
 def test_python_m_venv_and_pip_lines_name_the_package_the_way_the_project_does():
     for f, line, cmd in shell_lines():
         if "pip install" in cmd:
-            assert re.search(re.escape("git+" + REPO_URL) + r"|strathora_asof-|strathora-asof\[|-e '?\.|mcp>=2", cmd), f"{f}:{line}: {cmd}"       # never `pip install asof` (an unrelated project on PyPI)
+            assert re.search(re.escape("git+" + REPO_URL) + r"|strathora_asof-|strathora-asof\[|install strathora-asof$|-e '?\.|mcp>=2", cmd), f"{f}:{line}: {cmd}"       # never `pip install asof` (an unrelated project on PyPI)
             assert not re.search(r"pip install asof\b", cmd)
 
 
@@ -311,7 +311,7 @@ def test_no_real_company_identifier_and_no_default_company_in_the_edgar_smoke_sc
     assert r.returncode == 2 and "--cik" in r.stderr and "required" in r.stderr                  # no company is chosen for the user
 
 
-ALLOWED_HOSTS = {"github.com", "www.strathora.com", "127.0.0.1", "localhost", "www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
+ALLOWED_HOSTS = {"github.com", "www.strathora.com", "pypi.org","127.0.0.1", "localhost", "www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
 
 
 def test_no_tracked_file_names_the_service_a_home_folder_or_a_real_address():

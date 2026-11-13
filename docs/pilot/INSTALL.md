@@ -14,13 +14,12 @@ Python 3.10 or newer. Nothing else: the core has no dependencies.
 
 ## 2. Install (2 minutes)
 
-The package is called `strathora-asof`: you import it as `asof` and run it as `strathora` (the older command name `asof` still works). It is not published on PyPI. **Do not run `pip install asof`:** that name on PyPI belongs to an unrelated project. We send you a wheel file, or access to the private repository.
+The package is called `strathora-asof`: you import it as `asof` and run it as `strathora` (the older command name `asof` still works). It is on PyPI as `strathora-asof`. **Do not run `pip install asof`:** that name on PyPI belongs to an unrelated project.
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install strathora_asof-0.5.0-py3-none-any.whl   # the file we sent you
-# or, with access to the repository, one line:
-# .venv/bin/pip install "git+<the repository address we give you>"
+.venv/bin/pip install strathora-asof                          # from PyPI
+# or a wheel file we sent you: .venv/bin/pip install strathora_asof-0.5.0-py3-none-any.whl
 .venv/bin/strathora --version                                 # strathora-asof 0.5.0
 ```
 

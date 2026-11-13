@@ -12,10 +12,10 @@ It is a Python library with no dependencies, plus an optional MCP server; it run
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install "git+https://github.com/strathora/asof"
+pip install "strathora-asof[mcp]"
 ```
 
-Python 3.10 or newer (this install and the quickstart below were run on 3.10, 3.11, 3.12, 3.13 and 3.14, on macOS only). The package is called `strathora-asof`; you import it as `asof` and run it as `strathora` (the older command name `asof` still works). It is **not on PyPI**: do not `pip install asof`, that name there is an unrelated project.
+Python 3.10 or newer (the quickstart below was run by hand on 3.10, 3.11, 3.12, 3.13 and 3.14 on macOS; CI runs its checks on Linux and macOS). `[mcp]` adds the MCP server of step 4; for the library alone, `pip install strathora-asof`. For the latest `main`, before it is released: `pip install "strathora-asof[mcp] @ git+https://github.com/strathora/asof"`. The package is called `strathora-asof`; you import it as `asof` and run it as `strathora` (the older command name `asof` still works). On PyPI its name is **`strathora-asof`**: do not `pip install asof`, that name there is an unrelated project.
 
 ## Quickstart (5 minutes)
 
@@ -75,7 +75,7 @@ strathora verify --ledger asof-demo/ledger.db
 
 It prints `OK: 16 events, hash chain intact, tail anchor: ok`. Edit an event in the ledger file and it prints `FAIL` with the number of that event.
 
-**4. Optional: put it between an agent and your data, with no code.** Install the MCP extra with `pip install "strathora-asof[mcp] @ git+https://github.com/strathora/asof"`, then paste the block that step 1 printed into your MCP client's config. The agent gets a `query` tool that is locked to the clock in `asof-demo/asof.config.json`, and it cannot move that clock. [docs/MCP_CLIENTS.md](docs/MCP_CLIENTS.md) lists the clients this was run with and how they differ.
+**4. Optional: put it between an agent and your data, with no code.** The install above includes the MCP extra (`[mcp]`); paste the block that step 1 printed into your MCP client's config. The agent gets a `query` tool that is locked to the clock in `asof-demo/asof.config.json`, and it cannot move that clock. [docs/MCP_CLIENTS.md](docs/MCP_CLIENTS.md) lists the clients this was run with and how they differ.
 
 To wrap your own data, tools and model, follow [docs/pilot/INSTALL.md](docs/pilot/INSTALL.md) (about 15 minutes).
 

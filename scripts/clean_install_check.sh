@@ -125,10 +125,10 @@ def block(name):
     return m.group(1)
 
 install = re.search(r"## Install\n\n```bash\n(.*?)```", readme, re.S).group(1)
-README_URL = "git+https://github.com/strathora/asof"
-assert install.count(README_URL) == 1, install
+README_REQ = '"strathora-asof[mcp]"'
+assert install.count(README_REQ) == 1, install
 src = src if src.startswith("git+") else "git+" + src
-(out / "1_install.sh").write_text(install.replace(README_URL, src))        # the only change: install from the source under test instead of GitHub
+(out / "1_install.sh").write_text(install.replace(README_REQ, f'"strathora-asof[mcp] @ {src}"'))      # the only change: install the source under test instead of the release on PyPI
 (out / "2_init.sh").write_text(block("quickstart-init"))
 (out / "try_asof.py").write_text(block("quickstart-code"))
 (out / "3_verify.sh").write_text(block("quickstart-verify"))

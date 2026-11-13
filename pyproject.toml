@@ -11,11 +11,31 @@ requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 authors = [{ name = "Strathora" }]
 dependencies = []                      # standard library only
+keywords = ["ai-agents", "backtesting", "look-ahead-bias", "mcp", "point-in-time", "audit-log"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
 
 [project.urls]
 Homepage = "https://www.strathora.com"
-Repository = "https://github.com/strathora/asof"
+Source = "https://github.com/strathora/asof"
 Issues = "https://github.com/strathora/asof/issues"
+Documentation = "https://github.com/strathora/asof/blob/main/docs/REFERENCE.md"
 
 [project.scripts]
 strathora = "asof.cli:main"          # the command

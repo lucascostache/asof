@@ -18,7 +18,7 @@ python3 -m venv .venv
 .venv/bin/strathora --version          # prints: strathora-asof 0.5.0
 ```
 
-The package is called `strathora-asof`; you import it as `asof` and run it as `strathora`. It is **not on PyPI**: do not run `pip install asof`, which installs an unrelated project with the same name.
+The package is called `strathora-asof`; you import it as `asof` and run it as `strathora`. Without the example folder, `pip install "strathora-asof[mcp]"` from PyPI is enough. Do not run `pip install asof`, which installs an unrelated project.
 
 ## 2. One example: ask for data as of a time
 
