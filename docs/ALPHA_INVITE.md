@@ -18,7 +18,7 @@ python3 -m venv .venv
 .venv/bin/strathora --version          # prints: strathora-asof 0.5.0
 ```
 
-Without `gh`, `git clone git@github.com:lucascostache/asof.git` works if you have an SSH key on your GitHub account.
+Without `gh`, run `git clone` with the SSH address from the repository page (the green **Code** button, then **SSH**); that works if you have an SSH key on your GitHub account.
 
 The package is called `strathora-asof`; you import it as `asof` and run it as `strathora`. It is **not on PyPI**: do not run `pip install asof`, which installs an unrelated project with the same name.
 

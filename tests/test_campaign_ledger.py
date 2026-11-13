@@ -283,7 +283,7 @@ def test_killing_the_writer_at_random_moments_never_leaves_a_broken_or_half_writ
     path = tmp_path / "ledger.db"
     rnd = random.Random(42)
     kills = total = behind = 0
-    while total < 1000:
+    while total < 1000 or kills < 10:                                                                   # both, whatever the machine's speed (a fast CI runner reached 1,145 events in 9 kills)
         p = subprocess.Popen([sys.executable, WRITER, str(path), f"w{kills}"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=ENV)
         assert p.stdout.readline().strip() == "ready", p.stderr.read()
         time.sleep(rnd.choice([0.0, 0.001, 0.003, 0.008, 0.02, 0.05]))                                    # sometimes straight away, sometimes mid-stream

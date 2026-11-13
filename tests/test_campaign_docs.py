@@ -44,13 +44,13 @@ def test_the_inventory_of_code_blocks_is_the_one_this_file_accounts_for():
     by_lang: dict[str, int] = {}
     for _, _, lang, _ in blocks():
         by_lang[lang] = by_lang.get(lang, 0) + 1
-    assert by_lang == {"bash": 24, "python": 8, "json": 7, "text": 3, "none": 2, "html": 1}, by_lang       # a new block changes this line: decide how it is checked, then update it
+    assert by_lang == {"bash": 27, "python": 9, "json": 8, "text": 3, "none": 2, "html": 1}, by_lang       # a new block changes this line: decide how it is checked, then update it
 
 
 # ------------------------------------------------------------------ 33a. JSON
 def test_every_json_block_is_valid_json():
     js = blocks("json")
-    assert len(js) == 7
+    assert len(js) == 8
     for f, line, _, body in js:
         try:
             json.loads(body)
@@ -62,6 +62,7 @@ def test_every_json_block_is_valid_json():
 PYTHON_RUN_ELSEWHERE = {                                                                       # (file, first line of the block) -> the test that runs it exactly as written
     ("README.md", "from asof import Session, sources"): "tests/test_readme.py and scripts/clean_install_check.sh step 9",
     ("SPEC.md", "import hashlib, json, sqlite3"): "tests/test_spec.py and tests/test_schema_versions.py",
+    ("docs/ALPHA_INVITE.md", "from asof import Session, sources"): "tests/test_alpha_invite.py (it is also the README quickstart, verbatim)",
 }
 
 
@@ -152,6 +153,7 @@ NOT_RUN = {                                                                     
     "cd": "the reader's own folder", "cp": "copies the example folder (its contents are tested in tests/test_claude_desktop.py)", "echo": "prints a path", "export": "the reader's own keys and addresses",
     "set": "loads the reader's own key file", "npx": "another program (MCP Inspector; run by tests/test_campaign_mcp.py when it is installed)", "opencode": "another program",
     "source": "activates a virtual environment", ".": "loads the reader's own key file",
+    "gh": "GitHub's command-line tool: clones the private repository with the reader's own GitHub sign-in (docs/ALPHA_INVITE.md)",
 }
 SCRIPT_NEEDS = {"wrap_agent.py": "docs/pilot/examples/wrap_agent.py"}
 
