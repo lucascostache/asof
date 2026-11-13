@@ -16,6 +16,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 SC = ROOT / "showcase"
 FIX = SC / "fixtures" / "data_integrity"
+WRITTEN_ON = "3.13.13"                                  # the Python that wrote showcase/data_integrity/out (showcase/build.py); see the head-hash check below
 sys.path.insert(0, str(SC))
 
 from data_integrity import detect, monitor  # noqa: E402
@@ -91,10 +92,11 @@ def test_the_committed_detection_and_raw_report_are_what_the_code_produces_now(d
     assert json.loads((out / "detection.json").read_text())["rows"] == detect.table(day1)
     raw = json.loads((out / "data_integrity_report.json").read_text())
     now = json.loads(json.dumps(day1, sort_keys=True, default=str))
-    # The ledger's first event records the Python version, so the chain's head hash is the committed one only on the Python that wrote the committed file. Everything else must be equal on any version.
+    # The ledger's first event records the exact Python version (`sys.version.split()[0]`, patch number included), so the chain's head hash is the committed one only on the
+    # Python that wrote the committed file: 3.13.13. (CI's 3.13.18 differs in the patch number; found on the first GitHub Actions run.) Everything else must be equal on any version.
     committed_hash, hash_now = raw["day1"]["chain"].pop("head_hash"), now["chain"].pop("head_hash")
     assert raw["day1"] == now                                                                                    # reproducible raw output: every check result and count
-    assert len(hash_now) == 64 and (hash_now == committed_hash or sys.version_info[:2] != (3, 13))
+    assert len(hash_now) == 64 and (hash_now == committed_hash or sys.version.split()[0] != WRITTEN_ON)
 
 
 # ---------------------------------------------------------------- the clean control: what the checks say when nothing is planted

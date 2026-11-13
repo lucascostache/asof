@@ -348,7 +348,7 @@ def test_the_key_is_never_on_a_command_line_or_in_what_a_failing_script_prints(t
         p = subprocess.Popen([sys.executable, str(ROOT / "scripts" / "smoke_anthropic.py"), "--model", "m", "--base-url", f"http://127.0.0.1:{srv.server_port}", "--ledger", str(tmp_path / "l.db")],
                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env)
         time.sleep(1.5)
-        listing = subprocess.run(["ps", "-A", "-o", "pid=,args="], capture_output=True, text=True).stdout          # what any user of the machine can see
+        listing = subprocess.run(["ps", "-ww", "-A", "-o", "pid=,args="], capture_output=True, text=True).stdout    # what any user of the machine can see; -ww: whole command lines (Linux's ps cuts them to ~80 columns without a terminal, which would hide a key)
         mine = [ln for ln in listing.splitlines() if ln.strip().startswith(str(p.pid) + " ")]
         assert mine and "smoke_anthropic.py" in mine[0], listing[:500]
         hold.set()

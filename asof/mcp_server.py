@@ -311,6 +311,22 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ledger", help="override the config's ledger path")
     ap.add_argument("--allow-model-clock", action="store_true", help="let the model move the clock forward (never past the ceiling)")
     a = ap.parse_args(argv)
+    # Clients end the server in different ways: closing its input, SIGTERM, Ctrl-C (SIGINT), or closing the terminal (SIGHUP). Each must leave through the close below, so the
+    # session gets its `session_end`. The handlers are installed before anything is set up, and raise only while the server is serving: a stop that arrives during setup
+    # (found on CI: inside pydantic, building the server) is remembered and honoured where serving would begin, instead of tearing through library code. They raise at most
+    # once, so a second signal cannot interrupt the close.
+    state = {"phase": "starting", "stop": False}
+
+    def _stop(signum: int, frame: Any) -> None:
+        state["stop"] = True
+        if state["phase"] == "serving":
+            state["phase"] = "closing"
+            raise SystemExit(0)
+    for name in ("SIGTERM", "SIGINT", "SIGHUP"):
+        try:
+            signal.signal(getattr(signal, name), _stop)
+        except (ValueError, OSError, AttributeError):        # not the main thread, or a platform without this signal: the server still works, it just cannot record this kind of stop
+            pass
     try:
         cfg, base = load_config(a.config)
         for key, val in (("as_of", a.as_of), ("max_as_of", a.max_as_of), ("ledger_path", a.ledger)):
@@ -324,16 +340,17 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     print(f"asof {__version__}: serving session {session.id}, clock {iso(session.as_of)}, ceiling {iso(session.clock.ceiling) or 'none'}, "
           f"model may move clock: {policy.allow_model_clock}", file=sys.stderr)                      # stderr only: stdout is the protocol channel
-    def _stop(signum: int, frame: Any) -> None:              # clients end the server in different ways: closing its input, SIGTERM, Ctrl-C (SIGINT), or closing the terminal (SIGHUP).
-        raise SystemExit(0)                                  # All of them leave through the `finally` below, so the session is closed in the ledger
-    for name in ("SIGTERM", "SIGINT", "SIGHUP"):
-        try:
-            signal.signal(getattr(signal, name), _stop)
-        except (ValueError, OSError, AttributeError):        # not the main thread, or a platform without this signal: the server still works, it just cannot record this kind of stop
-            pass
     try:
-        build_server(session, policy).run("stdio")
-    except KeyboardInterrupt:                                # Ctrl-C where the handler could not be installed
+        try:
+            server = build_server(session, policy)
+            state["phase"] = "serving"
+            if not state["stop"]:                            # a stop that came during setup: do not start serving
+                server.run("stdio")
+        except KeyboardInterrupt:                            # Ctrl-C where the handler could not be installed
+            pass
+        finally:
+            state["phase"] = "closing"
+    except SystemExit:                                       # the handler's one SystemExit, wherever it landed above
         pass
     finally:
         session.close()                                      # writes session_end. A hard kill (SIGKILL, power loss) cannot be recorded: the chain still verifies, the session simply has no end event
