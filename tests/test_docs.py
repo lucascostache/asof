@@ -110,21 +110,22 @@ def test_the_readme_python_matrix_matches_pyproject_and_ci():
         assert f'"{v}"' in ci, v
 
 
-def test_the_ci_workflow_runs_every_step_on_linux_always_and_on_macos_on_main_by_hand_and_weekly():
+def test_the_ci_workflow_runs_linux_and_the_secret_scan_on_every_push_and_macos_only_by_hand():
     yaml = pytest.importorskip("yaml")
     text = (ROOT / ".github" / "workflows" / "ci.yml").read_text()
     w = yaml.safe_load(text)
     on = w.get("on", w.get(True))                                                                   # YAML 1.1 reads a bare `on:` as True
-    assert set(on) == {"push", "pull_request", "workflow_dispatch", "schedule"} and w["permissions"] == {"contents": "read"}
-    assert on["schedule"] == [{"cron": "0 6 * * 1"}]                                                # weekly
+    assert set(on) == {"push", "pull_request", "workflow_dispatch"} and w["permissions"] == {"contents": "read"}      # no schedule
     assert set(w["jobs"]) == {"secret-scan", "test-linux", "test-macos"}
     linux, mac = w["jobs"]["test-linux"], w["jobs"]["test-macos"]
     assert linux["runs-on"] == "ubuntu-latest" and mac["runs-on"] == "macos-latest"
     assert "if" not in linux and "if" not in w["jobs"]["secret-scan"]                              # every push and pull request
-    assert mac["if"] == "github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')"
-    assert "delete this `if:` line so macOS runs on every push and pull request again" in text      # the note for when the repository is public
+    assert mac["if"] == "github.event_name == 'workflow_dispatch'"                                  # by hand only, while the repository is private
+    assert "restore macOS on every push and pull request: delete this `if:` line and set python-version back to" in text     # the note for when it is public
+    assert linux["strategy"]["matrix"] == {"python-version": ["3.10", "3.11", "3.12", "3.13", "3.14"]}
+    assert mac["strategy"]["matrix"] == {"python-version": ["3.10", "3.14"]}                         # the oldest and newest
     for job in (linux, mac):
-        assert job["strategy"]["matrix"] == {"python-version": ["3.10", "3.11", "3.12", "3.13", "3.14"]} and job["strategy"]["fail-fast"] is False
+        assert job["strategy"]["fail-fast"] is False
         runs = [s.get("run", "") for s in job["steps"]]
         assert "python -m pip install -e '.[dev]'" in "\n".join(runs)                                # every extra, hypothesis included: the property tests run
         for step in ("ruff check asof scripts demo --select E9,F,B", "mypy asof --ignore-missing-imports", "python -m pytest -q", "python -m pip wheel . --no-deps -w dist"):

@@ -3,9 +3,7 @@ name: CI
 on:
   push:
   pull_request:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * 1"                     # weekly, Monday 06:00 UTC: the macOS jobs run at least once a week
+  workflow_dispatch:                        # Actions tab, "Run workflow": the only way the macOS jobs run while the repository is private
 
 permissions:
   contents: read
@@ -56,15 +54,16 @@ jobs:
 
   test-macos:
     name: Python ${{ matrix.python-version }} on macos-latest
-    # macOS minutes count 10x against a private repository's free allowance, so macOS runs only on pushes to main, by hand, and weekly.
-    # When the repository is public (Actions minutes are free), delete this `if:` line so macOS runs on every push and pull request again.
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    # macOS minutes count 10x against a private repository's allowance, so while the repository is private macOS runs ONLY by hand
+    # (workflow_dispatch), and only on the oldest and newest Python. When the repository is public (standard runners use no paid minutes there),
+    # restore macOS on every push and pull request: delete this `if:` line and set python-version back to ["3.10", "3.11", "3.12", "3.13", "3.14"].
+    if: github.event_name == 'workflow_dispatch'
     runs-on: macos-latest
     timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.10", "3.14"]
     steps:                                  # the same steps as test-linux (tests/test_docs.py checks that they stay the same)
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
