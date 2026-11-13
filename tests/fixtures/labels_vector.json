@@ -1,0 +1,21 @@
+{
+  "note": "One vector, two implementations: the library's asof/labels.py and the Strathora platform's own copy must both produce exactly these answers (each has a tests/test_labels.py that reads this file).",
+  "labels": ["VERIFIED", "OBSERVED", "UNKNOWN", "FLAGGED"],
+  "finding_types": ["LEAK", "SERVER_TOOL", "CLOCK_REWIND", "CHAIN_BREAK", "EXECUTION", "DATA_QUALITY", "SUSCEPTIBILITY", "POLICY"],
+  "finding_label": "FLAGGED",
+  "worst": [
+    {"in": [], "out": "UNKNOWN"},
+    {"in": ["VERIFIED"], "out": "VERIFIED"},
+    {"in": ["verified", "observed"], "out": "OBSERVED"},
+    {"in": ["OBSERVED", "UNKNOWN"], "out": "UNKNOWN"},
+    {"in": ["VERIFIED", "FLAGGED"], "out": "FLAGGED"},
+    {"in": ["UNKNOWN", "FLAGGED", "VERIFIED"], "out": "FLAGGED"},
+    {"in": ["VERIFIED", "VERIFIED", "VERIFIED"], "out": "VERIFIED"}
+  ],
+  "model_label": [
+    {"has_score": false, "rule_broken": false, "out": "UNKNOWN"},
+    {"has_score": true, "rule_broken": false, "out": "OBSERVED"},
+    {"has_score": false, "rule_broken": true, "out": "FLAGGED"},
+    {"has_score": true, "rule_broken": true, "out": "FLAGGED"}
+  ]
+}

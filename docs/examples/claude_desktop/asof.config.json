@@ -1,0 +1,11 @@
+{
+  "as_of": "2023-01-20T23:59:59Z",
+  "max_as_of": "2023-02-01T00:00:00Z",
+  "allow_model_clock": false,
+  "privacy": "full",
+  "ledger_path": "ledger.db",
+  "receipt_detail": "agent",
+  "sources": [
+    {"type": "jsonl", "name": "news", "path": "news.jsonl", "event_time": "published_at", "available_at": "published_at", "key": ["id"], "assume_tz": "UTC"}
+  ]
+}

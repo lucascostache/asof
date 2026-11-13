@@ -1,0 +1,3266 @@
+[
+ {
+  "available_at": "2021-05-04T21:00:00Z",
+  "event_time": "2021-01-04T00:00:00Z",
+  "record_id": "r0",
+  "ret": 0.000362
+ },
+ {
+  "available_at": "2021-01-05T21:00:01Z",
+  "event_time": "2021-01-05T00:00:00Z",
+  "record_id": "r1",
+  "ret": 0.007204
+ },
+ {
+  "available_at": "2021-01-06T21:00:02Z",
+  "event_time": "2021-01-06T00:00:00Z",
+  "record_id": "r2",
+  "ret": -0.000269
+ },
+ {
+  "available_at": "2021-05-07T21:00:03Z",
+  "event_time": "2021-01-07T00:00:00Z",
+  "record_id": "r3",
+  "ret": 0.013495
+ },
+ {
+  "available_at": "2021-01-08T21:00:04Z",
+  "event_time": "2021-01-08T00:00:00Z",
+  "record_id": "r4",
+  "ret": 0.011515
+ },
+ {
+  "available_at": "2021-01-11T21:00:05Z",
+  "event_time": "2021-01-11T00:00:00Z",
+  "record_id": "r5",
+  "ret": -0.005199
+ },
+ {
+  "available_at": "2021-05-12T21:00:06Z",
+  "event_time": "2021-01-12T00:00:00Z",
+  "record_id": "r6",
+  "ret": -0.003175
+ },
+ {
+  "available_at": "2021-01-13T21:00:07Z",
+  "event_time": "2021-01-13T00:00:00Z",
+  "record_id": "r7",
+  "ret": 0.011202
+ },
+ {
+  "available_at": "2021-01-14T21:00:08Z",
+  "event_time": "2021-01-14T00:00:00Z",
+  "record_id": "r8",
+  "ret": -0.00313
+ },
+ {
+  "available_at": "2021-05-15T21:00:09Z",
+  "event_time": "2021-01-15T00:00:00Z",
+  "record_id": "r9",
+  "ret": 0.009237
+ },
+ {
+  "available_at": "2021-01-18T21:00:10Z",
+  "event_time": "2021-01-18T00:00:00Z",
+  "record_id": "r10",
+  "ret": 0.005229
+ },
+ {
+  "available_at": "2021-01-19T21:00:11Z",
+  "event_time": "2021-01-19T00:00:00Z",
+  "record_id": "r11",
+  "ret": -0.009381
+ },
+ {
+  "available_at": "2021-05-20T21:00:12Z",
+  "event_time": "2021-01-20T00:00:00Z",
+  "record_id": "r12",
+  "ret": 0.010076
+ },
+ {
+  "available_at": "2021-01-21T21:00:13Z",
+  "event_time": "2021-01-21T00:00:00Z",
+  "record_id": "r13",
+  "ret": 0.010799
+ },
+ {
+  "available_at": "2021-01-22T21:00:14Z",
+  "event_time": "2021-01-22T00:00:00Z",
+  "record_id": "r14",
+  "ret": 0.000196
+ },
+ {
+  "available_at": "2021-05-25T21:00:15Z",
+  "event_time": "2021-01-25T00:00:00Z",
+  "record_id": "r15",
+  "ret": 0.002232
+ },
+ {
+  "available_at": "2021-01-26T21:00:16Z",
+  "event_time": "2021-01-26T00:00:00Z",
+  "record_id": "r16",
+  "ret": 0.002762
+ },
+ {
+  "available_at": "2021-01-27T21:00:17Z",
+  "event_time": "2021-01-27T00:00:00Z",
+  "record_id": "r17",
+  "ret": -0.004725
+ },
+ {
+  "available_at": "2021-05-28T21:00:18Z",
+  "event_time": "2021-01-28T00:00:00Z",
+  "record_id": "r18",
+  "ret": -0.00501
+ },
+ {
+  "available_at": "2021-01-29T21:00:19Z",
+  "event_time": "2021-01-29T00:00:00Z",
+  "record_id": "r19",
+  "ret": 0.007736
+ },
+ {
+  "available_at": "2021-02-01T21:00:20Z",
+  "event_time": "2021-02-01T00:00:00Z",
+  "record_id": "r20",
+  "ret": 0.004653
+ },
+ {
+  "available_at": "2021-06-02T21:00:21Z",
+  "event_time": "2021-02-02T00:00:00Z",
+  "record_id": "r21",
+  "ret": -0.001098
+ },
+ {
+  "available_at": "2021-02-03T21:00:22Z",
+  "event_time": "2021-02-03T00:00:00Z",
+  "record_id": "r22",
+  "ret": 0.007885
+ },
+ {
+  "available_at": "2021-02-04T21:00:23Z",
+  "event_time": "2021-02-04T00:00:00Z",
+  "record_id": "r23",
+  "ret": 0.005714
+ },
+ {
+  "available_at": "2021-06-05T21:00:24Z",
+  "event_time": "2021-02-05T00:00:00Z",
+  "record_id": "r24",
+  "ret": 0.00926
+ },
+ {
+  "available_at": "2021-02-08T21:00:25Z",
+  "event_time": "2021-02-08T00:00:00Z",
+  "record_id": "r25",
+  "ret": 0.00784
+ },
+ {
+  "available_at": "2021-02-09T21:00:26Z",
+  "event_time": "2021-02-09T00:00:00Z",
+  "record_id": "r26",
+  "ret": -0.004633
+ },
+ {
+  "available_at": "2021-06-10T21:00:27Z",
+  "event_time": "2021-02-10T00:00:00Z",
+  "record_id": "r27",
+  "ret": -0.009041
+ },
+ {
+  "available_at": "2021-02-11T21:00:28Z",
+  "event_time": "2021-02-11T00:00:00Z",
+  "record_id": "r28",
+  "ret": -0.005096
+ },
+ {
+  "available_at": "2021-02-12T21:00:29Z",
+  "event_time": "2021-02-12T00:00:00Z",
+  "record_id": "r29",
+  "ret": 0.008408
+ },
+ {
+  "available_at": "2021-06-15T21:00:30Z",
+  "event_time": "2021-02-15T00:00:00Z",
+  "record_id": "r30",
+  "ret": -0.001717
+ },
+ {
+  "available_at": "2021-02-16T21:00:31Z",
+  "event_time": "2021-02-16T00:00:00Z",
+  "record_id": "r31",
+  "ret": -0.005816
+ },
+ {
+  "available_at": "2021-02-17T21:00:32Z",
+  "event_time": "2021-02-17T00:00:00Z",
+  "record_id": "r32",
+  "ret": 0.00231
+ },
+ {
+  "available_at": "2021-06-18T21:00:33Z",
+  "event_time": "2021-02-18T00:00:00Z",
+  "record_id": "r33",
+  "ret": 0.00183
+ },
+ {
+  "available_at": "2021-02-19T21:00:34Z",
+  "event_time": "2021-02-19T00:00:00Z",
+  "record_id": "r34",
+  "ret": 0.0007
+ },
+ {
+  "available_at": "2021-02-22T21:00:35Z",
+  "event_time": "2021-02-22T00:00:00Z",
+  "record_id": "r35",
+  "ret": -0.011623
+ },
+ {
+  "available_at": "2021-06-23T21:00:36Z",
+  "event_time": "2021-02-23T00:00:00Z",
+  "record_id": "r36",
+  "ret": -0.006463
+ },
+ {
+  "available_at": "2021-02-24T21:00:37Z",
+  "event_time": "2021-02-24T00:00:00Z",
+  "record_id": "r37",
+  "ret": -0.003741
+ },
+ {
+  "available_at": "2021-02-25T21:00:38Z",
+  "event_time": "2021-02-25T00:00:00Z",
+  "record_id": "r38",
+  "ret": 0.004714
+ },
+ {
+  "available_at": "2021-06-26T21:00:39Z",
+  "event_time": "2021-02-26T00:00:00Z",
+  "record_id": "r39",
+  "ret": -0.004456
+ },
+ {
+  "available_at": "2021-03-01T21:00:40Z",
+  "event_time": "2021-03-01T00:00:00Z",
+  "record_id": "r40",
+  "ret": 0.005984
+ },
+ {
+  "available_at": "2021-03-02T21:00:41Z",
+  "event_time": "2021-03-02T00:00:00Z",
+  "record_id": "r41",
+  "ret": 0.008301
+ },
+ {
+  "available_at": "2021-07-01T21:00:42Z",
+  "event_time": "2021-03-03T00:00:00Z",
+  "record_id": "r42",
+  "ret": 0.003963
+ },
+ {
+  "available_at": "2021-03-04T21:00:43Z",
+  "event_time": "2021-03-04T00:00:00Z",
+  "record_id": "r43",
+  "ret": 0.00459
+ },
+ {
+  "available_at": "2021-03-05T21:00:44Z",
+  "event_time": "2021-03-05T00:00:00Z",
+  "record_id": "r44",
+  "ret": 0.00672
+ },
+ {
+  "available_at": "2021-07-06T21:00:45Z",
+  "event_time": "2021-03-08T00:00:00Z",
+  "record_id": "r45",
+  "ret": 0.005819
+ },
+ {
+  "available_at": "2021-03-09T21:00:46Z",
+  "event_time": "2021-03-09T00:00:00Z",
+  "record_id": "r46",
+  "ret": -0.008407
+ },
+ {
+  "available_at": "2021-03-10T21:00:47Z",
+  "event_time": "2021-03-10T00:00:00Z",
+  "record_id": "r47",
+  "ret": 0.002597
+ },
+ {
+  "available_at": "2021-07-09T21:00:48Z",
+  "event_time": "2021-03-11T00:00:00Z",
+  "record_id": "r48",
+  "ret": -0.000105
+ },
+ {
+  "available_at": "2021-03-12T21:00:49Z",
+  "event_time": "2021-03-12T00:00:00Z",
+  "record_id": "r49",
+  "ret": 0.008744
+ },
+ {
+  "available_at": "2021-03-15T21:00:50Z",
+  "event_time": "2021-03-15T00:00:00Z",
+  "record_id": "r50",
+  "ret": -0.010075
+ },
+ {
+  "available_at": "2021-07-14T21:00:51Z",
+  "event_time": "2021-03-16T00:00:00Z",
+  "record_id": "r51",
+  "ret": 0.009237
+ },
+ {
+  "available_at": "2021-03-17T21:00:52Z",
+  "event_time": "2021-03-17T00:00:00Z",
+  "record_id": "r52",
+  "ret": 0.000983
+ },
+ {
+  "available_at": "2021-03-18T21:00:53Z",
+  "event_time": "2021-03-18T00:00:00Z",
+  "record_id": "r53",
+  "ret": 0.008156
+ },
+ {
+  "available_at": "2021-07-17T21:00:54Z",
+  "event_time": "2021-03-19T00:00:00Z",
+  "record_id": "r54",
+  "ret": 0.012582
+ },
+ {
+  "available_at": "2021-03-22T21:00:55Z",
+  "event_time": "2021-03-22T00:00:00Z",
+  "record_id": "r55",
+  "ret": 0.001077
+ },
+ {
+  "available_at": "2021-03-23T21:00:56Z",
+  "event_time": "2021-03-23T00:00:00Z",
+  "record_id": "r56",
+  "ret": -0.008905
+ },
+ {
+  "available_at": "2021-07-22T21:00:57Z",
+  "event_time": "2021-03-24T00:00:00Z",
+  "record_id": "r57",
+  "ret": 0.007374
+ },
+ {
+  "available_at": "2021-03-25T21:00:58Z",
+  "event_time": "2021-03-25T00:00:00Z",
+  "record_id": "r58",
+  "ret": 0.010806
+ },
+ {
+  "available_at": "2021-03-26T21:00:59Z",
+  "event_time": "2021-03-26T00:00:00Z",
+  "record_id": "r59",
+  "ret": -0.007972
+ },
+ {
+  "available_at": "2021-07-27T21:01:00Z",
+  "event_time": "2021-03-29T00:00:00Z",
+  "record_id": "r60",
+  "ret": 0.008128
+ },
+ {
+  "available_at": "2021-03-30T21:01:01Z",
+  "event_time": "2021-03-30T00:00:00Z",
+  "record_id": "r61",
+  "ret": 0.005823
+ },
+ {
+  "available_at": "2021-03-31T21:01:02Z",
+  "event_time": "2021-03-31T00:00:00Z",
+  "record_id": "r62",
+  "ret": -0.004753
+ },
+ {
+  "available_at": "2021-07-30T21:01:03Z",
+  "event_time": "2021-04-01T00:00:00Z",
+  "record_id": "r63",
+  "ret": 0.00368
+ },
+ {
+  "available_at": "2021-04-02T21:01:04Z",
+  "event_time": "2021-04-02T00:00:00Z",
+  "record_id": "r64",
+  "ret": 0.000487
+ },
+ {
+  "available_at": "2021-04-05T21:01:05Z",
+  "event_time": "2021-04-05T00:00:00Z",
+  "record_id": "r65",
+  "ret": 0.005905
+ },
+ {
+  "available_at": "2021-08-04T21:01:06Z",
+  "event_time": "2021-04-06T00:00:00Z",
+  "record_id": "r66",
+  "ret": -0.008068
+ },
+ {
+  "available_at": "2021-04-07T21:01:07Z",
+  "event_time": "2021-04-07T00:00:00Z",
+  "record_id": "r67",
+  "ret": -0.007723
+ },
+ {
+  "available_at": "2021-04-08T21:01:08Z",
+  "event_time": "2021-04-08T00:00:00Z",
+  "record_id": "r68",
+  "ret": 0.000634
+ },
+ {
+  "available_at": "2021-08-07T21:01:09Z",
+  "event_time": "2021-04-09T00:00:00Z",
+  "record_id": "r69",
+  "ret": -0.001358
+ },
+ {
+  "available_at": "2021-04-12T21:01:10Z",
+  "event_time": "2021-04-12T00:00:00Z",
+  "record_id": "r70",
+  "ret": -0.007787
+ },
+ {
+  "available_at": "2021-04-13T21:01:11Z",
+  "event_time": "2021-04-13T00:00:00Z",
+  "record_id": "r71",
+  "ret": 0.010593
+ },
+ {
+  "available_at": "2021-08-12T21:01:12Z",
+  "event_time": "2021-04-14T00:00:00Z",
+  "record_id": "r72",
+  "ret": -0.004774
+ },
+ {
+  "available_at": "2021-04-15T21:01:13Z",
+  "event_time": "2021-04-15T00:00:00Z",
+  "record_id": "r73",
+  "ret": 0.000833
+ },
+ {
+  "available_at": "2021-04-16T21:01:14Z",
+  "event_time": "2021-04-16T00:00:00Z",
+  "record_id": "r74",
+  "ret": 0.003892
+ },
+ {
+  "available_at": "2021-08-17T21:01:15Z",
+  "event_time": "2021-04-19T00:00:00Z",
+  "record_id": "r75",
+  "ret": -0.009569
+ },
+ {
+  "available_at": "2021-04-20T21:01:16Z",
+  "event_time": "2021-04-20T00:00:00Z",
+  "record_id": "r76",
+  "ret": -0.006438
+ },
+ {
+  "available_at": "2021-04-21T21:01:17Z",
+  "event_time": "2021-04-21T00:00:00Z",
+  "record_id": "r77",
+  "ret": -0.004022
+ },
+ {
+  "available_at": "2021-08-20T21:01:18Z",
+  "event_time": "2021-04-22T00:00:00Z",
+  "record_id": "r78",
+  "ret": -0.005679
+ },
+ {
+  "available_at": "2021-04-23T21:01:19Z",
+  "event_time": "2021-04-23T00:00:00Z",
+  "record_id": "r79",
+  "ret": -0.007471
+ },
+ {
+  "available_at": "2021-04-26T21:01:20Z",
+  "event_time": "2021-04-26T00:00:00Z",
+  "record_id": "r80",
+  "ret": -0.00037
+ },
+ {
+  "available_at": "2021-08-25T21:01:21Z",
+  "event_time": "2021-04-27T00:00:00Z",
+  "record_id": "r81",
+  "ret": 0.010717
+ },
+ {
+  "available_at": "2021-04-28T21:01:22Z",
+  "event_time": "2021-04-28T00:00:00Z",
+  "record_id": "r82",
+  "ret": -0.006809
+ },
+ {
+  "available_at": "2021-04-29T21:01:23Z",
+  "event_time": "2021-04-29T00:00:00Z",
+  "record_id": "r83",
+  "ret": -0.0099
+ },
+ {
+  "available_at": "2021-08-28T21:01:24Z",
+  "event_time": "2021-04-30T00:00:00Z",
+  "record_id": "r84",
+  "ret": -0.003537
+ },
+ {
+  "available_at": "2021-05-03T21:01:25Z",
+  "event_time": "2021-05-03T00:00:00Z",
+  "record_id": "r85",
+  "ret": 0.003531
+ },
+ {
+  "available_at": "2021-05-04T21:01:26Z",
+  "event_time": "2021-05-04T00:00:00Z",
+  "record_id": "r86",
+  "ret": -0.005716
+ },
+ {
+  "available_at": "2021-09-02T21:01:27Z",
+  "event_time": "2021-05-05T00:00:00Z",
+  "record_id": "r87",
+  "ret": -0.000242
+ },
+ {
+  "available_at": "2021-05-06T21:01:28Z",
+  "event_time": "2021-05-06T00:00:00Z",
+  "record_id": "r88",
+  "ret": 0.000585
+ },
+ {
+  "available_at": "2021-05-07T21:01:29Z",
+  "event_time": "2021-05-07T00:00:00Z",
+  "record_id": "r89",
+  "ret": 0.005963
+ },
+ {
+  "available_at": "2021-09-07T21:01:30Z",
+  "event_time": "2021-05-10T00:00:00Z",
+  "record_id": "r90",
+  "ret": 0.010915
+ },
+ {
+  "available_at": "2021-05-11T21:01:31Z",
+  "event_time": "2021-05-11T00:00:00Z",
+  "record_id": "r91",
+  "ret": 0.002594
+ },
+ {
+  "available_at": "2021-05-12T21:01:32Z",
+  "event_time": "2021-05-12T00:00:00Z",
+  "record_id": "r92",
+  "ret": -0.000217
+ },
+ {
+  "available_at": "2021-09-10T21:01:33Z",
+  "event_time": "2021-05-13T00:00:00Z",
+  "record_id": "r93",
+  "ret": -0.007893
+ },
+ {
+  "available_at": "2021-05-14T21:01:34Z",
+  "event_time": "2021-05-14T00:00:00Z",
+  "record_id": "r94",
+  "ret": -0.011157
+ },
+ {
+  "available_at": "2021-05-17T21:01:35Z",
+  "event_time": "2021-05-17T00:00:00Z",
+  "record_id": "r95",
+  "ret": 0.005635
+ },
+ {
+  "available_at": "2021-09-15T21:01:36Z",
+  "event_time": "2021-05-18T00:00:00Z",
+  "record_id": "r96",
+  "ret": -0.00905
+ },
+ {
+  "available_at": "2021-05-19T21:01:37Z",
+  "event_time": "2021-05-19T00:00:00Z",
+  "record_id": "r97",
+  "ret": 0.005101
+ },
+ {
+  "available_at": "2021-05-20T21:01:38Z",
+  "event_time": "2021-05-20T00:00:00Z",
+  "record_id": "r98",
+  "ret": -0.004125
+ },
+ {
+  "available_at": "2021-09-18T21:01:39Z",
+  "event_time": "2021-05-21T00:00:00Z",
+  "record_id": "r99",
+  "ret": 0.013448
+ },
+ {
+  "available_at": "2021-05-24T21:01:40Z",
+  "event_time": "2021-05-24T00:00:00Z",
+  "record_id": "r100",
+  "ret": -0.004231
+ },
+ {
+  "available_at": "2021-05-25T21:01:41Z",
+  "event_time": "2021-05-25T00:00:00Z",
+  "record_id": "r101",
+  "ret": 0.008904
+ },
+ {
+  "available_at": "2021-09-23T21:01:42Z",
+  "event_time": "2021-05-26T00:00:00Z",
+  "record_id": "r102",
+  "ret": -0.001075
+ },
+ {
+  "available_at": "2021-05-27T21:01:43Z",
+  "event_time": "2021-05-27T00:00:00Z",
+  "record_id": "r103",
+  "ret": -0.011367
+ },
+ {
+  "available_at": "2021-05-28T21:01:44Z",
+  "event_time": "2021-05-28T00:00:00Z",
+  "record_id": "r104",
+  "ret": -0.000537
+ },
+ {
+  "available_at": "2021-09-28T21:01:45Z",
+  "event_time": "2021-05-31T00:00:00Z",
+  "record_id": "r105",
+  "ret": 0.009069
+ },
+ {
+  "available_at": "2021-06-01T21:01:46Z",
+  "event_time": "2021-06-01T00:00:00Z",
+  "record_id": "r106",
+  "ret": 0.000275
+ },
+ {
+  "available_at": "2021-06-02T21:01:47Z",
+  "event_time": "2021-06-02T00:00:00Z",
+  "record_id": "r107",
+  "ret": -0.004544
+ },
+ {
+  "available_at": "2021-10-01T21:01:48Z",
+  "event_time": "2021-06-03T00:00:00Z",
+  "record_id": "r108",
+  "ret": -0.006621
+ },
+ {
+  "available_at": "2021-06-04T21:01:49Z",
+  "event_time": "2021-06-04T00:00:00Z",
+  "record_id": "r109",
+  "ret": -0.000704
+ },
+ {
+  "available_at": "2021-06-07T21:01:50Z",
+  "event_time": "2021-06-07T00:00:00Z",
+  "record_id": "r110",
+  "ret": 0.004296
+ },
+ {
+  "available_at": "2021-10-06T21:01:51Z",
+  "event_time": "2021-06-08T00:00:00Z",
+  "record_id": "r111",
+  "ret": -0.003625
+ },
+ {
+  "available_at": "2021-06-09T21:01:52Z",
+  "event_time": "2021-06-09T00:00:00Z",
+  "record_id": "r112",
+  "ret": 0.011149
+ },
+ {
+  "available_at": "2021-06-10T21:01:53Z",
+  "event_time": "2021-06-10T00:00:00Z",
+  "record_id": "r113",
+  "ret": 0.005993
+ },
+ {
+  "available_at": "2021-10-09T21:01:54Z",
+  "event_time": "2021-06-11T00:00:00Z",
+  "record_id": "r114",
+  "ret": 0.00136
+ },
+ {
+  "available_at": "2021-06-14T21:01:55Z",
+  "event_time": "2021-06-14T00:00:00Z",
+  "record_id": "r115",
+  "ret": -0.007797
+ },
+ {
+  "available_at": "2021-06-15T21:01:56Z",
+  "event_time": "2021-06-15T00:00:00Z",
+  "record_id": "r116",
+  "ret": -0.004319
+ },
+ {
+  "available_at": "2021-10-14T21:01:57Z",
+  "event_time": "2021-06-16T00:00:00Z",
+  "record_id": "r117",
+  "ret": -0.005393
+ },
+ {
+  "available_at": "2021-06-17T21:01:58Z",
+  "event_time": "2021-06-17T00:00:00Z",
+  "record_id": "r118",
+  "ret": 0.00872
+ },
+ {
+  "available_at": "2021-06-18T21:01:59Z",
+  "event_time": "2021-06-18T00:00:00Z",
+  "record_id": "r119",
+  "ret": -0.007835
+ },
+ {
+  "available_at": "2021-10-19T21:02:00Z",
+  "event_time": "2021-06-21T00:00:00Z",
+  "record_id": "r120",
+  "ret": 0.001725
+ },
+ {
+  "available_at": "2021-06-22T21:02:01Z",
+  "event_time": "2021-06-22T00:00:00Z",
+  "record_id": "r121",
+  "ret": -0.001531
+ },
+ {
+  "available_at": "2021-06-23T21:02:02Z",
+  "event_time": "2021-06-23T00:00:00Z",
+  "record_id": "r122",
+  "ret": 0.011576
+ },
+ {
+  "available_at": "2021-10-22T21:02:03Z",
+  "event_time": "2021-06-24T00:00:00Z",
+  "record_id": "r123",
+  "ret": -0.008405
+ },
+ {
+  "available_at": "2021-06-25T21:02:04Z",
+  "event_time": "2021-06-25T00:00:00Z",
+  "record_id": "r124",
+  "ret": 0.011767
+ },
+ {
+  "available_at": "2021-06-28T21:02:05Z",
+  "event_time": "2021-06-28T00:00:00Z",
+  "record_id": "r125",
+  "ret": 0.0104
+ },
+ {
+  "available_at": "2021-10-27T21:02:06Z",
+  "event_time": "2021-06-29T00:00:00Z",
+  "record_id": "r126",
+  "ret": 0.003114
+ },
+ {
+  "available_at": "2021-06-30T21:02:07Z",
+  "event_time": "2021-06-30T00:00:00Z",
+  "record_id": "r127",
+  "ret": 0.01202
+ },
+ {
+  "available_at": "2021-07-01T21:02:08Z",
+  "event_time": "2021-07-01T00:00:00Z",
+  "record_id": "r128",
+  "ret": 0.006507
+ },
+ {
+  "available_at": "2021-10-30T21:02:09Z",
+  "event_time": "2021-07-02T00:00:00Z",
+  "record_id": "r129",
+  "ret": 0.012844
+ },
+ {
+  "available_at": "2021-07-05T21:02:10Z",
+  "event_time": "2021-07-05T00:00:00Z",
+  "record_id": "r130",
+  "ret": 0.007226
+ },
+ {
+  "available_at": "2021-07-06T21:02:11Z",
+  "event_time": "2021-07-06T00:00:00Z",
+  "record_id": "r131",
+  "ret": -0.01011
+ },
+ {
+  "available_at": "2021-11-04T21:02:12Z",
+  "event_time": "2021-07-07T00:00:00Z",
+  "record_id": "r132",
+  "ret": -0.009345
+ },
+ {
+  "available_at": "2021-07-08T21:02:13Z",
+  "event_time": "2021-07-08T00:00:00Z",
+  "record_id": "r133",
+  "ret": -0.008748
+ },
+ {
+  "available_at": "2021-07-09T21:02:14Z",
+  "event_time": "2021-07-09T00:00:00Z",
+  "record_id": "r134",
+  "ret": 0.011204
+ },
+ {
+  "available_at": "2021-11-09T21:02:15Z",
+  "event_time": "2021-07-12T00:00:00Z",
+  "record_id": "r135",
+  "ret": -0.008304
+ },
+ {
+  "available_at": "2021-07-13T21:02:16Z",
+  "event_time": "2021-07-13T00:00:00Z",
+  "record_id": "r136",
+  "ret": 0.007815
+ },
+ {
+  "available_at": "2021-07-14T21:02:17Z",
+  "event_time": "2021-07-14T00:00:00Z",
+  "record_id": "r137",
+  "ret": 0.010996
+ },
+ {
+  "available_at": "2021-11-12T21:02:18Z",
+  "event_time": "2021-07-15T00:00:00Z",
+  "record_id": "r138",
+  "ret": -0.004876
+ },
+ {
+  "available_at": "2021-07-16T21:02:19Z",
+  "event_time": "2021-07-16T00:00:00Z",
+  "record_id": "r139",
+  "ret": 0.00623
+ },
+ {
+  "available_at": "2021-07-19T21:02:20Z",
+  "event_time": "2021-07-19T00:00:00Z",
+  "record_id": "r140",
+  "ret": 0.005694
+ },
+ {
+  "available_at": "2021-11-17T21:02:21Z",
+  "event_time": "2021-07-20T00:00:00Z",
+  "record_id": "r141",
+  "ret": 0.001539
+ },
+ {
+  "available_at": "2021-07-21T21:02:22Z",
+  "event_time": "2021-07-21T00:00:00Z",
+  "record_id": "r142",
+  "ret": 0.001684
+ },
+ {
+  "available_at": "2021-07-22T21:02:23Z",
+  "event_time": "2021-07-22T00:00:00Z",
+  "record_id": "r143",
+  "ret": 0.000229
+ },
+ {
+  "available_at": "2021-11-20T21:02:24Z",
+  "event_time": "2021-07-23T00:00:00Z",
+  "record_id": "r144",
+  "ret": 0.008383
+ },
+ {
+  "available_at": "2021-07-26T21:02:25Z",
+  "event_time": "2021-07-26T00:00:00Z",
+  "record_id": "r145",
+  "ret": -0.00738
+ },
+ {
+  "available_at": "2021-07-27T21:02:26Z",
+  "event_time": "2021-07-27T00:00:00Z",
+  "record_id": "r146",
+  "ret": -0.006246
+ },
+ {
+  "available_at": "2021-11-25T21:02:27Z",
+  "event_time": "2021-07-28T00:00:00Z",
+  "record_id": "r147",
+  "ret": 0.007172
+ },
+ {
+  "available_at": "2021-07-29T21:02:28Z",
+  "event_time": "2021-07-29T00:00:00Z",
+  "record_id": "r148",
+  "ret": -0.006525
+ },
+ {
+  "available_at": "2021-07-30T21:02:29Z",
+  "event_time": "2021-07-30T00:00:00Z",
+  "record_id": "r149",
+  "ret": 0.006715
+ },
+ {
+  "available_at": "2021-11-30T21:02:30Z",
+  "event_time": "2021-08-02T00:00:00Z",
+  "record_id": "r150",
+  "ret": 0.010368
+ },
+ {
+  "available_at": "2021-08-03T21:02:31Z",
+  "event_time": "2021-08-03T00:00:00Z",
+  "record_id": "r151",
+  "ret": -0.008043
+ },
+ {
+  "available_at": "2021-08-04T21:02:32Z",
+  "event_time": "2021-08-04T00:00:00Z",
+  "record_id": "r152",
+  "ret": -0.004742
+ },
+ {
+  "available_at": "2021-12-03T21:02:33Z",
+  "event_time": "2021-08-05T00:00:00Z",
+  "record_id": "r153",
+  "ret": 0.007502
+ },
+ {
+  "available_at": "2021-08-06T21:02:34Z",
+  "event_time": "2021-08-06T00:00:00Z",
+  "record_id": "r154",
+  "ret": 0.000927
+ },
+ {
+  "available_at": "2021-08-09T21:02:35Z",
+  "event_time": "2021-08-09T00:00:00Z",
+  "record_id": "r155",
+  "ret": -0.002279
+ },
+ {
+  "available_at": "2021-12-08T21:02:36Z",
+  "event_time": "2021-08-10T00:00:00Z",
+  "record_id": "r156",
+  "ret": -0.009268
+ },
+ {
+  "available_at": "2021-08-11T21:02:37Z",
+  "event_time": "2021-08-11T00:00:00Z",
+  "record_id": "r157",
+  "ret": -0.010904
+ },
+ {
+  "available_at": "2021-08-12T21:02:38Z",
+  "event_time": "2021-08-12T00:00:00Z",
+  "record_id": "r158",
+  "ret": 0.008849
+ },
+ {
+  "available_at": "2021-12-11T21:02:39Z",
+  "event_time": "2021-08-13T00:00:00Z",
+  "record_id": "r159",
+  "ret": -0.003445
+ },
+ {
+  "available_at": "2021-08-16T21:02:40Z",
+  "event_time": "2021-08-16T00:00:00Z",
+  "record_id": "r160",
+  "ret": 0.010213
+ },
+ {
+  "available_at": "2021-08-17T21:02:41Z",
+  "event_time": "2021-08-17T00:00:00Z",
+  "record_id": "r161",
+  "ret": -0.001695
+ },
+ {
+  "available_at": "2021-12-16T21:02:42Z",
+  "event_time": "2021-08-18T00:00:00Z",
+  "record_id": "r162",
+  "ret": 0.003431
+ },
+ {
+  "available_at": "2021-08-19T21:02:43Z",
+  "event_time": "2021-08-19T00:00:00Z",
+  "record_id": "r163",
+  "ret": -0.009144
+ },
+ {
+  "available_at": "2021-08-20T21:02:44Z",
+  "event_time": "2021-08-20T00:00:00Z",
+  "record_id": "r164",
+  "ret": -0.002246
+ },
+ {
+  "available_at": "2021-12-21T21:02:45Z",
+  "event_time": "2021-08-23T00:00:00Z",
+  "record_id": "r165",
+  "ret": -0.00236
+ },
+ {
+  "available_at": "2021-08-24T21:02:46Z",
+  "event_time": "2021-08-24T00:00:00Z",
+  "record_id": "r166",
+  "ret": -0.000346
+ },
+ {
+  "available_at": "2021-08-25T21:02:47Z",
+  "event_time": "2021-08-25T00:00:00Z",
+  "record_id": "r167",
+  "ret": -0.004432
+ },
+ {
+  "available_at": "2021-12-24T21:02:48Z",
+  "event_time": "2021-08-26T00:00:00Z",
+  "record_id": "r168",
+  "ret": -0.001848
+ },
+ {
+  "available_at": "2021-08-27T21:02:49Z",
+  "event_time": "2021-08-27T00:00:00Z",
+  "record_id": "r169",
+  "ret": 0.001851
+ },
+ {
+  "available_at": "2021-08-30T21:02:50Z",
+  "event_time": "2021-08-30T00:00:00Z",
+  "record_id": "r170",
+  "ret": -0.002803
+ },
+ {
+  "available_at": "2021-12-29T21:02:51Z",
+  "event_time": "2021-08-31T00:00:00Z",
+  "record_id": "r171",
+  "ret": 0.007067
+ },
+ {
+  "available_at": "2021-09-01T21:02:52Z",
+  "event_time": "2021-09-01T00:00:00Z",
+  "record_id": "r172",
+  "ret": -0.003716
+ },
+ {
+  "available_at": "2021-09-02T21:02:53Z",
+  "event_time": "2021-09-02T00:00:00Z",
+  "record_id": "r173",
+  "ret": 0.004224
+ },
+ {
+  "available_at": "2022-01-01T21:02:54Z",
+  "event_time": "2021-09-03T00:00:00Z",
+  "record_id": "r174",
+  "ret": 0.009402
+ },
+ {
+  "available_at": "2021-09-06T21:02:55Z",
+  "event_time": "2021-09-06T00:00:00Z",
+  "record_id": "r175",
+  "ret": -0.010562
+ },
+ {
+  "available_at": "2021-09-07T21:02:56Z",
+  "event_time": "2021-09-07T00:00:00Z",
+  "record_id": "r176",
+  "ret": 0.002013
+ },
+ {
+  "available_at": "2022-01-06T21:02:57Z",
+  "event_time": "2021-09-08T00:00:00Z",
+  "record_id": "r177",
+  "ret": -0.003603
+ },
+ {
+  "available_at": "2021-09-09T21:02:58Z",
+  "event_time": "2021-09-09T00:00:00Z",
+  "record_id": "r178",
+  "ret": -0.006054
+ },
+ {
+  "available_at": "2021-09-10T21:02:59Z",
+  "event_time": "2021-09-10T00:00:00Z",
+  "record_id": "r179",
+  "ret": 0.000385
+ },
+ {
+  "available_at": "2022-01-11T21:03:00Z",
+  "event_time": "2021-09-13T00:00:00Z",
+  "record_id": "r180",
+  "ret": 0.009432
+ },
+ {
+  "available_at": "2021-09-14T21:03:01Z",
+  "event_time": "2021-09-14T00:00:00Z",
+  "record_id": "r181",
+  "ret": -0.001566
+ },
+ {
+  "available_at": "2021-09-15T21:03:02Z",
+  "event_time": "2021-09-15T00:00:00Z",
+  "record_id": "r182",
+  "ret": -0.003542
+ },
+ {
+  "available_at": "2022-01-14T21:03:03Z",
+  "event_time": "2021-09-16T00:00:00Z",
+  "record_id": "r183",
+  "ret": -0.001459
+ },
+ {
+  "available_at": "2021-09-17T21:03:04Z",
+  "event_time": "2021-09-17T00:00:00Z",
+  "record_id": "r184",
+  "ret": 0.008178
+ },
+ {
+  "available_at": "2021-09-20T21:03:05Z",
+  "event_time": "2021-09-20T00:00:00Z",
+  "record_id": "r185",
+  "ret": 0.011424
+ },
+ {
+  "available_at": "2022-01-19T21:03:06Z",
+  "event_time": "2021-09-21T00:00:00Z",
+  "record_id": "r186",
+  "ret": -0.00215
+ },
+ {
+  "available_at": "2021-09-22T21:03:07Z",
+  "event_time": "2021-09-22T00:00:00Z",
+  "record_id": "r187",
+  "ret": -0.001089
+ },
+ {
+  "available_at": "2021-09-23T21:03:08Z",
+  "event_time": "2021-09-23T00:00:00Z",
+  "record_id": "r188",
+  "ret": 0.004078
+ },
+ {
+  "available_at": "2022-01-22T21:03:09Z",
+  "event_time": "2021-09-24T00:00:00Z",
+  "record_id": "r189",
+  "ret": -0.007662
+ },
+ {
+  "available_at": "2021-09-27T21:03:10Z",
+  "event_time": "2021-09-27T00:00:00Z",
+  "record_id": "r190",
+  "ret": 0.009091
+ },
+ {
+  "available_at": "2021-09-28T21:03:11Z",
+  "event_time": "2021-09-28T00:00:00Z",
+  "record_id": "r191",
+  "ret": -0.009288
+ },
+ {
+  "available_at": "2022-01-27T21:03:12Z",
+  "event_time": "2021-09-29T00:00:00Z",
+  "record_id": "r192",
+  "ret": 0.001876
+ },
+ {
+  "available_at": "2021-09-30T21:03:13Z",
+  "event_time": "2021-09-30T00:00:00Z",
+  "record_id": "r193",
+  "ret": -0.00409
+ },
+ {
+  "available_at": "2021-10-01T21:03:14Z",
+  "event_time": "2021-10-01T00:00:00Z",
+  "record_id": "r194",
+  "ret": -0.007311
+ },
+ {
+  "available_at": "2022-02-01T21:03:15Z",
+  "event_time": "2021-10-04T00:00:00Z",
+  "record_id": "r195",
+  "ret": 0.011347
+ },
+ {
+  "available_at": "2021-10-05T21:03:16Z",
+  "event_time": "2021-10-05T00:00:00Z",
+  "record_id": "r196",
+  "ret": -0.004221
+ },
+ {
+  "available_at": "2021-10-06T21:03:17Z",
+  "event_time": "2021-10-06T00:00:00Z",
+  "record_id": "r197",
+  "ret": -0.000227
+ },
+ {
+  "available_at": "2022-02-04T21:03:18Z",
+  "event_time": "2021-10-07T00:00:00Z",
+  "record_id": "r198",
+  "ret": 0.001628
+ },
+ {
+  "available_at": "2021-10-08T21:03:19Z",
+  "event_time": "2021-10-08T00:00:00Z",
+  "record_id": "r199",
+  "ret": -0.000721
+ },
+ {
+  "available_at": "2021-10-11T21:03:20Z",
+  "event_time": "2021-10-11T00:00:00Z",
+  "record_id": "r200",
+  "ret": 0.009092
+ },
+ {
+  "available_at": "2022-02-09T21:03:21Z",
+  "event_time": "2021-10-12T00:00:00Z",
+  "record_id": "r201",
+  "ret": 0.004618
+ },
+ {
+  "available_at": "2021-10-13T21:03:22Z",
+  "event_time": "2021-10-13T00:00:00Z",
+  "record_id": "r202",
+  "ret": 0.011504
+ },
+ {
+  "available_at": "2021-10-14T21:03:23Z",
+  "event_time": "2021-10-14T00:00:00Z",
+  "record_id": "r203",
+  "ret": 0.004033
+ },
+ {
+  "available_at": "2022-02-12T21:03:24Z",
+  "event_time": "2021-10-15T00:00:00Z",
+  "record_id": "r204",
+  "ret": 0.003674
+ },
+ {
+  "available_at": "2021-10-18T21:03:25Z",
+  "event_time": "2021-10-18T00:00:00Z",
+  "record_id": "r205",
+  "ret": -0.00988
+ },
+ {
+  "available_at": "2021-10-19T21:03:26Z",
+  "event_time": "2021-10-19T00:00:00Z",
+  "record_id": "r206",
+  "ret": -0.002885
+ },
+ {
+  "available_at": "2022-02-17T21:03:27Z",
+  "event_time": "2021-10-20T00:00:00Z",
+  "record_id": "r207",
+  "ret": 0.007098
+ },
+ {
+  "available_at": "2021-10-21T21:03:28Z",
+  "event_time": "2021-10-21T00:00:00Z",
+  "record_id": "r208",
+  "ret": 0.004972
+ },
+ {
+  "available_at": "2021-10-22T21:03:29Z",
+  "event_time": "2021-10-22T00:00:00Z",
+  "record_id": "r209",
+  "ret": -0.001127
+ },
+ {
+  "available_at": "2022-02-22T21:03:30Z",
+  "event_time": "2021-10-25T00:00:00Z",
+  "record_id": "r210",
+  "ret": 0.008257
+ },
+ {
+  "available_at": "2021-10-26T21:03:31Z",
+  "event_time": "2021-10-26T00:00:00Z",
+  "record_id": "r211",
+  "ret": -0.003531
+ },
+ {
+  "available_at": "2021-10-27T21:03:32Z",
+  "event_time": "2021-10-27T00:00:00Z",
+  "record_id": "r212",
+  "ret": -0.008109
+ },
+ {
+  "available_at": "2022-02-25T21:03:33Z",
+  "event_time": "2021-10-28T00:00:00Z",
+  "record_id": "r213",
+  "ret": -0.007905
+ },
+ {
+  "available_at": "2021-10-29T21:03:34Z",
+  "event_time": "2021-10-29T00:00:00Z",
+  "record_id": "r214",
+  "ret": -0.003533
+ },
+ {
+  "available_at": "2021-11-01T21:03:35Z",
+  "event_time": "2021-11-01T00:00:00Z",
+  "record_id": "r215",
+  "ret": -0.002924
+ },
+ {
+  "available_at": "2022-03-02T21:03:36Z",
+  "event_time": "2021-11-02T00:00:00Z",
+  "record_id": "r216",
+  "ret": 0.00823
+ },
+ {
+  "available_at": "2021-11-03T21:03:37Z",
+  "event_time": "2021-11-03T00:00:00Z",
+  "record_id": "r217",
+  "ret": 0.005846
+ },
+ {
+  "available_at": "2021-11-04T21:03:38Z",
+  "event_time": "2021-11-04T00:00:00Z",
+  "record_id": "r218",
+  "ret": 0.003981
+ },
+ {
+  "available_at": "2022-03-05T21:03:39Z",
+  "event_time": "2021-11-05T00:00:00Z",
+  "record_id": "r219",
+  "ret": -0.005145
+ },
+ {
+  "available_at": "2021-11-08T21:03:40Z",
+  "event_time": "2021-11-08T00:00:00Z",
+  "record_id": "r220",
+  "ret": -0.010544
+ },
+ {
+  "available_at": "2021-11-09T21:03:41Z",
+  "event_time": "2021-11-09T00:00:00Z",
+  "record_id": "r221",
+  "ret": 0.004018
+ },
+ {
+  "available_at": "2022-03-10T21:03:42Z",
+  "event_time": "2021-11-10T00:00:00Z",
+  "record_id": "r222",
+  "ret": 0.001629
+ },
+ {
+  "available_at": "2021-11-11T21:03:43Z",
+  "event_time": "2021-11-11T00:00:00Z",
+  "record_id": "r223",
+  "ret": 0.00121
+ },
+ {
+  "available_at": "2021-11-12T21:03:44Z",
+  "event_time": "2021-11-12T00:00:00Z",
+  "record_id": "r224",
+  "ret": -0.005948
+ },
+ {
+  "available_at": "2022-03-15T21:03:45Z",
+  "event_time": "2021-11-15T00:00:00Z",
+  "record_id": "r225",
+  "ret": -0.004168
+ },
+ {
+  "available_at": "2021-11-16T21:03:46Z",
+  "event_time": "2021-11-16T00:00:00Z",
+  "record_id": "r226",
+  "ret": 0.003446
+ },
+ {
+  "available_at": "2021-11-17T21:03:47Z",
+  "event_time": "2021-11-17T00:00:00Z",
+  "record_id": "r227",
+  "ret": -0.003883
+ },
+ {
+  "available_at": "2022-03-18T21:03:48Z",
+  "event_time": "2021-11-18T00:00:00Z",
+  "record_id": "r228",
+  "ret": 0.012193
+ },
+ {
+  "available_at": "2021-11-19T21:03:49Z",
+  "event_time": "2021-11-19T00:00:00Z",
+  "record_id": "r229",
+  "ret": -0.001394
+ },
+ {
+  "available_at": "2021-11-22T21:03:50Z",
+  "event_time": "2021-11-22T00:00:00Z",
+  "record_id": "r230",
+  "ret": 0.00123
+ },
+ {
+  "available_at": "2022-03-23T21:03:51Z",
+  "event_time": "2021-11-23T00:00:00Z",
+  "record_id": "r231",
+  "ret": 0.011615
+ },
+ {
+  "available_at": "2021-11-24T21:03:52Z",
+  "event_time": "2021-11-24T00:00:00Z",
+  "record_id": "r232",
+  "ret": 0.009504
+ },
+ {
+  "available_at": "2021-11-25T21:03:53Z",
+  "event_time": "2021-11-25T00:00:00Z",
+  "record_id": "r233",
+  "ret": -0.001965
+ },
+ {
+  "available_at": "2022-03-26T21:03:54Z",
+  "event_time": "2021-11-26T00:00:00Z",
+  "record_id": "r234",
+  "ret": 0.001806
+ },
+ {
+  "available_at": "2021-11-29T21:03:55Z",
+  "event_time": "2021-11-29T00:00:00Z",
+  "record_id": "r235",
+  "ret": -0.00956
+ },
+ {
+  "available_at": "2021-11-30T21:03:56Z",
+  "event_time": "2021-11-30T00:00:00Z",
+  "record_id": "r236",
+  "ret": -0.004862
+ },
+ {
+  "available_at": "2022-03-31T21:03:57Z",
+  "event_time": "2021-12-01T00:00:00Z",
+  "record_id": "r237",
+  "ret": 0.005745
+ },
+ {
+  "available_at": "2021-12-02T21:03:58Z",
+  "event_time": "2021-12-02T00:00:00Z",
+  "record_id": "r238",
+  "ret": -0.00926
+ },
+ {
+  "available_at": "2021-12-03T21:03:59Z",
+  "event_time": "2021-12-03T00:00:00Z",
+  "record_id": "r239",
+  "ret": 0.010053
+ },
+ {
+  "available_at": "2022-04-05T21:04:00Z",
+  "event_time": "2021-12-06T00:00:00Z",
+  "record_id": "r240",
+  "ret": -0.005059
+ },
+ {
+  "available_at": "2021-12-07T21:04:01Z",
+  "event_time": "2021-12-07T00:00:00Z",
+  "record_id": "r241",
+  "ret": -0.001153
+ },
+ {
+  "available_at": "2021-12-08T21:04:02Z",
+  "event_time": "2021-12-08T00:00:00Z",
+  "record_id": "r242",
+  "ret": 0.001759
+ },
+ {
+  "available_at": "2022-04-08T21:04:03Z",
+  "event_time": "2021-12-09T00:00:00Z",
+  "record_id": "r243",
+  "ret": -0.0062
+ },
+ {
+  "available_at": "2021-12-10T21:04:04Z",
+  "event_time": "2021-12-10T00:00:00Z",
+  "record_id": "r244",
+  "ret": -0.000561
+ },
+ {
+  "available_at": "2021-12-13T21:04:05Z",
+  "event_time": "2021-12-13T00:00:00Z",
+  "record_id": "r245",
+  "ret": 0.001776
+ },
+ {
+  "available_at": "2022-04-13T21:04:06Z",
+  "event_time": "2021-12-14T00:00:00Z",
+  "record_id": "r246",
+  "ret": 0.010625
+ },
+ {
+  "available_at": "2021-12-15T21:04:07Z",
+  "event_time": "2021-12-15T00:00:00Z",
+  "record_id": "r247",
+  "ret": -0.00403
+ },
+ {
+  "available_at": "2021-12-16T21:04:08Z",
+  "event_time": "2021-12-16T00:00:00Z",
+  "record_id": "r248",
+  "ret": -9.3e-05
+ },
+ {
+  "available_at": "2022-04-16T21:04:09Z",
+  "event_time": "2021-12-17T00:00:00Z",
+  "record_id": "r249",
+  "ret": -0.00987
+ },
+ {
+  "available_at": "2021-12-20T21:04:10Z",
+  "event_time": "2021-12-20T00:00:00Z",
+  "record_id": "r250",
+  "ret": -0.006794
+ },
+ {
+  "available_at": "2021-12-21T21:04:11Z",
+  "event_time": "2021-12-21T00:00:00Z",
+  "record_id": "r251",
+  "ret": 0.006992
+ },
+ {
+  "available_at": "2022-04-21T21:04:12Z",
+  "event_time": "2021-12-22T00:00:00Z",
+  "record_id": "r252",
+  "ret": 0.005265
+ },
+ {
+  "available_at": "2021-12-23T21:04:13Z",
+  "event_time": "2021-12-23T00:00:00Z",
+  "record_id": "r253",
+  "ret": -0.010722
+ },
+ {
+  "available_at": "2021-12-24T21:04:14Z",
+  "event_time": "2021-12-24T00:00:00Z",
+  "record_id": "r254",
+  "ret": 0.003006
+ },
+ {
+  "available_at": "2022-04-26T21:04:15Z",
+  "event_time": "2021-12-27T00:00:00Z",
+  "record_id": "r255",
+  "ret": -0.003479
+ },
+ {
+  "available_at": "2021-12-28T21:04:16Z",
+  "event_time": "2021-12-28T00:00:00Z",
+  "record_id": "r256",
+  "ret": 0.001547
+ },
+ {
+  "available_at": "2021-12-29T21:04:17Z",
+  "event_time": "2021-12-29T00:00:00Z",
+  "record_id": "r257",
+  "ret": -0.008005
+ },
+ {
+  "available_at": "2022-04-29T21:04:18Z",
+  "event_time": "2021-12-30T00:00:00Z",
+  "record_id": "r258",
+  "ret": -0.0011
+ },
+ {
+  "available_at": "2021-12-31T21:04:19Z",
+  "event_time": "2021-12-31T00:00:00Z",
+  "record_id": "r259",
+  "ret": -0.002834
+ },
+ {
+  "available_at": "2022-01-03T21:04:20Z",
+  "event_time": "2022-01-03T00:00:00Z",
+  "record_id": "r260",
+  "ret": 0.00321
+ },
+ {
+  "available_at": "2022-05-04T21:04:21Z",
+  "event_time": "2022-01-04T00:00:00Z",
+  "record_id": "r261",
+  "ret": 0.010844
+ },
+ {
+  "available_at": "2022-01-05T21:04:22Z",
+  "event_time": "2022-01-05T00:00:00Z",
+  "record_id": "r262",
+  "ret": -0.009187
+ },
+ {
+  "available_at": "2022-01-06T21:04:23Z",
+  "event_time": "2022-01-06T00:00:00Z",
+  "record_id": "r263",
+  "ret": 0.003107
+ },
+ {
+  "available_at": "2022-05-07T21:04:24Z",
+  "event_time": "2022-01-07T00:00:00Z",
+  "record_id": "r264",
+  "ret": 0.005008
+ },
+ {
+  "available_at": "2022-01-10T21:04:25Z",
+  "event_time": "2022-01-10T00:00:00Z",
+  "record_id": "r265",
+  "ret": 0.002088
+ },
+ {
+  "available_at": "2022-01-11T21:04:26Z",
+  "event_time": "2022-01-11T00:00:00Z",
+  "record_id": "r266",
+  "ret": 0.010611
+ },
+ {
+  "available_at": "2022-05-12T21:04:27Z",
+  "event_time": "2022-01-12T00:00:00Z",
+  "record_id": "r267",
+  "ret": 0.005355
+ },
+ {
+  "available_at": "2022-01-13T21:04:28Z",
+  "event_time": "2022-01-13T00:00:00Z",
+  "record_id": "r268",
+  "ret": 0.000204
+ },
+ {
+  "available_at": "2022-01-14T21:04:29Z",
+  "event_time": "2022-01-14T00:00:00Z",
+  "record_id": "r269",
+  "ret": -0.006636
+ },
+ {
+  "available_at": "2022-05-17T21:04:30Z",
+  "event_time": "2022-01-17T00:00:00Z",
+  "record_id": "r270",
+  "ret": 0.010942
+ },
+ {
+  "available_at": "2022-01-18T21:04:31Z",
+  "event_time": "2022-01-18T00:00:00Z",
+  "record_id": "r271",
+  "ret": 0.0024
+ },
+ {
+  "available_at": "2022-01-19T21:04:32Z",
+  "event_time": "2022-01-19T00:00:00Z",
+  "record_id": "r272",
+  "ret": 0.010352
+ },
+ {
+  "available_at": "2022-05-20T21:04:33Z",
+  "event_time": "2022-01-20T00:00:00Z",
+  "record_id": "r273",
+  "ret": -0.001132
+ },
+ {
+  "available_at": "2022-01-21T21:04:34Z",
+  "event_time": "2022-01-21T00:00:00Z",
+  "record_id": "r274",
+  "ret": 0.007776
+ },
+ {
+  "available_at": "2022-01-24T21:04:35Z",
+  "event_time": "2022-01-24T00:00:00Z",
+  "record_id": "r275",
+  "ret": -0.011495
+ },
+ {
+  "available_at": "2022-05-25T21:04:36Z",
+  "event_time": "2022-01-25T00:00:00Z",
+  "record_id": "r276",
+  "ret": -0.004585
+ },
+ {
+  "available_at": "2022-01-26T21:04:37Z",
+  "event_time": "2022-01-26T00:00:00Z",
+  "record_id": "r277",
+  "ret": -0.00119
+ },
+ {
+  "available_at": "2022-01-27T21:04:38Z",
+  "event_time": "2022-01-27T00:00:00Z",
+  "record_id": "r278",
+  "ret": 0.009909
+ },
+ {
+  "available_at": "2022-05-28T21:04:39Z",
+  "event_time": "2022-01-28T00:00:00Z",
+  "record_id": "r279",
+  "ret": 0.013381
+ },
+ {
+  "available_at": "2022-01-31T21:04:40Z",
+  "event_time": "2022-01-31T00:00:00Z",
+  "record_id": "r280",
+  "ret": -0.010045
+ },
+ {
+  "available_at": "2022-01-31T21:04:40Z",
+  "event_time": "2022-01-31T00:00:00Z",
+  "record_id": "r280",
+  "ret": -0.010045
+ },
+ {
+  "available_at": "2022-02-01T21:04:41Z",
+  "event_time": "2022-02-01T00:00:00Z",
+  "record_id": "r281",
+  "ret": -0.008614
+ },
+ {
+  "available_at": "2022-02-01T21:04:41Z",
+  "event_time": "2022-02-01T00:00:00Z",
+  "record_id": "r281",
+  "ret": -0.008614
+ },
+ {
+  "available_at": "2022-06-02T21:04:42Z",
+  "event_time": "2022-02-02T00:00:00Z",
+  "record_id": "r282",
+  "ret": -0.005843
+ },
+ {
+  "available_at": "2022-06-02T21:04:42Z",
+  "event_time": "2022-02-02T00:00:00Z",
+  "record_id": "r282",
+  "ret": -0.005843
+ },
+ {
+  "available_at": "2022-02-03T21:04:43Z",
+  "event_time": "2022-02-03T00:00:00Z",
+  "record_id": "r283",
+  "ret": -0.003988
+ },
+ {
+  "available_at": "2022-02-03T21:04:43Z",
+  "event_time": "2022-02-03T00:00:00Z",
+  "record_id": "r283",
+  "ret": -0.003988
+ },
+ {
+  "available_at": "2022-02-04T21:04:44Z",
+  "event_time": "2022-02-04T00:00:00Z",
+  "record_id": "r284",
+  "ret": -0.009344
+ },
+ {
+  "available_at": "2022-02-04T21:04:44Z",
+  "event_time": "2022-02-04T00:00:00Z",
+  "record_id": "r284",
+  "ret": -0.009344
+ },
+ {
+  "available_at": "2022-06-07T21:04:45Z",
+  "event_time": "2022-02-07T00:00:00Z",
+  "record_id": "r285",
+  "ret": 0.001012
+ },
+ {
+  "available_at": "2022-06-07T21:04:45Z",
+  "event_time": "2022-02-07T00:00:00Z",
+  "record_id": "r285",
+  "ret": 0.001012
+ },
+ {
+  "available_at": "2022-02-08T21:04:46Z",
+  "event_time": "2022-02-08T00:00:00Z",
+  "record_id": "r286",
+  "ret": -0.009988
+ },
+ {
+  "available_at": "2022-02-08T21:04:46Z",
+  "event_time": "2022-02-08T00:00:00Z",
+  "record_id": "r286",
+  "ret": -0.009988
+ },
+ {
+  "available_at": "2022-02-09T21:04:47Z",
+  "event_time": "2022-02-09T00:00:00Z",
+  "record_id": "r287",
+  "ret": 0.002866
+ },
+ {
+  "available_at": "2022-02-09T21:04:47Z",
+  "event_time": "2022-02-09T00:00:00Z",
+  "record_id": "r287",
+  "ret": 0.002866
+ },
+ {
+  "available_at": "2022-06-10T21:04:48Z",
+  "event_time": "2022-02-10T00:00:00Z",
+  "record_id": "r288",
+  "ret": 0.003919
+ },
+ {
+  "available_at": "2022-06-10T21:04:48Z",
+  "event_time": "2022-02-10T00:00:00Z",
+  "record_id": "r288",
+  "ret": 0.003919
+ },
+ {
+  "available_at": "2022-02-11T21:04:49Z",
+  "event_time": "2022-02-11T00:00:00Z",
+  "record_id": "r289",
+  "ret": -0.004427
+ },
+ {
+  "available_at": "2022-02-11T21:04:49Z",
+  "event_time": "2022-02-11T00:00:00Z",
+  "record_id": "r289",
+  "ret": -0.004427
+ },
+ {
+  "available_at": "2022-02-14T21:04:50Z",
+  "event_time": "2022-02-14T00:00:00Z",
+  "record_id": "r290",
+  "ret": -0.003002
+ },
+ {
+  "available_at": "2022-02-14T21:04:50Z",
+  "event_time": "2022-02-14T00:00:00Z",
+  "record_id": "r290",
+  "ret": -0.003002
+ },
+ {
+  "available_at": "2022-06-15T21:04:51Z",
+  "event_time": "2022-02-15T00:00:00Z",
+  "record_id": "r291",
+  "ret": -0.007753
+ },
+ {
+  "available_at": "2022-06-15T21:04:51Z",
+  "event_time": "2022-02-15T00:00:00Z",
+  "record_id": "r291",
+  "ret": -0.007753
+ },
+ {
+  "available_at": "2022-02-16T21:04:52Z",
+  "event_time": "2022-02-16T00:00:00Z",
+  "record_id": "r292",
+  "ret": 0.011292
+ },
+ {
+  "available_at": "2022-02-16T21:04:52Z",
+  "event_time": "2022-02-16T00:00:00Z",
+  "record_id": "r292",
+  "ret": 0.011292
+ },
+ {
+  "available_at": "2022-02-17T21:04:53Z",
+  "event_time": "2022-02-17T00:00:00Z",
+  "record_id": "r293",
+  "ret": -0.003057
+ },
+ {
+  "available_at": "2022-02-17T21:04:53Z",
+  "event_time": "2022-02-17T00:00:00Z",
+  "record_id": "r293",
+  "ret": -0.003057
+ },
+ {
+  "available_at": "2022-06-18T21:04:54Z",
+  "event_time": "2022-02-18T00:00:00Z",
+  "record_id": "r294",
+  "ret": 0.005481
+ },
+ {
+  "available_at": "2022-06-18T21:04:54Z",
+  "event_time": "2022-02-18T00:00:00Z",
+  "record_id": "r294",
+  "ret": 0.005481
+ },
+ {
+  "available_at": "2022-02-21T21:04:55Z",
+  "event_time": "2022-02-21T00:00:00Z",
+  "record_id": "r295",
+  "ret": -0.008461
+ },
+ {
+  "available_at": "2022-02-21T21:04:55Z",
+  "event_time": "2022-02-21T00:00:00Z",
+  "record_id": "r295",
+  "ret": -0.008461
+ },
+ {
+  "available_at": "2022-02-22T21:04:56Z",
+  "event_time": "2022-02-22T00:00:00Z",
+  "record_id": "r296",
+  "ret": -0.010027
+ },
+ {
+  "available_at": "2022-02-22T21:04:56Z",
+  "event_time": "2022-02-22T00:00:00Z",
+  "record_id": "r296",
+  "ret": -0.010027
+ },
+ {
+  "available_at": "2022-06-23T21:04:57Z",
+  "event_time": "2022-02-23T00:00:00Z",
+  "record_id": "r297",
+  "ret": -0.007486
+ },
+ {
+  "available_at": "2022-06-23T21:04:57Z",
+  "event_time": "2022-02-23T00:00:00Z",
+  "record_id": "r297",
+  "ret": -0.007486
+ },
+ {
+  "available_at": "2022-02-24T21:04:58Z",
+  "event_time": "2022-02-24T00:00:00Z",
+  "record_id": "r298",
+  "ret": 0.00468
+ },
+ {
+  "available_at": "2022-02-24T21:04:58Z",
+  "event_time": "2022-02-24T00:00:00Z",
+  "record_id": "r298",
+  "ret": 0.00468
+ },
+ {
+  "available_at": "2022-02-25T21:04:59Z",
+  "event_time": "2022-02-25T00:00:00Z",
+  "record_id": "r299",
+  "ret": -0.01041
+ },
+ {
+  "available_at": "2022-02-25T21:04:59Z",
+  "event_time": "2022-02-25T00:00:00Z",
+  "record_id": "r299",
+  "ret": -0.01041
+ },
+ {
+  "available_at": "2022-06-28T21:05:00Z",
+  "event_time": "2022-02-28T00:00:00Z",
+  "record_id": "r300",
+  "ret": 0.001146
+ },
+ {
+  "available_at": "2022-06-28T21:05:00Z",
+  "event_time": "2022-02-28T00:00:00Z",
+  "record_id": "r300",
+  "ret": 0.001146
+ },
+ {
+  "available_at": "2022-03-01T21:05:01Z",
+  "event_time": "2022-03-01T00:00:00Z",
+  "record_id": "r301",
+  "ret": -0.003503
+ },
+ {
+  "available_at": "2022-03-01T21:05:01Z",
+  "event_time": "2022-03-01T00:00:00Z",
+  "record_id": "r301",
+  "ret": -0.003503
+ },
+ {
+  "available_at": "2022-03-02T21:05:02Z",
+  "event_time": "2022-03-02T00:00:00Z",
+  "record_id": "r302",
+  "ret": 0.001137
+ },
+ {
+  "available_at": "2022-03-02T21:05:02Z",
+  "event_time": "2022-03-02T00:00:00Z",
+  "record_id": "r302",
+  "ret": 0.001137
+ },
+ {
+  "available_at": "2022-07-01T21:05:03Z",
+  "event_time": "2022-03-03T00:00:00Z",
+  "record_id": "r303",
+  "ret": -0.002015
+ },
+ {
+  "available_at": "2022-07-01T21:05:03Z",
+  "event_time": "2022-03-03T00:00:00Z",
+  "record_id": "r303",
+  "ret": -0.002015
+ },
+ {
+  "available_at": "2022-03-04T21:05:04Z",
+  "event_time": "2022-03-04T00:00:00Z",
+  "record_id": "r304",
+  "ret": -0.004114
+ },
+ {
+  "available_at": "2022-03-04T21:05:04Z",
+  "event_time": "2022-03-04T00:00:00Z",
+  "record_id": "r304",
+  "ret": -0.004114
+ },
+ {
+  "available_at": "2022-03-07T21:05:05Z",
+  "event_time": "2022-03-07T00:00:00Z",
+  "record_id": "r305",
+  "ret": 0.005234
+ },
+ {
+  "available_at": "2022-03-07T21:05:05Z",
+  "event_time": "2022-03-07T00:00:00Z",
+  "record_id": "r305",
+  "ret": 0.005234
+ },
+ {
+  "available_at": "2022-07-06T21:05:06Z",
+  "event_time": "2022-03-08T00:00:00Z",
+  "record_id": "r306",
+  "ret": -0.005621
+ },
+ {
+  "available_at": "2022-07-06T21:05:06Z",
+  "event_time": "2022-03-08T00:00:00Z",
+  "record_id": "r306",
+  "ret": -0.005621
+ },
+ {
+  "available_at": "2022-03-09T21:05:07Z",
+  "event_time": "2022-03-09T00:00:00Z",
+  "record_id": "r307",
+  "ret": 0.011962
+ },
+ {
+  "available_at": "2022-03-09T21:05:07Z",
+  "event_time": "2022-03-09T00:00:00Z",
+  "record_id": "r307",
+  "ret": 0.011962
+ },
+ {
+  "available_at": "2022-03-10T21:05:08Z",
+  "event_time": "2022-03-10T00:00:00Z",
+  "record_id": "r308",
+  "ret": -0.008094
+ },
+ {
+  "available_at": "2022-03-10T21:05:08Z",
+  "event_time": "2022-03-10T00:00:00Z",
+  "record_id": "r308",
+  "ret": -0.008094
+ },
+ {
+  "available_at": "2022-07-09T21:05:09Z",
+  "event_time": "2022-03-11T00:00:00Z",
+  "record_id": "r309",
+  "ret": -0.005725
+ },
+ {
+  "available_at": "2022-07-09T21:05:09Z",
+  "event_time": "2022-03-11T00:00:00Z",
+  "record_id": "r309",
+  "ret": -0.005725
+ },
+ {
+  "available_at": "2022-03-14T21:05:10Z",
+  "event_time": "2022-03-14T00:00:00Z",
+  "record_id": "r310",
+  "ret": -0.002451
+ },
+ {
+  "available_at": "2022-03-14T21:05:10Z",
+  "event_time": "2022-03-14T00:00:00Z",
+  "record_id": "r310",
+  "ret": -0.002451
+ },
+ {
+  "available_at": "2022-03-15T21:05:11Z",
+  "event_time": "2022-03-15T00:00:00Z",
+  "record_id": "r311",
+  "ret": 0.005218
+ },
+ {
+  "available_at": "2022-03-15T21:05:11Z",
+  "event_time": "2022-03-15T00:00:00Z",
+  "record_id": "r311",
+  "ret": 0.005218
+ },
+ {
+  "available_at": "2022-07-14T21:05:12Z",
+  "event_time": "2022-03-16T00:00:00Z",
+  "record_id": "r312",
+  "ret": -0.002133
+ },
+ {
+  "available_at": "2022-07-14T21:05:12Z",
+  "event_time": "2022-03-16T00:00:00Z",
+  "record_id": "r312",
+  "ret": -0.002133
+ },
+ {
+  "available_at": "2022-03-17T21:05:13Z",
+  "event_time": "2022-03-17T00:00:00Z",
+  "record_id": "r313",
+  "ret": 0.005977
+ },
+ {
+  "available_at": "2022-03-17T21:05:13Z",
+  "event_time": "2022-03-17T00:00:00Z",
+  "record_id": "r313",
+  "ret": 0.005977
+ },
+ {
+  "available_at": "2022-03-18T21:05:14Z",
+  "event_time": "2022-03-18T00:00:00Z",
+  "record_id": "r314",
+  "ret": -0.005779
+ },
+ {
+  "available_at": "2022-03-18T21:05:14Z",
+  "event_time": "2022-03-18T00:00:00Z",
+  "record_id": "r314",
+  "ret": -0.005779
+ },
+ {
+  "available_at": "2022-07-19T21:05:15Z",
+  "event_time": "2022-03-21T00:00:00Z",
+  "record_id": "r315",
+  "ret": -0.007646
+ },
+ {
+  "available_at": "2022-07-19T21:05:15Z",
+  "event_time": "2022-03-21T00:00:00Z",
+  "record_id": "r315",
+  "ret": -0.007646
+ },
+ {
+  "available_at": "2022-03-22T21:05:16Z",
+  "event_time": "2022-03-22T00:00:00Z",
+  "record_id": "r316",
+  "ret": -0.004971
+ },
+ {
+  "available_at": "2022-03-22T21:05:16Z",
+  "event_time": "2022-03-22T00:00:00Z",
+  "record_id": "r316",
+  "ret": -0.004971
+ },
+ {
+  "available_at": "2022-03-23T21:05:17Z",
+  "event_time": "2022-03-23T00:00:00Z",
+  "record_id": "r317",
+  "ret": 0.011861
+ },
+ {
+  "available_at": "2022-03-23T21:05:17Z",
+  "event_time": "2022-03-23T00:00:00Z",
+  "record_id": "r317",
+  "ret": 0.011861
+ },
+ {
+  "available_at": "2022-07-22T21:05:18Z",
+  "event_time": "2022-03-24T00:00:00Z",
+  "record_id": "r318",
+  "ret": 0.006188
+ },
+ {
+  "available_at": "2022-07-22T21:05:18Z",
+  "event_time": "2022-03-24T00:00:00Z",
+  "record_id": "r318",
+  "ret": 0.006188
+ },
+ {
+  "available_at": "2022-03-25T21:05:19Z",
+  "event_time": "2022-03-25T00:00:00Z",
+  "record_id": "r319",
+  "ret": -0.002286
+ },
+ {
+  "available_at": "2022-03-25T21:05:19Z",
+  "event_time": "2022-03-25T00:00:00Z",
+  "record_id": "r319",
+  "ret": -0.002286
+ },
+ {
+  "available_at": "2022-03-28T21:05:20Z",
+  "event_time": "2022-03-28T00:00:00Z",
+  "record_id": "r320",
+  "ret": -0.006527
+ },
+ {
+  "available_at": "2022-07-27T21:05:21Z",
+  "event_time": "2022-03-29T00:00:00Z",
+  "record_id": "r321",
+  "ret": -0.002511
+ },
+ {
+  "available_at": "2022-03-30T21:05:22Z",
+  "event_time": "2022-03-30T00:00:00Z",
+  "record_id": "r322",
+  "ret": 0.011937
+ },
+ {
+  "available_at": "2022-03-31T21:05:23Z",
+  "event_time": "2022-03-31T00:00:00Z",
+  "record_id": "r323",
+  "ret": 0.004861
+ },
+ {
+  "available_at": "2022-07-30T21:05:24Z",
+  "event_time": "2022-04-01T00:00:00Z",
+  "record_id": "r324",
+  "ret": 0.007651
+ },
+ {
+  "available_at": "2022-04-04T21:05:25Z",
+  "event_time": "2022-04-04T00:00:00Z",
+  "record_id": "r325",
+  "ret": -0.005393
+ },
+ {
+  "available_at": "2022-04-05T21:05:26Z",
+  "event_time": "2022-04-05T00:00:00Z",
+  "record_id": "r326",
+  "ret": 0.003087
+ },
+ {
+  "available_at": "2022-08-04T21:05:27Z",
+  "event_time": "2022-04-06T00:00:00Z",
+  "record_id": "r327",
+  "ret": 0.004445
+ },
+ {
+  "available_at": "2022-04-07T21:05:28Z",
+  "event_time": "2022-04-07T00:00:00Z",
+  "record_id": "r328",
+  "ret": 0.009018
+ },
+ {
+  "available_at": "2022-04-08T21:05:29Z",
+  "event_time": "2022-04-08T00:00:00Z",
+  "record_id": "r329",
+  "ret": -0.003202
+ },
+ {
+  "available_at": "2022-08-09T21:05:30Z",
+  "event_time": "2022-04-11T00:00:00Z",
+  "record_id": "r330",
+  "ret": 0.005523
+ },
+ {
+  "available_at": "2022-04-12T21:05:31Z",
+  "event_time": "2022-04-12T00:00:00Z",
+  "record_id": "r331",
+  "ret": -0.008789
+ },
+ {
+  "available_at": "2022-04-13T21:05:32Z",
+  "event_time": "2022-04-13T00:00:00Z",
+  "record_id": "r332",
+  "ret": 0.004989
+ },
+ {
+  "available_at": "2022-08-12T21:05:33Z",
+  "event_time": "2022-04-14T00:00:00Z",
+  "record_id": "r333",
+  "ret": 0.002411
+ },
+ {
+  "available_at": "2022-04-15T21:05:34Z",
+  "event_time": "2022-04-15T00:00:00Z",
+  "record_id": "r334",
+  "ret": 0.008991
+ },
+ {
+  "available_at": "2022-04-18T21:05:35Z",
+  "event_time": "2022-04-18T00:00:00Z",
+  "record_id": "r335",
+  "ret": -0.003597
+ },
+ {
+  "available_at": "2022-08-17T21:05:36Z",
+  "event_time": "2022-04-19T00:00:00Z",
+  "record_id": "r336",
+  "ret": 0.004975
+ },
+ {
+  "available_at": "2022-04-20T21:05:37Z",
+  "event_time": "2022-04-20T00:00:00Z",
+  "record_id": "r337",
+  "ret": -0.006506
+ },
+ {
+  "available_at": "2022-04-21T21:05:38Z",
+  "event_time": "2022-04-21T00:00:00Z",
+  "record_id": "r338",
+  "ret": 0.008391
+ },
+ {
+  "available_at": "2022-08-20T21:05:39Z",
+  "event_time": "2022-04-22T00:00:00Z",
+  "record_id": "r339",
+  "ret": -0.002703
+ },
+ {
+  "available_at": "2022-04-25T21:05:40Z",
+  "event_time": "2022-04-25T00:00:00Z",
+  "record_id": "r340",
+  "ret": -0.00875
+ },
+ {
+  "available_at": "2022-04-26T21:05:41Z",
+  "event_time": "2022-04-26T00:00:00Z",
+  "record_id": "r341",
+  "ret": -0.008998
+ },
+ {
+  "available_at": "2022-08-25T21:05:42Z",
+  "event_time": "2022-04-27T00:00:00Z",
+  "record_id": "r342",
+  "ret": -0.004478
+ },
+ {
+  "available_at": "2022-04-28T21:05:43Z",
+  "event_time": "2022-04-28T00:00:00Z",
+  "record_id": "r343",
+  "ret": -0.001362
+ },
+ {
+  "available_at": "2022-04-29T21:05:44Z",
+  "event_time": "2022-04-29T00:00:00Z",
+  "record_id": "r344",
+  "ret": 0.007887
+ },
+ {
+  "available_at": "2022-08-30T21:05:45Z",
+  "event_time": "2022-05-02T00:00:00Z",
+  "record_id": "r345",
+  "ret": 0.010014
+ },
+ {
+  "available_at": "2022-05-03T21:05:46Z",
+  "event_time": "2022-05-03T00:00:00Z",
+  "record_id": "r346",
+  "ret": 0.001032
+ },
+ {
+  "available_at": "2022-05-04T21:05:47Z",
+  "event_time": "2022-05-04T00:00:00Z",
+  "record_id": "r347",
+  "ret": 0.000208
+ },
+ {
+  "available_at": "2022-09-02T21:05:48Z",
+  "event_time": "2022-05-05T00:00:00Z",
+  "record_id": "r348",
+  "ret": -0.003464
+ },
+ {
+  "available_at": "2022-05-06T21:05:49Z",
+  "event_time": "2022-05-06T00:00:00Z",
+  "record_id": "r349",
+  "ret": -0.000281
+ },
+ {
+  "available_at": "2022-05-09T21:05:50Z",
+  "event_time": "2022-05-09T00:00:00Z",
+  "record_id": "r350",
+  "ret": -0.006175
+ },
+ {
+  "available_at": "2022-09-07T21:05:51Z",
+  "event_time": "2022-05-10T00:00:00Z",
+  "record_id": "r351",
+  "ret": -0.007712
+ },
+ {
+  "available_at": "2022-05-11T21:05:52Z",
+  "event_time": "2022-05-11T00:00:00Z",
+  "record_id": "r352",
+  "ret": -0.011233
+ },
+ {
+  "available_at": "2022-05-12T21:05:53Z",
+  "event_time": "2022-05-12T00:00:00Z",
+  "record_id": "r353",
+  "ret": -0.007582
+ },
+ {
+  "available_at": "2022-09-10T21:05:54Z",
+  "event_time": "2022-05-13T00:00:00Z",
+  "record_id": "r354",
+  "ret": -0.007335
+ },
+ {
+  "available_at": "2022-05-16T21:05:55Z",
+  "event_time": "2022-05-16T00:00:00Z",
+  "record_id": "r355",
+  "ret": -0.002239
+ },
+ {
+  "available_at": "2022-05-17T21:05:56Z",
+  "event_time": "2022-05-17T00:00:00Z",
+  "record_id": "r356",
+  "ret": -0.011749
+ },
+ {
+  "available_at": "2022-09-15T21:05:57Z",
+  "event_time": "2022-05-18T00:00:00Z",
+  "record_id": "r357",
+  "ret": 0.009291
+ },
+ {
+  "available_at": "2022-05-19T21:05:58Z",
+  "event_time": "2022-05-19T00:00:00Z",
+  "record_id": "r358",
+  "ret": -0.002266
+ },
+ {
+  "available_at": "2022-05-20T21:05:59Z",
+  "event_time": "2022-05-20T00:00:00Z",
+  "record_id": "r359",
+  "ret": 0.007107
+ },
+ {
+  "available_at": "2022-09-20T21:06:00Z",
+  "event_time": "2022-05-23T00:00:00Z",
+  "record_id": "r360",
+  "ret": -0.000488
+ },
+ {
+  "available_at": "2022-05-24T21:06:01Z",
+  "event_time": "2022-05-24T00:00:00Z",
+  "record_id": "r361",
+  "ret": 0.011677
+ },
+ {
+  "available_at": "2022-05-25T21:06:02Z",
+  "event_time": "2022-05-25T00:00:00Z",
+  "record_id": "r362",
+  "ret": -0.006602
+ },
+ {
+  "available_at": "2022-09-23T21:06:03Z",
+  "event_time": "2022-05-26T00:00:00Z",
+  "record_id": "r363",
+  "ret": 0.008032
+ },
+ {
+  "available_at": "2022-05-27T21:06:04Z",
+  "event_time": "2022-05-27T00:00:00Z",
+  "record_id": "r364",
+  "ret": 0.009009
+ },
+ {
+  "available_at": "2022-05-30T21:06:05Z",
+  "event_time": "2022-05-30T00:00:00Z",
+  "record_id": "r365",
+  "ret": -0.009877
+ },
+ {
+  "available_at": "2022-09-28T21:06:06Z",
+  "event_time": "2022-05-31T00:00:00Z",
+  "record_id": "r366",
+  "ret": 0.004921
+ },
+ {
+  "available_at": "2022-06-01T21:06:07Z",
+  "event_time": "2022-06-01T00:00:00Z",
+  "record_id": "r367",
+  "ret": -0.003501
+ },
+ {
+  "available_at": "2022-06-02T21:06:08Z",
+  "event_time": "2022-06-02T00:00:00Z",
+  "record_id": "r368",
+  "ret": 0.007801
+ },
+ {
+  "available_at": "2022-10-01T21:06:09Z",
+  "event_time": "2022-06-03T00:00:00Z",
+  "record_id": "r369",
+  "ret": -0.009052
+ },
+ {
+  "available_at": "2022-06-06T21:06:10Z",
+  "event_time": "2022-06-06T00:00:00Z",
+  "record_id": "r370",
+  "ret": -0.003116
+ },
+ {
+  "available_at": "2022-06-07T21:06:11Z",
+  "event_time": "2022-06-07T00:00:00Z",
+  "record_id": "r371",
+  "ret": -0.004613
+ },
+ {
+  "available_at": "2022-10-06T21:06:12Z",
+  "event_time": "2022-06-08T00:00:00Z",
+  "record_id": "r372",
+  "ret": -0.003465
+ },
+ {
+  "available_at": "2022-06-09T21:06:13Z",
+  "event_time": "2022-06-09T00:00:00Z",
+  "record_id": "r373",
+  "ret": -0.002929
+ },
+ {
+  "available_at": "2022-06-10T21:06:14Z",
+  "event_time": "2022-06-10T00:00:00Z",
+  "record_id": "r374",
+  "ret": -0.003443
+ },
+ {
+  "available_at": "2022-10-11T21:06:15Z",
+  "event_time": "2022-06-13T00:00:00Z",
+  "record_id": "r375",
+  "ret": 0.00655
+ },
+ {
+  "available_at": "2022-06-14T21:06:16Z",
+  "event_time": "2022-06-14T00:00:00Z",
+  "record_id": "r376",
+  "ret": 0.006509
+ },
+ {
+  "available_at": "2022-06-15T21:06:17Z",
+  "event_time": "2022-06-15T00:00:00Z",
+  "record_id": "r377",
+  "ret": 0.007357
+ },
+ {
+  "available_at": "2022-10-14T21:06:18Z",
+  "event_time": "2022-06-16T00:00:00Z",
+  "record_id": "r378",
+  "ret": 0.004975
+ },
+ {
+  "available_at": "2022-06-17T21:06:19Z",
+  "event_time": "2022-06-17T00:00:00Z",
+  "record_id": "r379",
+  "ret": 0.011013
+ },
+ {
+  "available_at": "2022-06-20T21:06:20Z",
+  "event_time": "2022-06-20T00:00:00Z",
+  "record_id": "r380",
+  "ret": -0.001924
+ },
+ {
+  "available_at": "2022-10-19T21:06:21Z",
+  "event_time": "2022-06-21T00:00:00Z",
+  "record_id": "r381",
+  "ret": 0.006227
+ },
+ {
+  "available_at": "2022-06-22T21:06:22Z",
+  "event_time": "2022-06-22T00:00:00Z",
+  "record_id": "r382",
+  "ret": -0.000535
+ },
+ {
+  "available_at": "2022-06-23T21:06:23Z",
+  "event_time": "2022-06-23T00:00:00Z",
+  "record_id": "r383",
+  "ret": 0.007557
+ },
+ {
+  "available_at": "2022-10-22T21:06:24Z",
+  "event_time": "2022-06-24T00:00:00Z",
+  "record_id": "r384",
+  "ret": -0.002892
+ },
+ {
+  "available_at": "2022-06-27T21:06:25Z",
+  "event_time": "2022-06-27T00:00:00Z",
+  "record_id": "r385",
+  "ret": -0.007716
+ },
+ {
+  "available_at": "2022-06-28T21:06:26Z",
+  "event_time": "2022-06-28T00:00:00Z",
+  "record_id": "r386",
+  "ret": -0.009122
+ },
+ {
+  "available_at": "2022-10-27T21:06:27Z",
+  "event_time": "2022-06-29T00:00:00Z",
+  "record_id": "r387",
+  "ret": 0.003449
+ },
+ {
+  "available_at": "2022-06-30T21:06:28Z",
+  "event_time": "2022-06-30T00:00:00Z",
+  "record_id": "r388",
+  "ret": 0.011305
+ },
+ {
+  "available_at": "2022-07-01T21:06:29Z",
+  "event_time": "2022-07-01T00:00:00Z",
+  "record_id": "r389",
+  "ret": -0.009798
+ },
+ {
+  "available_at": "2022-11-01T21:06:30Z",
+  "event_time": "2022-07-04T00:00:00Z",
+  "record_id": "r390",
+  "ret": -0.001723
+ },
+ {
+  "available_at": "2022-07-05T21:06:31Z",
+  "event_time": "2022-07-05T00:00:00Z",
+  "record_id": "r391",
+  "ret": 0.012058
+ },
+ {
+  "available_at": "2022-07-06T21:06:32Z",
+  "event_time": "2022-07-06T00:00:00Z",
+  "record_id": "r392",
+  "ret": 0.007574
+ },
+ {
+  "available_at": "2022-11-04T21:06:33Z",
+  "event_time": "2022-07-07T00:00:00Z",
+  "record_id": "r393",
+  "ret": 0.013638
+ },
+ {
+  "available_at": "2022-07-08T21:06:34Z",
+  "event_time": "2022-07-08T00:00:00Z",
+  "record_id": "r394",
+  "ret": -0.007183
+ },
+ {
+  "available_at": "2022-07-11T21:06:35Z",
+  "event_time": "2022-07-11T00:00:00Z",
+  "record_id": "r395",
+  "ret": 0.011618
+ },
+ {
+  "available_at": "2022-11-09T21:06:36Z",
+  "event_time": "2022-07-12T00:00:00Z",
+  "record_id": "r396",
+  "ret": 0.011231
+ },
+ {
+  "available_at": "2022-07-13T21:06:37Z",
+  "event_time": "2022-07-13T00:00:00Z",
+  "record_id": "r397",
+  "ret": -0.008099
+ },
+ {
+  "available_at": "2022-07-14T21:06:38Z",
+  "event_time": "2022-07-14T00:00:00Z",
+  "record_id": "r398",
+  "ret": 0.002093
+ },
+ {
+  "available_at": "2022-11-12T21:06:39Z",
+  "event_time": "2022-07-15T00:00:00Z",
+  "record_id": "r399",
+  "ret": 0.00687
+ },
+ {
+  "available_at": "2022-07-18T21:06:40Z",
+  "event_time": "2022-07-18T00:00:00Z",
+  "record_id": "r400",
+  "ret": 0.000795
+ },
+ {
+  "available_at": "2022-07-19T21:06:41Z",
+  "event_time": "2022-07-19T00:00:00Z",
+  "record_id": "r401",
+  "ret": 0.004643
+ },
+ {
+  "available_at": "2022-11-17T21:06:42Z",
+  "event_time": "2022-07-20T00:00:00Z",
+  "record_id": "r402",
+  "ret": 0.00968
+ },
+ {
+  "available_at": "2022-07-21T21:06:43Z",
+  "event_time": "2022-07-21T00:00:00Z",
+  "record_id": "r403",
+  "ret": -0.00364
+ },
+ {
+  "available_at": "2022-07-22T21:06:44Z",
+  "event_time": "2022-07-22T00:00:00Z",
+  "record_id": "r404",
+  "ret": 0.011598
+ },
+ {
+  "available_at": "2022-11-22T21:06:45Z",
+  "event_time": "2022-07-25T00:00:00Z",
+  "record_id": "r405",
+  "ret": 0.012311
+ },
+ {
+  "available_at": "2022-07-26T21:06:46Z",
+  "event_time": "2022-07-26T00:00:00Z",
+  "record_id": "r406",
+  "ret": 0.001633
+ },
+ {
+  "available_at": "2022-07-27T21:06:47Z",
+  "event_time": "2022-07-27T00:00:00Z",
+  "record_id": "r407",
+  "ret": 0.003612
+ },
+ {
+  "available_at": "2022-11-25T21:06:48Z",
+  "event_time": "2022-07-28T00:00:00Z",
+  "record_id": "r408",
+  "ret": -0.007022
+ },
+ {
+  "available_at": "2022-07-29T21:06:49Z",
+  "event_time": "2022-07-29T00:00:00Z",
+  "record_id": "r409",
+  "ret": -0.004881
+ },
+ {
+  "available_at": "2022-08-01T21:06:50Z",
+  "event_time": "2022-08-01T00:00:00Z",
+  "record_id": "r410",
+  "ret": 0.003184
+ },
+ {
+  "available_at": "2022-11-30T21:06:51Z",
+  "event_time": "2022-08-02T00:00:00Z",
+  "record_id": "r411",
+  "ret": -0.010042
+ },
+ {
+  "available_at": "2022-08-03T21:06:52Z",
+  "event_time": "2022-08-03T00:00:00Z",
+  "record_id": "r412",
+  "ret": -0.007201
+ },
+ {
+  "available_at": "2022-08-04T21:06:53Z",
+  "event_time": "2022-08-04T00:00:00Z",
+  "record_id": "r413",
+  "ret": -0.007221
+ },
+ {
+  "available_at": "2022-12-03T21:06:54Z",
+  "event_time": "2022-08-05T00:00:00Z",
+  "record_id": "r414",
+  "ret": -0.007603
+ },
+ {
+  "available_at": "2022-08-08T21:06:55Z",
+  "event_time": "2022-08-08T00:00:00Z",
+  "record_id": "r415",
+  "ret": -0.008259
+ },
+ {
+  "available_at": "2022-08-09T21:06:56Z",
+  "event_time": "2022-08-09T00:00:00Z",
+  "record_id": "r416",
+  "ret": -0.009449
+ },
+ {
+  "available_at": "2022-12-08T21:06:57Z",
+  "event_time": "2022-08-10T00:00:00Z",
+  "record_id": "r417",
+  "ret": 0.012759
+ },
+ {
+  "available_at": "2022-08-11T21:06:58Z",
+  "event_time": "2022-08-11T00:00:00Z",
+  "record_id": "r418",
+  "ret": 0.006525
+ },
+ {
+  "available_at": "2022-08-12T21:06:59Z",
+  "event_time": "2022-08-12T00:00:00Z",
+  "record_id": "r419",
+  "ret": 0.004175
+ },
+ {
+  "available_at": "2022-12-13T21:07:00Z",
+  "event_time": "2022-08-15T00:00:00Z",
+  "record_id": "r420",
+  "ret": -0.008224
+ },
+ {
+  "available_at": "2022-08-16T21:07:01Z",
+  "event_time": "2022-08-16T00:00:00Z",
+  "record_id": "r421",
+  "ret": 0.011793
+ },
+ {
+  "available_at": "2022-08-17T21:07:02Z",
+  "event_time": "2022-08-17T00:00:00Z",
+  "record_id": "r422",
+  "ret": 0.008318
+ },
+ {
+  "available_at": "2022-12-16T21:07:03Z",
+  "event_time": "2022-08-18T00:00:00Z",
+  "record_id": "r423",
+  "ret": -0.006417
+ },
+ {
+  "available_at": "2022-08-19T21:07:04Z",
+  "event_time": "2022-08-19T00:00:00Z",
+  "record_id": "r424",
+  "ret": 0.009573
+ },
+ {
+  "available_at": "2022-08-22T21:07:05Z",
+  "event_time": "2022-08-22T00:00:00Z",
+  "record_id": "r425",
+  "ret": 0.006916
+ },
+ {
+  "available_at": "2022-12-21T21:07:06Z",
+  "event_time": "2022-08-23T00:00:00Z",
+  "record_id": "r426",
+  "ret": 0.011038
+ },
+ {
+  "available_at": "2022-08-24T21:07:07Z",
+  "event_time": "2022-08-24T00:00:00Z",
+  "record_id": "r427",
+  "ret": 0.008783
+ },
+ {
+  "available_at": "2022-08-25T21:07:08Z",
+  "event_time": "2022-08-25T00:00:00Z",
+  "record_id": "r428",
+  "ret": 0.010431
+ },
+ {
+  "available_at": "2022-12-24T21:07:09Z",
+  "event_time": "2022-08-26T00:00:00Z",
+  "record_id": "r429",
+  "ret": 0.007763
+ },
+ {
+  "available_at": "2022-08-29T21:07:10Z",
+  "event_time": "2022-08-29T00:00:00Z",
+  "record_id": "r430",
+  "ret": -0.002078
+ },
+ {
+  "available_at": "2022-08-30T21:07:11Z",
+  "event_time": "2022-08-30T00:00:00Z",
+  "record_id": "r431",
+  "ret": -0.002138
+ },
+ {
+  "available_at": "2022-12-29T21:07:12Z",
+  "event_time": "2022-08-31T00:00:00Z",
+  "record_id": "r432",
+  "ret": -0.006861
+ },
+ {
+  "available_at": "2022-09-01T21:07:13Z",
+  "event_time": "2022-09-01T00:00:00Z",
+  "record_id": "r433",
+  "ret": 0.010879
+ },
+ {
+  "available_at": "2022-09-02T21:07:14Z",
+  "event_time": "2022-09-02T00:00:00Z",
+  "record_id": "r434",
+  "ret": 0.007352
+ },
+ {
+  "available_at": "2023-01-03T21:07:15Z",
+  "event_time": "2022-09-05T00:00:00Z",
+  "record_id": "r435",
+  "ret": 0.012091
+ },
+ {
+  "available_at": "2022-09-06T21:07:16Z",
+  "event_time": "2022-09-06T00:00:00Z",
+  "record_id": "r436",
+  "ret": 0.006529
+ },
+ {
+  "available_at": "2022-09-07T21:07:17Z",
+  "event_time": "2022-09-07T00:00:00Z",
+  "record_id": "r437",
+  "ret": 0.004304
+ },
+ {
+  "available_at": "2023-01-06T21:07:18Z",
+  "event_time": "2022-09-08T00:00:00Z",
+  "record_id": "r438",
+  "ret": 0.006478
+ },
+ {
+  "available_at": "2022-09-09T21:07:19Z",
+  "event_time": "2022-09-09T00:00:00Z",
+  "record_id": "r439",
+  "ret": 0.011733
+ },
+ {
+  "available_at": "2022-09-12T21:07:20Z",
+  "event_time": "2022-09-12T00:00:00Z",
+  "record_id": "r440",
+  "ret": 0.003288
+ },
+ {
+  "available_at": "2023-01-11T21:07:21Z",
+  "event_time": "2022-09-13T00:00:00Z",
+  "record_id": "r441",
+  "ret": -0.00184
+ },
+ {
+  "available_at": "2022-09-14T21:07:22Z",
+  "event_time": "2022-09-14T00:00:00Z",
+  "record_id": "r442",
+  "ret": -0.010956
+ },
+ {
+  "available_at": "2022-09-15T21:07:23Z",
+  "event_time": "2022-09-15T00:00:00Z",
+  "record_id": "r443",
+  "ret": -0.004017
+ },
+ {
+  "available_at": "2023-01-14T21:07:24Z",
+  "event_time": "2022-09-16T00:00:00Z",
+  "record_id": "r444",
+  "ret": -0.001393
+ },
+ {
+  "available_at": "2022-09-19T21:07:25Z",
+  "event_time": "2022-09-19T00:00:00Z",
+  "record_id": "r445",
+  "ret": -0.001983
+ },
+ {
+  "available_at": "2022-09-20T21:07:26Z",
+  "event_time": "2022-09-20T00:00:00Z",
+  "record_id": "r446",
+  "ret": 0.008664
+ },
+ {
+  "available_at": "2023-01-19T21:07:27Z",
+  "event_time": "2022-09-21T00:00:00Z",
+  "record_id": "r447",
+  "ret": -0.001187
+ },
+ {
+  "available_at": "2022-09-22T21:07:28Z",
+  "event_time": "2022-09-22T00:00:00Z",
+  "record_id": "r448",
+  "ret": -0.008596
+ },
+ {
+  "available_at": "2022-09-23T21:07:29Z",
+  "event_time": "2022-09-23T00:00:00Z",
+  "record_id": "r449",
+  "ret": 0.001268
+ },
+ {
+  "available_at": "2023-01-24T21:07:30Z",
+  "event_time": "2022-09-26T00:00:00Z",
+  "record_id": "r450",
+  "ret": -0.001698
+ },
+ {
+  "available_at": "2022-09-27T21:07:31Z",
+  "event_time": "2022-09-27T00:00:00Z",
+  "record_id": "r451",
+  "ret": -0.006556
+ },
+ {
+  "available_at": "2022-09-28T21:07:32Z",
+  "event_time": "2022-09-28T00:00:00Z",
+  "record_id": "r452",
+  "ret": -0.010624
+ },
+ {
+  "available_at": "2023-01-27T21:07:33Z",
+  "event_time": "2022-09-29T00:00:00Z",
+  "record_id": "r453",
+  "ret": -0.003731
+ },
+ {
+  "available_at": "2022-09-30T21:07:34Z",
+  "event_time": "2022-09-30T00:00:00Z",
+  "record_id": "r454",
+  "ret": -0.008288
+ },
+ {
+  "available_at": "2022-10-03T21:07:35Z",
+  "event_time": "2022-10-03T00:00:00Z",
+  "record_id": "r455",
+  "ret": 0.007714
+ },
+ {
+  "available_at": "2023-02-01T21:07:36Z",
+  "event_time": "2022-10-04T00:00:00Z",
+  "record_id": "r456",
+  "ret": -0.005371
+ },
+ {
+  "available_at": "2022-10-05T21:07:37Z",
+  "event_time": "2022-10-05T00:00:00Z",
+  "record_id": "r457",
+  "ret": -0.011002
+ },
+ {
+  "available_at": "2022-10-06T21:07:38Z",
+  "event_time": "2022-10-06T00:00:00Z",
+  "record_id": "r458",
+  "ret": -0.009928
+ },
+ {
+  "available_at": "2023-02-04T21:07:39Z",
+  "event_time": "2022-10-07T00:00:00Z",
+  "record_id": "r459",
+  "ret": 0.004091
+ },
+ {
+  "available_at": "2022-10-10T21:07:40Z",
+  "event_time": "2022-10-10T00:00:00Z",
+  "record_id": "r460",
+  "ret": -0.004366
+ },
+ {
+  "available_at": "2022-10-11T21:07:41Z",
+  "event_time": "2022-10-11T00:00:00Z",
+  "record_id": "r461",
+  "ret": 0.005475
+ },
+ {
+  "available_at": "2023-02-09T21:07:42Z",
+  "event_time": "2022-10-12T00:00:00Z",
+  "record_id": "r462",
+  "ret": 0.008574
+ },
+ {
+  "available_at": "2022-10-13T21:07:43Z",
+  "event_time": "2022-10-13T00:00:00Z",
+  "record_id": "r463",
+  "ret": 0.011069
+ },
+ {
+  "available_at": "2022-10-14T21:07:44Z",
+  "event_time": "2022-10-14T00:00:00Z",
+  "record_id": "r464",
+  "ret": 0.006765
+ },
+ {
+  "available_at": "2023-02-14T21:07:45Z",
+  "event_time": "2022-10-17T00:00:00Z",
+  "record_id": "r465",
+  "ret": -0.010295
+ },
+ {
+  "available_at": "2022-10-18T21:07:46Z",
+  "event_time": "2022-10-18T00:00:00Z",
+  "record_id": "r466",
+  "ret": -0.005279
+ },
+ {
+  "available_at": "2022-10-19T21:07:47Z",
+  "event_time": "2022-10-19T00:00:00Z",
+  "record_id": "r467",
+  "ret": 0.004209
+ },
+ {
+  "available_at": "2023-02-17T21:07:48Z",
+  "event_time": "2022-10-20T00:00:00Z",
+  "record_id": "r468",
+  "ret": 0.000164
+ },
+ {
+  "available_at": "2022-10-21T21:07:49Z",
+  "event_time": "2022-10-21T00:00:00Z",
+  "record_id": "r469",
+  "ret": -0.006121
+ },
+ {
+  "available_at": "2022-10-24T21:07:50Z",
+  "event_time": "2022-10-24T00:00:00Z",
+  "record_id": "r470",
+  "ret": 0.001571
+ },
+ {
+  "available_at": "2023-02-22T21:07:51Z",
+  "event_time": "2022-10-25T00:00:00Z",
+  "record_id": "r471",
+  "ret": -0.00943
+ },
+ {
+  "available_at": "2022-10-26T21:07:52Z",
+  "event_time": "2022-10-26T00:00:00Z",
+  "record_id": "r472",
+  "ret": 0.003682
+ },
+ {
+  "available_at": "2022-10-27T21:07:53Z",
+  "event_time": "2022-10-27T00:00:00Z",
+  "record_id": "r473",
+  "ret": -0.002908
+ },
+ {
+  "available_at": "2023-02-25T21:07:54Z",
+  "event_time": "2022-10-28T00:00:00Z",
+  "record_id": "r474",
+  "ret": 0.010691
+ },
+ {
+  "available_at": "2022-10-31T21:07:55Z",
+  "event_time": "2022-10-31T00:00:00Z",
+  "record_id": "r475",
+  "ret": 0.003278
+ },
+ {
+  "available_at": "2022-11-01T21:07:56Z",
+  "event_time": "2022-11-01T00:00:00Z",
+  "record_id": "r476",
+  "ret": 0.010148
+ },
+ {
+  "available_at": "2023-03-02T21:07:57Z",
+  "event_time": "2022-11-02T00:00:00Z",
+  "record_id": "r477",
+  "ret": 0.004334
+ },
+ {
+  "available_at": "2022-11-03T21:07:58Z",
+  "event_time": "2022-11-03T00:00:00Z",
+  "record_id": "r478",
+  "ret": -0.003445
+ },
+ {
+  "available_at": "2022-11-04T21:07:59Z",
+  "event_time": "2022-11-04T00:00:00Z",
+  "record_id": "r479",
+  "ret": -0.003507
+ },
+ {
+  "available_at": "2023-03-07T21:08:00Z",
+  "event_time": "2022-11-07T00:00:00Z",
+  "record_id": "r480",
+  "ret": 0.010723
+ },
+ {
+  "available_at": "2022-11-08T21:08:01Z",
+  "event_time": "2022-11-08T00:00:00Z",
+  "record_id": "r481",
+  "ret": -0.005514
+ },
+ {
+  "available_at": "2022-11-09T21:08:02Z",
+  "event_time": "2022-11-09T00:00:00Z",
+  "record_id": "r482",
+  "ret": 0.003656
+ },
+ {
+  "available_at": "2023-03-10T21:08:03Z",
+  "event_time": "2022-11-10T00:00:00Z",
+  "record_id": "r483",
+  "ret": 0.010505
+ },
+ {
+  "available_at": "2022-11-11T21:08:04Z",
+  "event_time": "2022-11-11T00:00:00Z",
+  "record_id": "r484",
+  "ret": 0.006069
+ },
+ {
+  "available_at": "2022-11-14T21:08:05Z",
+  "event_time": "2022-11-14T00:00:00Z",
+  "record_id": "r485",
+  "ret": 0.001587
+ },
+ {
+  "available_at": "2023-03-15T21:08:06Z",
+  "event_time": "2022-11-15T00:00:00Z",
+  "record_id": "r486",
+  "ret": 0.003061
+ },
+ {
+  "available_at": "2022-11-16T21:08:07Z",
+  "event_time": "2022-11-16T00:00:00Z",
+  "record_id": "r487",
+  "ret": -0.010266
+ },
+ {
+  "available_at": "2022-11-17T21:08:08Z",
+  "event_time": "2022-11-17T00:00:00Z",
+  "record_id": "r488",
+  "ret": -0.01139
+ },
+ {
+  "available_at": "2023-03-18T21:08:09Z",
+  "event_time": "2022-11-18T00:00:00Z",
+  "record_id": "r489",
+  "ret": 0.00912
+ },
+ {
+  "available_at": "2022-11-21T21:08:10Z",
+  "event_time": "2022-11-21T00:00:00Z",
+  "record_id": "r490",
+  "ret": 0.012177
+ },
+ {
+  "available_at": "2022-11-22T21:08:11Z",
+  "event_time": "2022-11-22T00:00:00Z",
+  "record_id": "r491",
+  "ret": -0.000143
+ },
+ {
+  "available_at": "2023-03-23T21:08:12Z",
+  "event_time": "2022-11-23T00:00:00Z",
+  "record_id": "r492",
+  "ret": 0.004615
+ },
+ {
+  "available_at": "2022-11-24T21:08:13Z",
+  "event_time": "2022-11-24T00:00:00Z",
+  "record_id": "r493",
+  "ret": 0.006057
+ },
+ {
+  "available_at": "2022-11-25T21:08:14Z",
+  "event_time": "2022-11-25T00:00:00Z",
+  "record_id": "r494",
+  "ret": -0.003035
+ },
+ {
+  "available_at": "2023-03-28T21:08:15Z",
+  "event_time": "2022-11-28T00:00:00Z",
+  "record_id": "r495",
+  "ret": 0.001838
+ },
+ {
+  "available_at": "2022-11-29T21:08:16Z",
+  "event_time": "2022-11-29T00:00:00Z",
+  "record_id": "r496",
+  "ret": -0.006146
+ },
+ {
+  "available_at": "2022-11-30T21:08:17Z",
+  "event_time": "2022-11-30T00:00:00Z",
+  "record_id": "r497",
+  "ret": -0.00308
+ },
+ {
+  "available_at": "2023-03-31T21:08:18Z",
+  "event_time": "2022-12-01T00:00:00Z",
+  "record_id": "r498",
+  "ret": 0.00736
+ },
+ {
+  "available_at": "2022-12-02T21:08:19Z",
+  "event_time": "2022-12-02T00:00:00Z",
+  "record_id": "r499",
+  "ret": -0.00641
+ },
+ {
+  "available_at": "2022-12-05T21:08:20Z",
+  "event_time": "2022-12-05T00:00:00Z",
+  "record_id": "r500",
+  "ret": 0.012092
+ },
+ {
+  "available_at": "2023-04-05T21:08:21Z",
+  "event_time": "2022-12-06T00:00:00Z",
+  "record_id": "r501",
+  "ret": -0.006385
+ },
+ {
+  "available_at": "2022-12-07T21:08:22Z",
+  "event_time": "2022-12-07T00:00:00Z",
+  "record_id": "r502",
+  "ret": 0.009641
+ },
+ {
+  "available_at": "2022-12-08T21:08:23Z",
+  "event_time": "2022-12-08T00:00:00Z",
+  "record_id": "r503",
+  "ret": 0.005531
+ }
+]

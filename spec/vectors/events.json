@@ -1,0 +1,385 @@
+{
+ "description": "Event hash vectors: build the list [hash_domain, seq, prev_hash, id, session_id, type, call_id, event_time, available_at, recorded_at, payload_sha256], canonicalise it (RFC 8785), sha256 the UTF-8 bytes; domain is asof-ledger/<schema_version>.",
+ "event_hash": [
+  {
+   "name": "schema 3: all fields present",
+   "schema_version": 3,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "145bd913a09895858187d784bfe47778c3435792bc5980de7e3105480a7605ad"
+  },
+  {
+   "name": "schema 3: null call_id",
+   "schema_version": 3,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": null,
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "6684654eb7c7b09457aa1a99b3fa7ca1ec287dedadd769031631e5f34219763e"
+  },
+  {
+   "name": "schema 3: null event_time and available_at",
+   "schema_version": 3,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": null,
+    "available_at": null,
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "c4beac8e2ee6d26cfedf1cbcf34f8f80a82a0f4407f2c7b276d631ee057c9bb5"
+  },
+  {
+   "name": "schema 3: first event, genesis prev_hash",
+   "schema_version": 3,
+   "fields": {
+    "seq": 1,
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "064ddd383bf1414dbf7f4c34339cf01c8230fc58105d6faea0b7f66af373bd68"
+  },
+  {
+   "name": "schema 3: non-ASCII session id",
+   "schema_version": 3,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "séssion-😀",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "9a1c4d68d5ace8ae3414e95ea9248615bf4658cc0baad0d9df604a492cf3a86f"
+  },
+  {
+   "name": "schema 3: session id with quotes and a newline",
+   "schema_version": 3,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "a\"b\nc",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "1375e577bf26620758164d3454680d6d846eb5a8f4bd3bd266a08bd2c2641021"
+  },
+  {
+   "name": "schema 3: large seq",
+   "schema_version": 3,
+   "fields": {
+    "seq": 9007199254740991,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "639020ce1371c14e74bf8099bbdad6618fef0d905a61cf0d115a49c6c51d6d5a"
+  },
+  {
+   "name": "schema 2: all fields present",
+   "schema_version": 2,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "93fff982f048918d6eece3c3b2d0f0ec56c1331dc9f657e6927a6b00762cc24b"
+  },
+  {
+   "name": "schema 2: null call_id",
+   "schema_version": 2,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": null,
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "a1ce88f8951cca7cf86e4c9f88f22101b933d5cdc54bc0d5f4f74ce87b01c7ba"
+  },
+  {
+   "name": "schema 2: null event_time and available_at",
+   "schema_version": 2,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": null,
+    "available_at": null,
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "f061ee4edf45da68821486a2e8e4b843e6202087e220fbfd2ae12082c34e9e4e"
+  },
+  {
+   "name": "schema 2: first event, genesis prev_hash",
+   "schema_version": 2,
+   "fields": {
+    "seq": 1,
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "f5402d6ec42c72b863541da2fc71bba94db2ef2b9db075e0a6cc0718bf6bdfe9"
+  },
+  {
+   "name": "schema 2: non-ASCII session id",
+   "schema_version": 2,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "séssion-😀",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "063c4d1087bf40c99762bda918068e2f6a530b18212f64da69d370b2d54f0d7b"
+  },
+  {
+   "name": "schema 2: session id with quotes and a newline",
+   "schema_version": 2,
+   "fields": {
+    "seq": 7,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "a\"b\nc",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "b8c2ff61888af0c766ef930be8d53309209ed9917802c28b0715363ecd8b6ee6"
+  },
+  {
+   "name": "schema 2: large seq",
+   "schema_version": 2,
+   "fields": {
+    "seq": 9007199254740991,
+    "prev_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "id": "0123456789abcdef0123456789abcdef",
+    "session_id": "s1",
+    "type": "query",
+    "call_id": "c1",
+    "event_time": "2023-01-20T23:00:00Z",
+    "available_at": "2023-01-20T23:00:00Z",
+    "recorded_at": "2026-11-08T18:00:00.123456Z",
+    "payload_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+   },
+   "hash": "95ebb44f2029eff242d84f744828131b6015b209becad699107321ab494e7dea"
+  }
+ ],
+ "chains": [
+  {
+   "name": "schema 3 chain with payloads (floats, non-ASCII, UTF-16 key order)",
+   "schema_version": 3,
+   "hash_domain": "asof-ledger/3",
+   "events": [
+    {
+     "seq": 1,
+     "id": "00000000000000000000000000000001",
+     "session_id": "vector-session",
+     "type": "session_start",
+     "call_id": null,
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "c44946ea27f6da6a1bd33be31ba9cb84c1a081f346cce3db3f4146c0d0e29945",
+     "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+     "payload": {
+      "as_of": "2023-01-20T23:00:00Z",
+      "privacy": "hashes_only",
+      "max_as_of": null
+     },
+     "hash": "a391bb5e1fe794c07e8e41ec1a47e7f256501134a4c5bec429082d4d65e87f41",
+     "payload_canonical": "{\"as_of\":\"2023-01-20T23:00:00Z\",\"max_as_of\":null,\"privacy\":\"hashes_only\"}"
+    },
+    {
+     "seq": 2,
+     "id": "00000000000000000000000000000002",
+     "session_id": "vector-session",
+     "type": "query",
+     "call_id": "call-1",
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "6791663a3dc97465d19be92f47fce7a39c3ffbd0571b64508bffbf23c7b72f01",
+     "prev_hash": "a391bb5e1fe794c07e8e41ec1a47e7f256501134a4c5bec429082d4d65e87f41",
+     "payload": {
+      "lookback": 2592000.0,
+      "limit": null,
+      "served": 3,
+      "counts": {
+       "served": 3,
+       "blocked_future": 1
+      },
+      "source": "prices",
+      "warnings": []
+     },
+     "hash": "f38e19da3da09724f2cfa2e695f55a1a974417640b9d9bfc729c9f6645f9817e",
+     "payload_canonical": "{\"counts\":{\"blocked_future\":1,\"served\":3},\"limit\":null,\"lookback\":2592000,\"served\":3,\"source\":\"prices\",\"warnings\":[]}"
+    },
+    {
+     "seq": 3,
+     "id": "00000000000000000000000000000003",
+     "session_id": "vector-session",
+     "type": "decision",
+     "call_id": "call-1",
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "9905f660105210927f82a5d748af3e8c5254c94dedf9bea27343c268df5eb9bd",
+     "prev_hash": "f38e19da3da09724f2cfa2e695f55a1a974417640b9d9bfc729c9f6645f9817e",
+     "payload": {
+      "action": "hôld 😀",
+      "details_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "z": 0.1,
+      "a": [
+       1,
+       2.5,
+       1e+21
+      ],
+      "😀": 1,
+      "דּ": 2
+     },
+     "hash": "54babb9f91c2bd960017ee0ad6d5cd70b39b5e7ca598e0157b236e4b39eab276",
+     "payload_canonical": "{\"a\":[1,2.5,1e+21],\"action\":\"hôld 😀\",\"details_sha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"z\":0.1,\"😀\":1,\"דּ\":2}"
+    }
+   ]
+  },
+  {
+   "name": "schema 2 chain (SPEC 1.0)",
+   "schema_version": 2,
+   "hash_domain": "asof-ledger/2",
+   "events": [
+    {
+     "seq": 1,
+     "id": "00000000000000000000000000000001",
+     "session_id": "vector-session",
+     "type": "session_start",
+     "call_id": null,
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "123e029ed738aa6fd2803a815a785f2ae98acedd716829b36c767d4d41fc0108",
+     "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+     "payload": {
+      "as_of": "2023-01-20T23:00:00Z",
+      "privacy": "hashes_only"
+     },
+     "hash": "cc348fdcbf30ad8e17253bce5fa650570c4cfc72d5206dfd18f3b40472756039",
+     "payload_text": "{\"as_of\":\"2023-01-20T23:00:00Z\",\"privacy\":\"hashes_only\"}"
+    },
+    {
+     "seq": 2,
+     "id": "00000000000000000000000000000002",
+     "session_id": "vector-session",
+     "type": "query",
+     "call_id": "call-1",
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "ca70dbe891154406aa4f840c962a5580fc91220e48cdaae82640333629462b21",
+     "prev_hash": "cc348fdcbf30ad8e17253bce5fa650570c4cfc72d5206dfd18f3b40472756039",
+     "payload": {
+      "served": 3,
+      "source": "prices",
+      "lookback": 30,
+      "warnings": []
+     },
+     "hash": "51774aa4a793d7087115d87e57a02ce264dc88ec14e2684689c6c1bfae5e02d1",
+     "payload_text": "{\"lookback\":30,\"served\":3,\"source\":\"prices\",\"warnings\":[]}"
+    },
+    {
+     "seq": 3,
+     "id": "00000000000000000000000000000003",
+     "session_id": "vector-session",
+     "type": "decision",
+     "call_id": "call-1",
+     "event_time": "2023-01-20T23:00:00Z",
+     "available_at": "2023-01-20T23:00:00Z",
+     "recorded_at": "2026-11-08T18:00:00Z",
+     "payload_sha256": "c0c536e92d6ff98ae78043e799714e271da560f87af0c76ec0af5b493e8b9fb5",
+     "prev_hash": "51774aa4a793d7087115d87e57a02ce264dc88ec14e2684689c6c1bfae5e02d1",
+     "payload": {
+      "action": "hold",
+      "details_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+     },
+     "hash": "53ec1f7c723da2eb36a43de5f5bcb0f4b47bb5f4667201ec81f13efa4ba725e6",
+     "payload_text": "{\"action\":\"hold\",\"details_sha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\"}"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "chain_ok": true,
+ "false_positives": [
+  {
+   "basis": "heuristic",
+   "flag": "gaps",
+   "n": 56,
+   "of": 3000,
+   "severity": "warning",
+   "source": "news"
+  }
+ ],
+ "flags_per_source": {
+  "bars": [],
+  "estimates": [],
+  "fundamentals": [],
+  "news": [
+   "gaps"
+  ],
+  "universe": []
+ },
+ "gaps_detail": {
+  "news": {
+   "calendar": "XNYS",
+   "largest_gap_after": "2022-10-25T19:20:01Z",
+   "largest_gap_seconds": 161807,
+   "median_sessions_skipped": 0,
+   "median_step_seconds": 4318,
+   "n_gaps": 56,
+   "n_gaps_missed_sessions": 3,
+   "n_gaps_within_day": 53,
+   "n_sessions_missed": 3
+  }
+ },
+ "planted_flags_raised_on_control": [],
+ "survivorship_at_start": {
+  "at": "2022-01-04T14:00:00Z",
+  "flagged": false,
+  "listed_not_members": [],
+  "n_listed": 44,
+  "n_members": 44
+ },
+ "synthetic": true,
+ "tables": {
+  "bars.csv": 22880,
+  "estimates.csv": 352,
+  "fundamentals.csv": 352,
+  "news.csv": 3000,
+  "universe.csv": 44
+ }
+}

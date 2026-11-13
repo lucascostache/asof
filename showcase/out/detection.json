@@ -1,0 +1,100 @@
+{
+ "rows": [
+  {
+   "basis": "heuristic",
+   "check": "quality.py:bulk_backfill",
+   "detected": "DETECTED",
+   "found_count": 400,
+   "note": "",
+   "planted": "backfill",
+   "planted_count": 400,
+   "severity": "warning",
+   "table": "estimates.csv"
+  },
+  {
+   "basis": "counted",
+   "check": "quality.py:restatements",
+   "detected": "DETECTED",
+   "found_count": 12,
+   "note": "",
+   "planted": "restatement",
+   "planted_count": 12,
+   "severity": "warning",
+   "table": "fundamentals.csv"
+  },
+  {
+   "basis": "counted",
+   "check": "bars.py + quality.py:availability_moved_to_close",
+   "detected": "DETECTED",
+   "found_count": 4837,
+   "note": "",
+   "planted": "bar_close",
+   "planted_count": 4837,
+   "severity": "info",
+   "table": "bars.csv"
+  },
+  {
+   "basis": "counted",
+   "check": "quality.py:missing_available_at",
+   "detected": "DETECTED",
+   "found_count": 300,
+   "note": "",
+   "planted": "timestamp_gaps",
+   "planted_count": 300,
+   "severity": "warning",
+   "table": "news.csv"
+  },
+  {
+   "basis": "counted",
+   "check": "quality.py:survivorship (a survivors-only universe queried at the start)",
+   "detected": "DETECTED",
+   "found_count": 6,
+   "note": "at 2022-01-04T14:00:00Z the list has 44 names and the prices of 2022-01-03 show 50 trading; the 6 it leaves out are exactly the delisted ones. The fixture's own universe at the same time: no flag. After the last delisting a survivors-only list is right, so the flag can only show it before then",
+   "planted": "survivorship",
+   "planted_count": 6,
+   "severity": "warning",
+   "table": "universe.csv + bars.csv"
+  },
+  {
+   "basis": "counted",
+   "check": "Session.members (universe as of T) vs a survivors-only list",
+   "detected": "MEASURED",
+   "found_count": 6,
+   "note": "as-of universe at the start has 50 names, the survivors-only list 44; the 6 missing are exactly the delisted ones",
+   "planted": "survivorship",
+   "planted_count": 6,
+   "severity": null,
+   "table": "universe.csv + bars.csv"
+  }
+ ],
+ "survivorship": {
+  "as_of_universe_size_at_start": 50,
+  "matches_planted": true,
+  "missing_from_naive": [
+   "SYN04",
+   "SYN12",
+   "SYN20",
+   "SYN28",
+   "SYN36",
+   "SYN44"
+  ],
+  "naive_universe_size": 44,
+  "planted": [
+   "SYN04",
+   "SYN12",
+   "SYN20",
+   "SYN28",
+   "SYN36",
+   "SYN44"
+  ]
+ },
+ "unplanted_flags": [
+  {
+   "basis": "heuristic",
+   "flag": "gaps",
+   "n": 56,
+   "severity": "warning",
+   "source": "news"
+  }
+ ]
+}

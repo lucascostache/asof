@@ -1,0 +1,84 @@
+{
+ "by_severity": {
+  "error": 0,
+  "info": 0,
+  "warning": 2
+ },
+ "flags": [
+  "duplicate_rows",
+  "late_availability"
+ ],
+ "issues": [
+  {
+   "basis": "counted",
+   "example_row_ids_hmac": [
+    "78c57fca27fe1508f7fc8aa411947c18b8acf71c4f4f0537337f202a3989e696",
+    "d767eaed6f3af39366bae7d794d2aef5a9cca639eba3a94c092ba2952f866073",
+    "6047bb330d544b8dd025827f6d78ebdcb5d0be8b455ac194a68bf9cac5c4be4c",
+    "e4e2543cf1c079846c49cc9822a9d655bc03209d7ec1a2429bb0eaf617563d60",
+    "0d556a8650216015af854a4762e29f87cc8b83ab36f5025ce41726a9476d2113"
+   ],
+   "flag": "returns: duplicate_rows",
+   "n": 40,
+   "severity": "warning"
+  },
+  {
+   "basis": "heuristic",
+   "example_row_ids_hmac": [
+    "0f2954e208c9011c468ae10b03f86268c8baa22c100b7fdd1ec3ad0e46229e96",
+    "61c2d1efebfcfaff4eb40f98c5a27f0d1696f12b539fdc63272fb847be32acf1",
+    "54fa8217454cdc1a053dc756107fb84003b8ce4dd041707bd2cdb0dcd5863682",
+    "87fc76ed7fca445775764c69b288d7632dd3accf33fbed9b3bb32285a61711d4",
+    "e1bab648ff1626019953d5de12e4d24ac76fddd60fcbd6c619c0378c0d798e1f"
+   ],
+   "flag": "returns: late_availability",
+   "n": 181,
+   "severity": "warning"
+  }
+ ],
+ "kind": "series",
+ "n_records": 544,
+ "row_ids": "hmac",
+ "sources": [
+  {
+   "available_at": {
+    "max": "2023-04-05T21:08:21Z",
+    "min": "2021-01-05T21:00:01Z",
+    "n_missing": 0,
+    "n_naive": 0,
+    "n_present": 544,
+    "n_unparseable": 0
+   },
+   "event_time": {
+    "max": "2022-12-08T00:00:00Z",
+    "min": "2021-01-04T00:00:00Z",
+    "n_missing": 0,
+    "n_naive": 0,
+    "n_present": 544,
+    "n_unparseable": 0
+   },
+   "flags": [
+    "late_availability",
+    "duplicate_rows"
+   ],
+   "kind": "series",
+   "lag_seconds": {
+    "max": 10444101,
+    "median": 75967,
+    "min": 75601
+   },
+   "n_records": 544,
+   "name": "returns",
+   "thresholds": {
+    "burst_min_records": 20,
+    "burst_min_span_days": 30,
+    "gap_factor": 5,
+    "late_lag_factor": 10,
+    "late_lag_min_seconds": 86400,
+    "stale_factor": 5
+   }
+  }
+ ],
+ "v": 1,
+ "view": "internal"
+}

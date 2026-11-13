@@ -1,0 +1,68 @@
+{
+  "asof_version": "0.5.0",
+  "date": "2026-11-12",
+  "scale": 1.0,
+  "machine": {
+    "cpu": "Apple M2",
+    "cores": 8,
+    "memory_gb": 16,
+    "os": "Darwin 24.5.0 (arm64)",
+    "python": "3.13.13",
+    "sqlite": "3.53.0"
+  },
+  "results": {
+    "ledger-build": {
+      "events": 1000000,
+      "seconds": 134.13,
+      "events_per_second": 7456,
+      "file_mb": 601.3,
+      "peak_memory_mb": 31.5
+    },
+    "ledger-verify": {
+      "events": 1000000,
+      "ok": true,
+      "anchor": "ok",
+      "seconds": 24.97,
+      "events_per_second": 40042,
+      "peak_memory_mb": 28.6
+    },
+    "query-1m": {
+      "record_versions": 1000000,
+      "build_records_seconds": 18.19,
+      "query_seconds": 2.58,
+      "served": 500000,
+      "blocked_future": 499999,
+      "filtered_query_seconds": 2.43,
+      "filtered_served": 100,
+      "peak_memory_mb": 776.7
+    },
+    "session-1m": {
+      "rows": 1000000,
+      "csv_mb": 65.4,
+      "write_csv_seconds": 3.14,
+      "load_source_seconds": 75.71,
+      "query_seconds": 5.64,
+      "served": 100,
+      "blocked_future": 250000,
+      "peak_memory_mb": 1627.4
+    },
+    "advance-10k": {
+      "steps": 10000,
+      "source_record_versions": 20000,
+      "seconds": 515.8,
+      "milliseconds_per_step": 51.58,
+      "ledger_events": 79997,
+      "ledger_mb": 824.1,
+      "peak_memory_mb": 753.8
+    },
+    "advance-10k-unlisted": {
+      "steps": 10000,
+      "source_record_versions": 20000,
+      "seconds": 409.4,
+      "milliseconds_per_step": 40.94,
+      "ledger_events": 79997,
+      "ledger_mb": 62.8,
+      "peak_memory_mb": 219.6
+    }
+  }
+}

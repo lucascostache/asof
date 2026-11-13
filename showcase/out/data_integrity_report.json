@@ -1,0 +1,1002 @@
+{
+ "day1": {
+  "chain": {
+   "anchor": "skipped",
+   "first_bad_seq": null,
+   "head_hash": "26bec11f01b8371ab0e856475200273006470232c371b0eef56878dc800bce9a",
+   "n_events": 11,
+   "ok": true,
+   "reason": null,
+   "status": "intact"
+  },
+  "check_run_at": "2023-12-30T09:00:00Z",
+  "sources": {
+   "bars": {
+    "available_at": {
+     "max": "2023-12-29T21:20:00Z",
+     "min": "2022-01-03T21:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 24522,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 1,
+     "warning": 0
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2023-12-30T09:00:03Z",
+    "event_time": {
+     "max": "2023-12-29T05:00:00Z",
+     "min": "2022-01-03T05:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 24522,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "availability_moved_to_close"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 0,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [],
+      "flag": "availability_moved_to_close",
+      "n": 4837,
+      "severity": "info"
+     }
+    ],
+    "kind": "series",
+    "n_records": 24522,
+    "notes": {
+     "availability_moved_to_close": 4837,
+     "partial_bars_withheld": 0
+    },
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 58800,
+      "median": 58800,
+      "min": 57600
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "estimates": {
+    "available_at": {
+     "max": "2023-11-20T10:48:15Z",
+     "min": "2023-11-20T10:15:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 400,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": {
+      "available_at_hour": "2023-11-20T10:00:00Z",
+      "event_span_days": 638,
+      "n_records": 400
+     },
+     "n_bursts": 1,
+     "n_records_in_bursts": 400
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 1
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2023-12-30T09:00:12Z",
+    "event_time": {
+     "max": "2023-09-30T00:00:00Z",
+     "min": "2021-12-31T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 400,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "bulk_backfill"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 61,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "heuristic",
+      "example_record_ids_sha256": [
+       "1ebc7e502db815f100cdcf4fb43e8a30f6702e5051b01a3d696b838d74a924f2",
+       "816b88ed425a55cd8c83665d5e4d94117f3e3917cc2d878440eaae66448044cc",
+       "60a112a60faf84bab3cf535c7ecea966454f43ac382eadd22124d24981df710d",
+       "5ddcd7ed01ac3f94c2b2e763f1d41d00494a1f3afa62b0a0b395f9d2339dd314",
+       "e433425b1ea170badd960f728c0b03b42527dd982420cb4c7533f04c9bb363c9"
+      ],
+      "flag": "bulk_backfill",
+      "n": 400,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 400,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 59568460,
+      "median": 28032480,
+      "min": 4443335
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "fundamentals": {
+    "available_at": {
+     "max": "2023-11-09T21:00:00Z",
+     "min": "2022-01-30T21:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 412,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 1
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2023-12-30T09:00:06Z",
+    "event_time": {
+     "max": "2023-09-30T00:00:00Z",
+     "min": "2021-12-31T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 412,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "restatements"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 61,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [
+       "ec02cda1122f7249257408077745448b368c58a3418e27e4d99892dce1c9d4e1",
+       "12db460e15d0d0815b604445a12ffa8e42cfcffe0a8b56d542fd94d68183a9f8",
+       "e68e346c4b8276be46214deb577fcd6392ceaafe9e9f42cb3b963c79262ccf62",
+       "b123065cb9fb09eb8f3c84a1ad4c008b6fa0f3b148d16154b76e758023099519",
+       "8b45e097bbc7b53353c54d7faf61407bae68914217684c02d4cd1389e386f8da"
+      ],
+      "flag": "restatements",
+      "n": 12,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 412,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 12,
+     "n_ids_restated": 12
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 11221200,
+      "median": 3099600,
+      "min": 2667600
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "news": {
+    "available_at": {
+     "max": "2023-12-29T14:27:21Z",
+     "min": "2022-01-03T10:07:38Z",
+     "n_missing": 300,
+     "n_naive": 0,
+     "n_present": 2700,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 2
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2023-12-30T09:00:09Z",
+    "event_time": {
+     "max": "2023-12-29T18:32:34Z",
+     "min": "2022-01-03T10:04:48Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 3000,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "missing_available_at",
+     "gaps"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": "2022-10-25T19:20:01Z",
+     "largest_gap_seconds": 161807,
+     "median_sessions_skipped": 0,
+     "median_step_seconds": 4318,
+     "n_gaps": 56,
+     "n_gaps_missed_sessions": 3,
+     "n_gaps_within_day": 53,
+     "n_sessions_missed": 3
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "heuristic",
+      "example_record_ids_sha256": [],
+      "flag": "gaps",
+      "n": 56,
+      "severity": "warning"
+     },
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [
+       "3855f925f1d97adc728902272ac246e3cc7416eb26a1a408f258927b911b62bc",
+       "bce2d0ec766e8fbe4d607886d870a6a0fd154bdc6ea764b08034eb46c1e45dc4",
+       "ef7c7f3d879b5c41202e8d3026550594dcbbe405d08a6348e51aa99dd819a7a4",
+       "75dc45eb394a6403b63b97c666bb1d9e0257d92860223e06fc0162e515b83705",
+       "89c8286fe4828dafdfd0b8e22e1106010244cf5ef07b8e1fbcf61844a4e1bfd3"
+      ],
+      "flag": "missing_available_at",
+      "n": 300,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 3000,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 194,
+      "median": 120,
+      "min": 45
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "universe": {
+    "available_at": {
+     "max": "2023-06-23T23:59:59.999999Z",
+     "min": "2021-12-01T23:59:59.999999Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 56,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 0
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2023-12-30T09:00:15Z",
+    "event_time": {
+     "max": "2023-07-03T00:00:00Z",
+     "min": "2021-12-15T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 56,
+     "n_unparseable": 0
+    },
+    "flags": [],
+    "gaps": {
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_step_seconds": null,
+     "n_gaps": null
+    },
+    "identity": "record_id",
+    "issues": [],
+    "kind": "change_log",
+    "n_records": 56,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": 56,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": null,
+      "median": null,
+      "min": null
+     },
+     "late_availability": null
+    },
+    "v": 1
+   }
+  }
+ },
+ "day30": {
+  "chain": {
+   "anchor": "skipped",
+   "first_bad_seq": null,
+   "head_hash": "88e7405bf7e2f1c3c65f3931848cc849e9ba9d24f44e87cc34c2811d69bfd6a6",
+   "n_events": 13,
+   "ok": true,
+   "reason": null,
+   "status": "intact"
+  },
+  "check_run_at": "2024-01-29T09:00:00Z",
+  "sources": {
+   "analyst_ratings": {
+    "available_at": {
+     "max": "2024-01-15T11:13:19Z",
+     "min": "2024-01-15T10:20:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 3200,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": {
+      "available_at_hour": "2024-01-15T10:00:00Z",
+      "event_span_days": 535,
+      "n_records": 2400
+     },
+     "n_bursts": 2,
+     "n_records_in_bursts": 3200
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 1
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:18Z",
+    "event_time": {
+     "max": "2023-12-19T00:00:00Z",
+     "min": "2022-01-03T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 3200,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "bulk_backfill"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 0,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "heuristic",
+      "example_record_ids_sha256": [
+       "355c09a7983edf4b2687f0992e77bd7b3c396d1aa8c95b185ee12acbf2a75fe6",
+       "33cccd1d7b48c9662ed84de0065a580ecc499a372336e303636f53fcdcd2cfe9",
+       "544c0b3584ebeeef525f0c1b9121c64a07fdbeab6bb9e7b4b958fd3a0aa7c260",
+       "6352e4bf13ff8710a50f8235c8b90652eb9eafd3b6b9dc62962d89ee7c1ec3bf",
+       "5399adf794958cd1c644fe189c737b8aa72596f8ff432858b2ee2dc9a6c2c2c8"
+      ],
+      "flag": "bulk_backfill",
+      "n": 3200,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 3200,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 64146006,
+      "median": 33216406,
+      "min": 2373193
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "bars": {
+    "available_at": {
+     "max": "2023-12-29T21:20:00Z",
+     "min": "2022-01-03T21:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 24522,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 1,
+     "warning": 0
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:03Z",
+    "event_time": {
+     "max": "2023-12-29T05:00:00Z",
+     "min": "2022-01-03T05:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 24522,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "availability_moved_to_close"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 0,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [],
+      "flag": "availability_moved_to_close",
+      "n": 4837,
+      "severity": "info"
+     }
+    ],
+    "kind": "series",
+    "n_records": 24522,
+    "notes": {
+     "availability_moved_to_close": 4837,
+     "partial_bars_withheld": 0
+    },
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 58800,
+      "median": 58800,
+      "min": 57600
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "estimates": {
+    "available_at": {
+     "max": "2023-11-20T10:48:15Z",
+     "min": "2023-11-20T10:15:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 400,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": {
+      "available_at_hour": "2023-11-20T10:00:00Z",
+      "event_span_days": 638,
+      "n_records": 400
+     },
+     "n_bursts": 1,
+     "n_records_in_bursts": 400
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 1
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:12Z",
+    "event_time": {
+     "max": "2023-09-30T00:00:00Z",
+     "min": "2021-12-31T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 400,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "bulk_backfill"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 61,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "heuristic",
+      "example_record_ids_sha256": [
+       "1ebc7e502db815f100cdcf4fb43e8a30f6702e5051b01a3d696b838d74a924f2",
+       "816b88ed425a55cd8c83665d5e4d94117f3e3917cc2d878440eaae66448044cc",
+       "60a112a60faf84bab3cf535c7ecea966454f43ac382eadd22124d24981df710d",
+       "5ddcd7ed01ac3f94c2b2e763f1d41d00494a1f3afa62b0a0b395f9d2339dd314",
+       "e433425b1ea170badd960f728c0b03b42527dd982420cb4c7533f04c9bb363c9"
+      ],
+      "flag": "bulk_backfill",
+      "n": 400,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 400,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 59568460,
+      "median": 28032480,
+      "min": 4443335
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "fundamentals": {
+    "available_at": {
+     "max": "2023-11-09T21:00:00Z",
+     "min": "2022-01-30T21:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 412,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 1
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:06Z",
+    "event_time": {
+     "max": "2023-09-30T00:00:00Z",
+     "min": "2021-12-31T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 412,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "restatements"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_sessions_skipped": 61,
+     "median_step_seconds": null,
+     "n_gaps": 0,
+     "n_gaps_missed_sessions": 0,
+     "n_gaps_within_day": 0,
+     "n_sessions_missed": 0
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [
+       "ec02cda1122f7249257408077745448b368c58a3418e27e4d99892dce1c9d4e1",
+       "12db460e15d0d0815b604445a12ffa8e42cfcffe0a8b56d542fd94d68183a9f8",
+       "e68e346c4b8276be46214deb577fcd6392ceaafe9e9f42cb3b963c79262ccf62",
+       "b123065cb9fb09eb8f3c84a1ad4c008b6fa0f3b148d16154b76e758023099519",
+       "8b45e097bbc7b53353c54d7faf61407bae68914217684c02d4cd1389e386f8da"
+      ],
+      "flag": "restatements",
+      "n": 12,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 412,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 12,
+     "n_ids_restated": 12
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 11221200,
+      "median": 3099600,
+      "min": 2667600
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "news": {
+    "available_at": {
+     "max": "2024-01-26T20:33:26Z",
+     "min": "2022-01-03T10:07:38Z",
+     "n_missing": 300,
+     "n_naive": 0,
+     "n_present": 2820,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 2
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:09Z",
+    "event_time": {
+     "max": "2024-01-26T19:50:20Z",
+     "min": "2022-01-03T10:04:48Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 3120,
+     "n_unparseable": 0
+    },
+    "flags": [
+     "missing_available_at",
+     "gaps"
+    ],
+    "gaps": {
+     "calendar": "XNYS",
+     "largest_gap_after": "2022-10-25T19:20:01Z",
+     "largest_gap_seconds": 161807,
+     "median_sessions_skipped": 0,
+     "median_step_seconds": 4272,
+     "n_gaps": 64,
+     "n_gaps_missed_sessions": 3,
+     "n_gaps_within_day": 61,
+     "n_sessions_missed": 3
+    },
+    "identity": "record_id",
+    "issues": [
+     {
+      "basis": "heuristic",
+      "example_record_ids_sha256": [],
+      "flag": "gaps",
+      "n": 64,
+      "severity": "warning"
+     },
+     {
+      "basis": "counted",
+      "example_record_ids_sha256": [
+       "3855f925f1d97adc728902272ac246e3cc7416eb26a1a408f258927b911b62bc",
+       "bce2d0ec766e8fbe4d607886d870a6a0fd154bdc6ea764b08034eb46c1e45dc4",
+       "ef7c7f3d879b5c41202e8d3026550594dcbbe405d08a6348e51aa99dd819a7a4",
+       "75dc45eb394a6403b63b97c666bb1d9e0257d92860223e06fc0162e515b83705",
+       "89c8286fe4828dafdfd0b8e22e1106010244cf5ef07b8e1fbcf61844a4e1bfd3"
+      ],
+      "flag": "missing_available_at",
+      "n": 300,
+      "severity": "warning"
+     }
+    ],
+    "kind": "series",
+    "n_records": 3120,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": null,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": 2995,
+      "median": 124,
+      "min": 45
+     },
+     "late_availability": 0
+    },
+    "v": 1
+   },
+   "universe": {
+    "available_at": {
+     "max": "2023-06-23T23:59:59.999999Z",
+     "min": "2021-12-01T23:59:59.999999Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 56,
+     "n_unparseable": 0
+    },
+    "bursts": {
+     "largest": null,
+     "n_bursts": 0,
+     "n_records_in_bursts": 0
+    },
+    "by_severity": {
+     "error": 0,
+     "info": 0,
+     "warning": 0
+    },
+    "duplicates": {
+     "basis": "record_id+available_at+payload",
+     "n_duplicate_rows": 0
+    },
+    "evaluated_at": "2024-01-29T09:00:15Z",
+    "event_time": {
+     "max": "2023-07-03T00:00:00Z",
+     "min": "2021-12-15T00:00:00Z",
+     "n_missing": 0,
+     "n_naive": 0,
+     "n_present": 56,
+     "n_unparseable": 0
+    },
+    "flags": [],
+    "gaps": {
+     "largest_gap_after": null,
+     "largest_gap_seconds": null,
+     "median_step_seconds": null,
+     "n_gaps": null
+    },
+    "identity": "record_id",
+    "issues": [],
+    "kind": "change_log",
+    "n_records": 56,
+    "restatements": {
+     "detectable": true,
+     "n_extra_versions": 0,
+     "n_ids_restated": 0
+    },
+    "thresholds": {
+     "burst_min_records": 20,
+     "burst_min_span_days": 30,
+     "gap_factor": 5,
+     "late_lag_factor": 10,
+     "late_lag_min_seconds": 86400,
+     "stale_factor": 5
+    },
+    "timing": {
+     "announced_ahead": 56,
+     "available_before_event": 0,
+     "future_dated": 0,
+     "lag_seconds": {
+      "max": null,
+      "median": null,
+      "min": null
+     },
+     "late_availability": null
+    },
+    "v": 1
+   }
+  }
+ }
+}

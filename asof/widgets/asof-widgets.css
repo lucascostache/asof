@@ -1,0 +1,143 @@
+/* AsOf widget kit: dark glass, soft white text, a muted GREEN for what is good or knowable, a muted AMBER for warnings and observed measurements, a muted RED only for errors, leaks and blocked. Scoped to .asof-w so it cannot leak into a host page. No fonts or images are loaded.
+   Colour map:  green = knowable / locked / verified / intact      amber = warning / OBSERVED (a measurement, not proof)      red = error / look-ahead leak / blocked / broken      white = neutral, recorded      grey = unknown
+   The palette is deliberately low in saturation and the glows are faint: nothing here should glare. */
+asof-receipt, asof-clock-timeline, asof-quality-panel, asof-chain-status, asof-rolling-sharpe, asof-leak-overlay, asof-gap-breakdown, asof-series { display: block; margin: 0 0 14px; }
+
+.asof-w { --asof-fg: #dcdcdf; --asof-mut: rgba(220, 220, 223, .56); --asof-line: rgba(255, 255, 255, .1); --g: #6fbf8f; --g2: #4d9f73; --r: #d77a78; --r2: #bd5a58; --soft: #d9a3a1; --a: #d6a14b; --a2: #b48636; --w: #dcdcdf;
+  --asof-glass: linear-gradient(165deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .015) 55%, rgba(255, 255, 255, .03));
+  position: relative; overflow: hidden; box-sizing: border-box; color: var(--asof-fg); background: var(--asof-glass); border: 1px solid var(--asof-line); border-top-color: rgba(255, 255, 255, .18); border-radius: 18px; padding: 18px 20px;
+  -webkit-backdrop-filter: blur(14px) saturate(105%); backdrop-filter: blur(14px) saturate(105%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 18px 40px -22px rgba(0, 0, 0, .9);
+  font: 13px/1.55 -apple-system, "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; max-width: 720px; width: 100%; overflow-wrap: anywhere;
+  animation: asof-in .25s ease-out both; }
+.asof-w *, .asof-w *::before, .asof-w *::after { box-sizing: border-box; }
+@keyframes asof-in { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .asof-w { animation: none; } }
+
+/* the accent bar across the top of each card */
+.asof-w::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, var(--g), var(--w)); opacity: .7; }
+.asof-clock-timeline::before { background: linear-gradient(90deg, var(--w), var(--g)); }
+.asof-quality-panel::before { background: linear-gradient(90deg, var(--a2), var(--a), var(--w)); }
+.asof-chain-status::before { background: linear-gradient(90deg, var(--g2), var(--g)); }
+.asof-chain-status.asof-broken::before { background: linear-gradient(90deg, var(--r2), var(--r)); }
+.asof-rolling-sharpe::before { background: linear-gradient(90deg, var(--g2), var(--g), var(--w)); }
+.asof-leak-overlay::before { background: linear-gradient(90deg, var(--g), var(--w), var(--r2)); }
+.asof-gap-breakdown::before { background: linear-gradient(90deg, var(--w), var(--a), var(--g)); }
+.asof-error::before { background: var(--r2); }
+
+.asof-hd { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, .06); margin-bottom: 14px; }
+.asof-ttl { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--asof-mut); }
+.asof-synth { font: 600 10px ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; color: #101215; background: rgba(220, 220, 223, .85); border-radius: 999px; padding: 2px 8px; }
+.asof-w code { font: 12px ui-monospace, Menlo, monospace; }
+.asof-mut { color: var(--asof-mut); font-size: 12px; } .asof-unknown { color: var(--asof-mut); }
+.asof-neg { color: var(--a); } .asof-bad { color: var(--r); }                                                  /* neg: a caution (amber); bad: an error (red) */
+.asof-error { border-color: rgba(189, 90, 88, .5); color: var(--soft); }
+.asof-sub { margin: 16px 0 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--asof-mut); }
+.asof-dl { margin: 0; display: grid; gap: 6px; } .asof-row { display: grid; grid-template-columns: 130px 1fr; gap: 10px; } .asof-row dt { color: var(--asof-mut); } .asof-row dd { margin: 0; }
+.asof-dl2 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); column-gap: 26px; } .asof-dl2 .asof-row { grid-template-columns: 1fr auto; }
+.asof-warn { margin: 10px 0 0; padding-left: 18px; color: var(--a); }
+.asof-ul { margin: 4px 0 0; padding-left: 18px; color: var(--asof-mut); font-size: 12px; }
+.asof-alt { margin-top: 10px; color: var(--asof-mut); font-size: 12px; } .asof-alt summary { cursor: pointer; } .asof-alt summary:hover { color: var(--asof-fg); }
+.asof-alt table, .asof-tbl { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 12px; }
+.asof-alt th, .asof-alt td, .asof-tbl th, .asof-tbl td { text-align: left; padding: 3px 8px; border-bottom: 1px solid var(--asof-line); vertical-align: top; }
+.asof-tbl th:not(:first-child), .asof-tbl td:not(:first-child) { white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.asof-mean { color: var(--asof-mut); font-size: 11.5px; margin-top: 2px; }
+.asof-src { margin: 10px 0 4px; }
+.asof-idl { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; } .asof-id { border: 1px solid var(--asof-line); border-radius: 6px; padding: 0 7px; background: rgba(255, 255, 255, .03); }
+.asof-w svg { width: 100%; height: auto; display: block; }
+
+/* coverage meters */
+.asof-meter { margin: 6px 0; } .asof-mrow { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--asof-mut); }
+.asof-track { height: 6px; border-radius: 999px; background: rgba(255, 255, 255, .07); overflow: hidden; margin-top: 3px; }
+.asof-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--g2), var(--g)); } .asof-fill.asof-fill-warn { background: linear-gradient(90deg, var(--a2), var(--a)); }
+
+/* badges: neutral white by default; the labels are green (verified), amber (observed), grey (unknown); flagged is red */
+.asof-badge { display: inline-block; border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px; padding: 0 8px; font: 600 10.5px ui-monospace, Menlo, monospace; text-transform: uppercase; letter-spacing: .04em; }
+.asof-b-decision, .asof-b-verified { border-color: rgba(111, 191, 143, .5); color: var(--g); background: rgba(111, 191, 143, .07); }
+.asof-b-flagged { border-color: rgba(215, 122, 120, .55); color: var(--r); background: rgba(215, 122, 120, .08); }
+.asof-b-observed { border-color: rgba(214, 161, 75, .5); color: var(--a); background: rgba(214, 161, 75, .08); } .asof-b-unknown { color: var(--asof-mut); }
+
+/* stat tiles */
+.asof-tiles { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; }                 /* equal tiles in a row; a tile whose number is longer than its share grows (and the row wraps) instead of the number breaking or spilling */
+.asof-tile { flex: 1 1 110px; border: 1px solid var(--asof-line); border-radius: 12px; padding: 10px 12px; background: rgba(255, 255, 255, .03); display: flex; flex-direction: column; }
+.asof-tile b { font-size: 24px; line-height: 1.1; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }      /* a number never breaks in the middle ("-19.01 pp" stays on one line) */ .asof-tile span { color: var(--asof-mut); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+.asof-tile-ok { border-color: rgba(111, 191, 143, .32); background: linear-gradient(160deg, rgba(111, 191, 143, .09), rgba(111, 191, 143, .01)); } .asof-tile-ok b { color: var(--g); }
+.asof-tile-hot { border-color: rgba(215, 122, 120, .36); background: linear-gradient(160deg, rgba(215, 122, 120, .11), rgba(215, 122, 120, .015)); } .asof-tile-hot b { color: var(--r); }
+.asof-tile-name b { font-size: 16px; line-height: 1.3; padding: 4px 0; white-space: normal; } .asof-compact .asof-tile-name b { font-size: 15px; padding: 3px 0; }                      /* a name, not a number: smaller, so it does not wrap in a narrow tile */
+.asof-tile-warm { border-color: rgba(214, 161, 75, .34); background: linear-gradient(160deg, rgba(214, 161, 75, .09), rgba(214, 161, 75, .01)); } .asof-tile-warm b { color: var(--a); }
+
+/* data-quality chips: error red, warning amber, info white */
+.asof-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; } .asof-chip { border: 1px solid var(--asof-line); border-radius: 999px; padding: 1px 10px; }
+.asof-s-error { background: rgba(189, 90, 88, .13); color: var(--r); border-color: rgba(215, 122, 120, .5); }
+.asof-s-warning { background: rgba(214, 161, 75, .08); color: var(--a); border-color: rgba(214, 161, 75, .45); }
+.asof-s-info { color: var(--asof-mut); }
+
+/* chain status */
+.asof-big { font-size: 20px; font-weight: 600; margin: 0 0 10px; }
+.asof-c-ok { color: var(--g); text-shadow: 0 0 18px rgba(111, 191, 143, .25); } .asof-c-bad { color: var(--r); text-shadow: 0 0 18px rgba(215, 122, 120, .25); } .asof-c-unk { color: var(--asof-mut); }
+
+/* charts */
+.asof-axis { stroke: var(--asof-line); stroke-width: 1; } .asof-grid { stroke: rgba(255, 255, 255, .05); stroke-width: 1; } .asof-zero { stroke: rgba(255, 255, 255, .22); stroke-dasharray: 3 3; }
+.asof-tick, .asof-lane { fill: var(--asof-mut); font: 10.5px ui-monospace, Menlo, monospace; }
+.asof-area { fill: url(#asof-ga); }
+.asof-line { fill: none; stroke-width: 1.8; }
+.asof-line.asof-l2 { stroke: var(--g); stroke-width: 2; filter: drop-shadow(0 0 2px rgba(111, 191, 143, .25)); }                       /* the main (locked, as-of) series: green */
+.asof-line.asof-l3 { stroke: var(--w); stroke-dasharray: 6 3; stroke-width: 1.6; opacity: .7; }                                      /* the other series (unlocked, look-ahead): white, dashed */
+.asof-line.asof-l1 { stroke: rgba(220, 220, 223, .35); }
+.asof-end { fill: var(--g); stroke: rgba(111, 191, 143, .2); stroke-width: 5; paint-order: stroke; }
+.asof-endv { fill: var(--asof-fg); font: 600 11px ui-monospace, Menlo, monospace; stroke: #0d0e11; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; }
+.asof-band { fill: rgba(215, 122, 120, .24); }                                                                                      /* the look-ahead gap: red */
+.asof-gbar { fill: rgba(220, 220, 223, .18); } .asof-gbar-on { fill: rgba(215, 122, 120, .62); }
+.asof-legend { display: flex; flex-wrap: wrap; gap: 14px; list-style: none; margin: 8px 0 0; padding: 0; color: var(--asof-mut); font-size: 12px; }
+.asof-sw { display: inline-block; width: 18px; height: 0; border-top: 2px solid var(--g); margin-right: 6px; vertical-align: middle; }
+.asof-sw.asof-l1 { border-top-color: rgba(220, 220, 223, .65); } .asof-sw.asof-l2 { border-top-color: var(--g); } .asof-sw.asof-l3 { border-top-color: var(--w); border-top-style: dashed; }
+.asof-sw.asof-sw-v { border-top-color: var(--g); } .asof-sw.asof-sw-o { border-top-color: var(--a); } .asof-sw.asof-sw-l { border-top-color: var(--r); } .asof-sw.asof-sw-u { border-top-color: #6b7280; }
+.asof-bandsw { height: 10px; border: 0; background: rgba(215, 122, 120, .45); width: 18px; } .asof-gaplabel { margin: 8px 0 0; font-weight: 600; color: var(--r); }
+
+/* share of the gap by cause: one stacked bar, segments coloured by label */
+.asof-w svg.asof-stack { margin: 0 0 12px; }
+/* gap breakdown rows: part | bar | value | share | label. One scale for every bar. */
+.asof-gb { list-style: none; margin: 4px 0 14px; padding: 0; display: grid; grid-template-columns: minmax(7.5rem, 11rem) 1fr minmax(4.5rem, max-content) minmax(3rem, max-content) 5.5rem; column-gap: 14px; }      /* one grid for all rows: the value columns are as wide as the widest value, so a long number fits and the rows stay aligned */
+.asof-gbr { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1; align-items: center; padding: 9px 2px; border-top: 1px solid var(--asof-line); font-size: 13px; }
+.asof-gbr:first-child { border-top: 0; }
+.asof-def { margin: 0 0 12px; font-size: 12.5px; color: var(--asof-mut); } .asof-def b { color: var(--asof-fg); font-weight: 600; }
+.asof-gbn { font-weight: 600; } .asof-gbv, .asof-gbs { text-align: right; font: 12.5px ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; white-space: nowrap; } .asof-gbs { color: var(--asof-mut); }
+.asof-gbr .asof-badge { justify-self: end; margin: 0; }
+.asof-gbt { position: relative; display: block; height: 10px; border-radius: 999px; background: rgba(255, 255, 255, .06); overflow: hidden; }
+.asof-gbf { position: absolute; top: 0; bottom: 0; border-radius: 999px; min-width: 3px; } .asof-gbz { position: absolute; top: -2px; bottom: -2px; width: 1px; background: var(--asof-mut); opacity: .7; z-index: 1; }
+.asof-gbf.asof-bl-verified { background: var(--g); } .asof-gbf.asof-bl-observed { background: var(--a); } .asof-gbf.asof-bl-unknown { background: #6b7280; } .asof-gbf.asof-bl-flagged, .asof-gbf.asof-bl-leak { background: var(--r); }
+.asof-light .asof-gbt { background: rgba(0, 0, 0, .07); }
+@media (max-width: 560px) { .asof-gb { display: block; } .asof-gbr { grid-template-columns: 1fr auto auto auto; column-gap: 14px; row-gap: 6px; } .asof-gbt { grid-column: 1 / -1; grid-row: 2; } .asof-gbn, .asof-gbv, .asof-gbs, .asof-gbr .asof-badge { grid-row: 1; } }
+/* compact: the headline numbers (and the chart) only */
+.asof-hd .asof-ttl { margin-right: auto; }
+.asof-download { font: 600 10.5px ui-monospace, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--asof-mut); background: transparent; border: 1px solid var(--asof-line); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+.asof-download:hover { color: var(--asof-fg); border-color: rgba(255, 255, 255, .3); } .asof-download:focus-visible { outline: 2px solid var(--w); outline-offset: 2px; }
+.asof-light .asof-download:hover { border-color: rgba(0, 0, 0, .35); }
+.asof-compact { padding: 14px 16px; border-radius: 14px; } .asof-compact .asof-hd { margin-bottom: 10px; padding-bottom: 8px; } .asof-compact .asof-tiles { margin-bottom: 8px; } .asof-compact .asof-tile b { font-size: 21px; } .asof-compact .asof-big { font-size: 17px; margin-bottom: 8px; }
+
+/* three clocks: when it happened = white, when it became knowable = green, when it was recorded = a hollow ring; knowable after T = red */
+.asof-lanebg { fill: rgba(255, 255, 255, .03); stroke: rgba(255, 255, 255, .05); }
+.asof-tpill { fill: var(--w); } .asof-ttext { fill: #101215; font: 700 10.5px ui-monospace, Menlo, monospace; } .asof-now { stroke: var(--w); stroke-width: 1.3; opacity: .8; }
+.asof-w circle.asof-l1 { fill: rgba(220, 220, 223, .7); } .asof-w circle.asof-l2 { fill: var(--g); filter: drop-shadow(0 0 2px rgba(111, 191, 143, .3)); }
+.asof-w circle.asof-l3 { fill: none; stroke: var(--w); stroke-width: 1.6; opacity: .8; } .asof-w circle.asof-late { fill: var(--r); stroke: var(--r); filter: drop-shadow(0 0 2px rgba(215, 122, 120, .35)); }
+
+/* gap breakdown: verified green, observed amber, look-ahead leakage red (a leak is red whatever its label), unknown grey, flagged red; the unexplained remainder is never dressed up */
+.asof-bar { fill: var(--w); }
+.asof-bl-verified { fill: var(--g); } .asof-bl-observed { fill: var(--a); } .asof-bl-unknown { fill: #6b7280; } .asof-bl-flagged, .asof-bl-leak { fill: var(--r); }
+
+/* the summary a screen reader gets in place of the picture; invisible, but not display:none (that would hide it from them too) */
+.asof-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 520px) { .asof-w { padding: 14px; border-radius: 14px; } .asof-row { grid-template-columns: 1fr; gap: 0; } .asof-tile b, .asof-compact .asof-tile b { font-size: clamp(14px, 5.2vw, 20px); }      /* the number shrinks with the screen so it fits its half-width tile without wrapping */
+  .asof-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .asof-tile-wide { grid-column: 1 / -1; } }                    /* phones: tiles two to a row, the headline tile (the return gap) across both */
+@media (prefers-contrast: more) { .asof-w { --asof-line: rgba(255, 255, 255, .5); --asof-mut: rgba(220, 220, 223, .85); } }
+/* light hosts: the same kit on a white page */
+.asof-light .asof-w, .asof-w.asof-light { --asof-fg: #1b1b1e; --asof-mut: rgba(27, 27, 30, .6); --asof-line: rgba(0, 0, 0, .13); --asof-glass: rgba(255, 255, 255, .75); --g: #3f8f66; --r: #b85654; --soft: #c27c7a; --a: #96661a; --a2: #b07a22; --w: #1b1b1e; }
+.asof-light .asof-synth, .asof-light .asof-tpill { color: #f5f5f6; } .asof-light .asof-endv { stroke: #f7f7f8; } .asof-light .asof-ttext { fill: #f5f5f6; }
+.asof-light .asof-synth { background: #3a3a3f; }                                                              /* a dark pill with light text: the dark theme's pale pill vanishes on white */
+.asof-light .asof-w circle.asof-l1, .asof-w.asof-light circle.asof-l1 { fill: #55555a; } .asof-light .asof-line.asof-l1 { stroke: rgba(27, 27, 30, .4); }.asof-light .asof-sw.asof-l1 { border-top-color: rgba(27, 27, 30, .6); } .asof-light .asof-gbar { fill: rgba(27, 27, 30, .16); }
+.asof-light .asof-track { background: rgba(0, 0, 0, .08); } .asof-light .asof-tile, .asof-light .asof-id { background: rgba(0, 0, 0, .025); }
+
+/* THEME. Square corners are the DEFAULT: nothing in the kit is rounded unless it asks to be. Add the class "asof-rounded" to the widget (the `rounded` attribute does it) for the older rounded look: cards,
+   tiles, pills and bars get the radii declared above back. This block is last on purpose, so no rule above can round a corner by accident. */
+.asof-w:not(.asof-rounded), .asof-w:not(.asof-rounded) * { border-radius: 0; }
+.asof-w:not(.asof-rounded) rect { rx: 0; ry: 0; }

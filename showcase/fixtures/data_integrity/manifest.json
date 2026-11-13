@@ -1,0 +1,185 @@
+{
+ "about": "SYNTHETIC fixture: fictional tickers and made-up numbers. Fixed seed; regenerate with `python showcase/fixtures/data_integrity/generate.py`. Nothing here is real data.",
+ "check_clocks": {
+  "day1": "2023-12-30T09:00:00Z",
+  "day30": "2024-01-29T09:00:00Z"
+ },
+ "day30_changes": {
+  "new_backfill": {
+   "rows": 3200,
+   "table": "day30/analyst_ratings.csv",
+   "what": "a new series of 3,200 rows dated across 2022-2023 that all became available within one hour on 2024-01-15"
+  },
+  "slower_feed": {
+   "new_rows": 120,
+   "table": "day30/news.csv",
+   "what": "30 days of new news rows (120) whose lag from event to availability is about 45 minutes instead of about 2"
+  }
+ },
+ "n_tickers": 50,
+ "period": [
+  "2022-01-03",
+  "2023-12-29"
+ ],
+ "planted": {
+  "backfill": {
+   "all_available_at_within": [
+    "2023-11-20T10:15:00Z",
+    "2023-11-20T10:49:00Z"
+   ],
+   "event_times": [
+    "2021-12-31",
+    "2023-09-30"
+   ],
+   "expect_flag": "bulk_backfill",
+   "rows": 400,
+   "source": "estimates",
+   "table": "estimates.csv",
+   "what": "a consensus-estimates series added later but dated in the past"
+  },
+  "bar_close": {
+   "expect_flag": "availability_moved_to_close",
+   "rows": 4837,
+   "source": "bars",
+   "table": "bars.csv",
+   "tickers": [
+    "SYN01",
+    "SYN02",
+    "SYN03",
+    "SYN04",
+    "SYN05",
+    "SYN06",
+    "SYN07",
+    "SYN08",
+    "SYN09",
+    "SYN10"
+   ],
+   "what": "the vendor feed for 10 tickers stamps each daily bar as available at the OPEN (09:30 New York), before the bar has closed; a signal that reads it trades on information that does not exist yet"
+  },
+  "restatement": {
+   "expect_flag": "restatements",
+   "n_restated": 12,
+   "restated": [
+    {
+     "first_eps": 2.15,
+     "period_end": "2022-03-31",
+     "restated_available_at": "2022-08-02T21:00:00Z",
+     "restated_eps": 1.87,
+     "symbol": "SYN05"
+    },
+    {
+     "first_eps": 2.23,
+     "period_end": "2023-03-31",
+     "restated_available_at": "2023-08-06T21:00:00Z",
+     "restated_eps": 1.97,
+     "symbol": "SYN07"
+    },
+    {
+     "first_eps": 1.64,
+     "period_end": "2022-12-31",
+     "restated_available_at": "2023-05-02T21:00:00Z",
+     "restated_eps": 1.88,
+     "symbol": "SYN18"
+    },
+    {
+     "first_eps": 0.84,
+     "period_end": "2022-12-31",
+     "restated_available_at": "2023-04-30T21:00:00Z",
+     "restated_eps": 0.91,
+     "symbol": "SYN29"
+    },
+    {
+     "first_eps": 2.55,
+     "period_end": "2022-03-31",
+     "restated_available_at": "2022-08-07T21:00:00Z",
+     "restated_eps": 2.32,
+     "symbol": "SYN31"
+    },
+    {
+     "first_eps": 2.06,
+     "period_end": "2022-06-30",
+     "restated_available_at": "2022-10-30T21:00:00Z",
+     "restated_eps": 1.88,
+     "symbol": "SYN34"
+    },
+    {
+     "first_eps": 2.28,
+     "period_end": "2023-06-30",
+     "restated_available_at": "2023-10-29T21:00:00Z",
+     "restated_eps": 2.06,
+     "symbol": "SYN38"
+    },
+    {
+     "first_eps": 1.89,
+     "period_end": "2022-12-31",
+     "restated_available_at": "2023-05-01T21:00:00Z",
+     "restated_eps": 2.05,
+     "symbol": "SYN40"
+    },
+    {
+     "first_eps": 1.22,
+     "period_end": "2021-12-31",
+     "restated_available_at": "2022-05-07T21:00:00Z",
+     "restated_eps": 1.1,
+     "symbol": "SYN42"
+    },
+    {
+     "first_eps": 2.1,
+     "period_end": "2023-06-30",
+     "restated_available_at": "2023-11-06T21:00:00Z",
+     "restated_eps": 2.3,
+     "symbol": "SYN45"
+    },
+    {
+     "first_eps": 1.18,
+     "period_end": "2022-06-30",
+     "restated_available_at": "2022-11-05T21:00:00Z",
+     "restated_eps": 1.28,
+     "symbol": "SYN48"
+    },
+    {
+     "first_eps": 3.43,
+     "period_end": "2023-06-30",
+     "restated_available_at": "2023-10-31T21:00:00Z",
+     "restated_eps": 3.75,
+     "symbol": "SYN50"
+    }
+   ],
+   "source": "fundamentals",
+   "table": "fundamentals.csv",
+   "what": "EPS values revised after first publication (same symbol and period, a second row 90 days later)"
+  },
+  "survivorship": {
+   "delisted": {
+    "SYN04": "2022-08-09",
+    "SYN12": "2022-10-12",
+    "SYN20": "2022-12-16",
+    "SYN28": "2023-02-21",
+    "SYN36": "2023-04-27",
+    "SYN44": "2023-07-03"
+   },
+   "expect": "a naive (survivors-only) universe has 44 names; the as-of universe at the start has 50",
+   "source": "universe",
+   "table": "universe.csv + bars.csv",
+   "what": "6 tickers delisted mid-period: their bars stop and they are removed from the universe, so a list of today's survivors leaves them out"
+  },
+  "timestamp_gaps": {
+   "expect_flag": "missing_available_at",
+   "of": 3000,
+   "rows": 300,
+   "source": "news",
+   "table": "news.csv",
+   "what": "10% of news rows have no available_at"
+  }
+ },
+ "seed": 20240102,
+ "tables": {
+  "bars.csv": 24522,
+  "day30/analyst_ratings.csv": 3200,
+  "day30/news.csv": 3120,
+  "estimates.csv": 400,
+  "fundamentals.csv": 412,
+  "news.csv": 3000,
+  "universe.csv": 56
+ }
+}

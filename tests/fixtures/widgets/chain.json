@@ -1,0 +1,12 @@
+{
+ "anchor": "skipped",
+ "first_bad_seq": null,
+ "head_hash": "a1bcadedca9de1f775bf04c1182332d7938a0522975bb8d2246f73bb21b6caab",
+ "n_events": 449,
+ "ok": true,
+ "reason": null,
+ "status": "intact",
+ "warnings": [
+  "the tail anchor was not checked: a chain cut off at the end would still verify"
+ ]
+}

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strathora-asof"                # the distribution name. The import name stays `asof` (`from asof import Session`). On PyPI the bare name `asof` belongs to an unrelated project.
+version = "0.5.0"
+description = "Time-lock connector for AI agents: see only what was knowable at time T, with a tamper-evident ledger and receipts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Strathora" }]
+dependencies = []                      # standard library only
+
+[project.scripts]
+strathora = "asof.cli:main"          # the command
+asof = "asof.cli:main"               # an alias of the same entry point: `asof verify` and `strathora verify` are the same command
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=14"]
+mcp = ["mcp>=2,<3"]                      # the MCP server (asof.mcp_server); needs mcp 2.x (MCPServer)
+server = ["certifi>=2023.7.22"]          # trusted TLS roots for sync and SEC fetches on Pythons that ship none; sync itself is standard-library only
+dev = ["pytest>=8", "hypothesis>=6", "pyarrow>=14", "mcp>=2,<3", "certifi>=2023.7.22", "ruff", "mypy"]      # hypothesis: the property-based tests (they are skipped without it)
+
+[tool.setuptools.packages.find]
+include = ["asof*"]
+
+[tool.setuptools.package-data]
+asof = ["py.typed"]
+"asof.widgets" = ["*.js", "*.css", "README.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

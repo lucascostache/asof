@@ -1,0 +1,295 @@
+{
+ "description": "RFC 8785 test vectors: parse `input` as JSON, canonicalise, compare to `canonical`; sha256 is of the UTF-8 bytes of `canonical`.",
+ "cases": [
+  {
+   "name": "RFC 8785 section 3.2.2: numbers, literals and string escapes",
+   "input": "{\"numbers\": [333333333.33333329, 1E30, 4.50, 2e-3, 0.000000000000000000000000001], \"string\": \"\\u20ac$\\u000F\\u000aA'\\u0042\\u0022\\u005c\\\\\\\"\\/\", \"literals\": [null, true, false]}",
+   "canonical": "{\"literals\":[null,true,false],\"numbers\":[333333333.3333333,1e+30,4.5,0.002,1e-27],\"string\":\"€$\\u000f\\nA'B\\\"\\\\\\\\\\\"/\"}",
+   "sha256": "2d5e01a318d0f0879ab568c4be289c8b1f64ef8921a53c6277d5e069978baacb",
+   "note": "the example printed in the RFC"
+  },
+  {
+   "name": "RFC 8785 section 3.2.3: members sort by UTF-16 code units, not by code point",
+   "input": "{\"\\u20ac\": \"Euro Sign\", \"\\r\": \"Carriage Return\", \"\\ufb33\": \"Hebrew Letter Dalet With Dagesh\", \"1\": \"One\", \"\\ud83d\\ude00\": \"Emoji: Grinning Face\", \"\\u0080\": \"Control\", \"\\u00f6\": \"Latin Small Letter O With Diaeresis\"}",
+   "canonical": "{\"\\r\":\"Carriage Return\",\"1\":\"One\",\"\":\"Control\",\"ö\":\"Latin Small Letter O With Diaeresis\",\"€\":\"Euro Sign\",\"😀\":\"Emoji: Grinning Face\",\"דּ\":\"Hebrew Letter Dalet With Dagesh\"}",
+   "sha256": "5e321556d22018a9656991a9e94f77ec175fa193e52a2429d312f8419ec8b08c",
+   "note": "U+1F600 (a surrogate pair, D83D DE00) sorts BEFORE U+FB33 in UTF-16 and after it by code point"
+  },
+  {
+   "name": "empty object",
+   "input": "{}",
+   "canonical": "{}",
+   "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+   "name": "empty array",
+   "input": "[]",
+   "canonical": "[]",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+   "name": "null",
+   "input": "null",
+   "canonical": "null",
+   "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+  },
+  {
+   "name": "true",
+   "input": "true",
+   "canonical": "true",
+   "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+  },
+  {
+   "name": "false",
+   "input": "false",
+   "canonical": "false",
+   "sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+  },
+  {
+   "name": "nested",
+   "input": "{\"b\": [1, {\"d\": 4, \"c\": 3}], \"a\": {\"z\": [], \"y\": {}}}",
+   "canonical": "{\"a\":{\"y\":{},\"z\":[]},\"b\":[1,{\"c\":3,\"d\":4}]}",
+   "sha256": "e6eda0b54038f68160b4fa932b158da9da7f919266000c71456ce615369fa02e"
+  },
+  {
+   "name": "whitespace is dropped",
+   "input": " {  \"a\" : [ 1 , 2 ] ,\n \"b\":\"x\" } ",
+   "canonical": "{\"a\":[1,2],\"b\":\"x\"}",
+   "sha256": "d0f56dda38d34376527524ddd98f7ec117d5cbfb240f86e11bfb9d2d01a717d9"
+  },
+  {
+   "name": "number: zero",
+   "input": "[0]",
+   "canonical": "[0]",
+   "sha256": "d0bca111f8628137adc4c16f123496dcdd1d590d06cb5d9acd68b39fe656fb97"
+  },
+  {
+   "name": "number: negative zero is written 0",
+   "input": "[-0.0]",
+   "canonical": "[0]",
+   "sha256": "d0bca111f8628137adc4c16f123496dcdd1d590d06cb5d9acd68b39fe656fb97"
+  },
+  {
+   "name": "number: a whole number written with .0 loses it",
+   "input": "[2592000.0]",
+   "canonical": "[2592000]",
+   "sha256": "afa4ed55a488b891cb6ccd7ab79bef0f2e633f2f080e9ac468cbed25efd66975"
+  },
+  {
+   "name": "number: exponent form of a whole number",
+   "input": "[1E2]",
+   "canonical": "[100]",
+   "sha256": "40d9afd03b3d591c7ae198b6e1f985bd67bd98442def97adb1ad2f6756bfddac"
+  },
+  {
+   "name": "number: smallest denormal",
+   "input": "[5e-324]",
+   "canonical": "[5e-324]",
+   "sha256": "36ae31cf02ccda095c0e10f6eb921c5c76dc4a045971112fdffbb8bf72329e47"
+  },
+  {
+   "name": "number: negative smallest denormal",
+   "input": "[-5e-324]",
+   "canonical": "[-5e-324]",
+   "sha256": "d864eca48b1d968b0b281c7ed85ca624c3574586a395225199005714183fc857"
+  },
+  {
+   "name": "number: largest double",
+   "input": "[1.7976931348623157e308]",
+   "canonical": "[1.7976931348623157e+308]",
+   "sha256": "dabeb6b2980d2d512888b69d2576387da2a30109b9308eb6674ea6c24fbc8dad"
+  },
+  {
+   "name": "number: 2^53",
+   "input": "[9007199254740992]",
+   "canonical": "[9007199254740992]",
+   "sha256": "5dc10964d69741c9924433db7b0e8fe5b0ac6fac6a5dd6d142b8c4e05e2162c3"
+  },
+  {
+   "name": "number: 2^53 + 2",
+   "input": "[9007199254740994]",
+   "canonical": "[9007199254740994]",
+   "sha256": "d83457813cf9989d82357c8e14d64e7b69f083b23a4ac3b798f1ccf90a4c910b"
+  },
+  {
+   "name": "number: 1e21 switches to exponent form",
+   "input": "[1e21]",
+   "canonical": "[1e+21]",
+   "sha256": "5f5f297c3b2ec0b2793ea5cfe3f242ad4bd3aa438734268b6c9b7251a643d86c"
+  },
+  {
+   "name": "number: just below 1e21 stays digits",
+   "input": "[999999999999999900000]",
+   "canonical": "[999999999999999900000]",
+   "sha256": "d41c6def0037e7453ed69a63afb01a332a560197b7cbde15883feba83ed0e47c"
+  },
+  {
+   "name": "number: 1e-6 stays decimal",
+   "input": "[0.000001]",
+   "canonical": "[0.000001]",
+   "sha256": "1051d381ca47ccc627251714cc2a92838b92b0e9cf0130318b25b82ef7e18d9e"
+  },
+  {
+   "name": "number: 1e-7 goes exponent",
+   "input": "[0.0000001]",
+   "canonical": "[1e-7]",
+   "sha256": "bc7a06269156cbffa6333144da8da95e93d9c6cf0ad4895595a8e886fb780433"
+  },
+  {
+   "name": "number: 9.999999999999997e-7",
+   "input": "[9.999999999999997e-7]",
+   "canonical": "[9.999999999999997e-7]",
+   "sha256": "448fa91aeaf1d127eaa663d125958c8652afc4fb33649e5d2d9d022874ddac33"
+  },
+  {
+   "name": "number: 333333333.3333332",
+   "input": "[333333333.3333332]",
+   "canonical": "[333333333.3333332]",
+   "sha256": "07702e6880d8fac7081d5e12f380ddcdcc085bd49946b67f6314f3420b1947d0"
+  },
+  {
+   "name": "number: 333333333.33333325",
+   "input": "[333333333.33333325]",
+   "canonical": "[333333333.33333325]",
+   "sha256": "b848020aa8689e911d288351bee3edd50304d1d5059cc14cfb53f54310671863"
+  },
+  {
+   "name": "number: 333333333.3333333",
+   "input": "[333333333.3333333]",
+   "canonical": "[333333333.3333333]",
+   "sha256": "6306a5403f1f03f73c3592163aeff1fbbecb9ac8ae3f9652d89fc09eabfbd335"
+  },
+  {
+   "name": "number: 333333333.3333334",
+   "input": "[333333333.3333334]",
+   "canonical": "[333333333.3333334]",
+   "sha256": "61561c3453cc88042e146214e57ce7901669fae23f7c82937e50dc15f43173b1"
+  },
+  {
+   "name": "number: 333333333.33333343",
+   "input": "[333333333.33333343]",
+   "canonical": "[333333333.33333343]",
+   "sha256": "fffb20230b5392e52df46df950a73ac9f73d08c64f87088fecc0047bc86b8b58"
+  },
+  {
+   "name": "number: 0.1",
+   "input": "[0.1]",
+   "canonical": "[0.1]",
+   "sha256": "06a6535c3ff5c9da828e977bc53df452117cd1579a24be9595a0b154d601d75c"
+  },
+  {
+   "name": "number: 4.5 written 4.50",
+   "input": "[4.50]",
+   "canonical": "[4.5]",
+   "sha256": "ae8e886586d3023e5df97848de2a4cdff1e53eb611fb52c19bab99a6859deac0"
+  },
+  {
+   "name": "number: largest safe integer",
+   "input": "[9007199254740991]",
+   "canonical": "[9007199254740991]",
+   "sha256": "cf0c058a3667326abbfce35f93db15ddea1ac816f12c19a6546f7c3880cecc1c"
+  },
+  {
+   "name": "number: negative safe integer",
+   "input": "[-9007199254740991]",
+   "canonical": "[-9007199254740991]",
+   "sha256": "b08c9788abf248d9270bbe4646a3552c2287a8c23bddeede3796a218050f8caf"
+  },
+  {
+   "name": "number: a float that is not exact",
+   "input": "[0.30000000000000004]",
+   "canonical": "[0.30000000000000004]",
+   "sha256": "e54ec050d935c92d92de7fb92c3c071820ac2482daad8fc6e9fe7404ee3af41c"
+  },
+  {
+   "name": "number: 1.2345678901234568e20 (a whole float)",
+   "input": "[1.2345678901234568e20]",
+   "canonical": "[123456789012345680000]",
+   "sha256": "fb913b7a1b91e90d388eadadc271b19a4f3ff832b871523a588bf7acc0de728b"
+  },
+  {
+   "name": "number: -1.5e-9",
+   "input": "[-1.5e-9]",
+   "canonical": "[-1.5e-9]",
+   "sha256": "f2854d5c31da0805259701cb403dad1ac48e78afce5df17166739936ba189368"
+  },
+  {
+   "name": "number from IEEE bits 0000000000000001",
+   "input": "[5e-324]",
+   "canonical": "[5e-324]",
+   "sha256": "36ae31cf02ccda095c0e10f6eb921c5c76dc4a045971112fdffbb8bf72329e47"
+  },
+  {
+   "name": "number from IEEE bits 7fefffffffffffff",
+   "input": "[1.7976931348623157e+308]",
+   "canonical": "[1.7976931348623157e+308]",
+   "sha256": "dabeb6b2980d2d512888b69d2576387da2a30109b9308eb6674ea6c24fbc8dad"
+  },
+  {
+   "name": "number from IEEE bits 444b1ae4d6e2ef50",
+   "input": "[1e+21]",
+   "canonical": "[1e+21]",
+   "sha256": "5f5f297c3b2ec0b2793ea5cfe3f242ad4bd3aa438734268b6c9b7251a643d86c"
+  },
+  {
+   "name": "number from IEEE bits 3eb0c6f7a0b5ed8d",
+   "input": "[1e-06]",
+   "canonical": "[0.000001]",
+   "sha256": "1051d381ca47ccc627251714cc2a92838b92b0e9cf0130318b25b82ef7e18d9e"
+  },
+  {
+   "name": "number from IEEE bits 41b3de4355555555",
+   "input": "[333333333.3333333]",
+   "canonical": "[333333333.3333333]",
+   "sha256": "6306a5403f1f03f73c3592163aeff1fbbecb9ac8ae3f9652d89fc09eabfbd335"
+  },
+  {
+   "name": "number from IEEE bits becbf647612f3696",
+   "input": "[-3.3333333333333333e-06]",
+   "canonical": "[-0.0000033333333333333333]",
+   "sha256": "91df72c098377e85c34bfe32ad88372ec420b27ad7f0674e70a47b902ed8baee"
+  },
+  {
+   "name": "string: quotes and backslash",
+   "input": "[\"a\\\"b\\\\c\"]",
+   "canonical": "[\"a\\\"b\\\\c\"]",
+   "sha256": "986663116fd55e53e4dcf94f4b8aca470b8f777e99a55ffddebe93d728dc33e4"
+  },
+  {
+   "name": "string: control characters",
+   "input": "[\"\\u0000\\u0001\\b\\t\\n\\f\\r\\u001f\"]",
+   "canonical": "[\"\\u0000\\u0001\\b\\t\\n\\f\\r\\u001f\"]",
+   "sha256": "e256a736cd6cbcb76cd78b12ce86e42870b738b1308d114f5fbfab6b84dfc527"
+  },
+  {
+   "name": "string: DEL and U+2028 stay literal",
+   "input": "[\"\\u007f\\u2028\\u2029\"]",
+   "canonical": "[\"  \"]",
+   "sha256": "c5522ec4a9cadd0dbe0d521d6b7e65210f3f4db5a208298b0e83f5b9e99d937f"
+  },
+  {
+   "name": "string: non-ASCII is UTF-8",
+   "input": "[\"caf\\u00e9 \\u00fcber \\u4e2d\\u6587\"]",
+   "canonical": "[\"café über 中文\"]",
+   "sha256": "bd3552488fb28bea773d90b5579709c20a1d4a3df973b5816f6deb8c671d3ed5"
+  },
+  {
+   "name": "string: astral plane",
+   "input": "[\"\\ud83d\\ude00 \\ud835\\udd0a\"]",
+   "canonical": "[\"😀 𝔊\"]",
+   "sha256": "808bb79b85f87fa8e9df4a58d78fd15b34db2a0e3ba9d6609a460f215488cbdf"
+  },
+  {
+   "name": "string: solidus is not escaped",
+   "input": "[\"a\\/b\"]",
+   "canonical": "[\"a/b\"]",
+   "sha256": "1693b0cfc4dae1878cdb4234fe0c8d96b42766f997045bc65bc7db525d867213"
+  },
+  {
+   "name": "string: combining character",
+   "input": "[\"e\\u0301\"]",
+   "canonical": "[\"é\"]",
+   "sha256": "32860394d411eb384be988968561412199087c5fd8be3004ef5516db217fb254"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+{
+  "_comment": "Real EDGAR filings with their acceptance time as shown by BOTH EDGAR sources, used by tests/test_sec_known_filings.py. This file ships EMPTY: AsOf's author has not fetched real filings (EDGAR requires your own User-Agent). Generate it with:  ASOF_SEC_USER_AGENT='Your Org you@your-domain' python scripts/smoke_edgar.py --cik <CIK> --n 4 --write-fixture tests/fixtures/edgar_known_filings.json",
+  "schema": 1,
+  "filings": []
+}

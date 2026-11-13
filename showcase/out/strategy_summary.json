@@ -1,0 +1,18 @@
+{
+ "final": {
+  "days": 460,
+  "locked_equity": 1.01,
+  "locked_run": {
+   "chain_ok": true,
+   "query_calls": 1380
+  },
+  "unlocked_equity": 2.1405
+ },
+ "rules": {
+  "decision_time": "10:00 America/New_York",
+  "hold": 8,
+  "manifest_seed": 20240102,
+  "warmup_days": 60,
+  "window": 60
+ }
+}

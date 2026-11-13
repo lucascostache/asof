@@ -1,0 +1,26 @@
+{
+ "alerts": [
+  {
+   "flag": "bulk_backfill",
+   "level": "warning",
+   "n": 3200,
+   "source": "analyst_ratings",
+   "text": "new source analyst_ratings: bulk backfill (3,200 rows)"
+  },
+  {
+   "flag": "feed_delay",
+   "level": "warning",
+   "n": 120,
+   "source": "news",
+   "text": "news: feed delay 2 min \u2192 46 min (120 new rows)"
+  },
+  {
+   "flag": "chain",
+   "level": "ok",
+   "n": 13,
+   "source": "ledger",
+   "text": "chain verified \u00b7 13 events"
+  }
+ ],
+ "label": "Simulated: two manual check runs, not live monitoring."
+}

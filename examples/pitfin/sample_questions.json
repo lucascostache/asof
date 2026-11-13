@@ -1,0 +1,88 @@
+{
+  "note": "SYNTHETIC. Five invented questions about fictional companies, to show the format and to exercise the harness. The real question set (public data only: EDGAR filings, historical prices, earnings dates) is supplied by you. Nothing here is real.",
+  "questions": [
+    {
+      "id": "syn-01",
+      "as_of": "2023-01-20T14:00:00Z",
+      "question": "As of 2023-01-20, what was Acme Synthetic Corp's (ACME) fourth-quarter 2022 revenue, which it reported on 2023-02-02? Answer with the number in millions of dollars.",
+      "answer": "412",
+      "ticker": "ACME",
+      "company": "Acme Synthetic Corp",
+      "event_date": "2023-02-02",
+      "source": "synthetic: invented earnings release, no real company",
+      "later_facts": ["412 million"],
+      "control": {
+        "as_of": "2030-01-15T14:00:00Z",
+        "question": "As of 2030-01-15, what was Acme Synthetic Corp's (ACME) fourth-quarter 2029 revenue, which it reported on 2030-02-05? Answer with the number in millions of dollars.",
+        "answer": "977",
+        "event_date": "2030-02-05"
+      }
+    },
+    {
+      "id": "syn-02",
+      "as_of": "2023-03-10T14:00:00Z",
+      "question": "As of 2023-03-10, on what date did Beta Fictional Inc (BETA) announce its acquisition of Gamma Imaginary Ltd? Answer with the date.",
+      "answer": "2023-04-17",
+      "ticker": "BETA",
+      "company": "Beta Fictional Inc",
+      "event_date": "2023-04-17",
+      "source": "synthetic: invented announcement",
+      "later_facts": ["acquisition of Gamma Imaginary"],
+      "control": {
+        "as_of": "2030-03-04T14:00:00Z",
+        "question": "As of 2030-03-04, on what date did Beta Fictional Inc (BETA) announce its acquisition of Delta Made-Up Ltd? Answer with the date.",
+        "answer": "2030-05-09",
+        "event_date": "2030-05-09"
+      }
+    },
+    {
+      "id": "syn-03",
+      "as_of": "2023-06-01T14:00:00Z",
+      "question": "As of 2023-06-01, what was the closing price of Gamma Imaginary Ltd (GAMMA) on 2023-06-15? Answer with the price.",
+      "answer": "58.25",
+      "ticker": "GAMMA",
+      "company": "Gamma Imaginary Ltd",
+      "event_date": "2023-06-15",
+      "source": "synthetic: invented price series",
+      "control": {
+        "as_of": "2030-06-03T14:00:00Z",
+        "question": "As of 2030-06-03, what was the closing price of Gamma Imaginary Ltd (GAMMA) on 2030-06-17? Answer with the price.",
+        "answer": "131.40",
+        "event_date": "2030-06-17"
+      }
+    },
+    {
+      "id": "syn-04",
+      "as_of": "2023-09-05T14:00:00Z",
+      "question": "As of 2023-09-05, who did Delta Made-Up Ltd (DELTA) name as its new chief executive on 2023-10-02? Answer with the surname.",
+      "answer": "Okonkwo",
+      "ticker": "DELTA",
+      "company": "Delta Made-Up Ltd",
+      "event_date": "2023-10-02",
+      "source": "synthetic: invented announcement",
+      "later_facts": ["Okonkwo"],
+      "control": {
+        "as_of": "2030-09-02T14:00:00Z",
+        "question": "As of 2030-09-02, who did Delta Made-Up Ltd (DELTA) name as its new chief executive on 2030-10-01? Answer with the surname.",
+        "answer": "Lindqvist",
+        "event_date": "2030-10-01"
+      }
+    },
+    {
+      "id": "syn-05",
+      "as_of": "2023-11-13T14:00:00Z",
+      "question": "As of 2023-11-13, what dividend per share did Epsilon Pretend Co (EPSL) declare on 2023-11-28? Answer with the amount in dollars.",
+      "answer": "0.42",
+      "ticker": "EPSL",
+      "company": "Epsilon Pretend Co",
+      "event_date": "2023-11-28",
+      "source": "synthetic: invented dividend declaration",
+      "control": {
+        "as_of": "2030-11-11T14:00:00Z",
+        "question": "As of 2030-11-11, what dividend per share did Epsilon Pretend Co (EPSL) declare on 2030-11-26? Answer with the amount in dollars.",
+        "answer": "0.91",
+        "event_date": "2030-11-26"
+      }
+    }
+  ]
+}
