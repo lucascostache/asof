@@ -3,7 +3,7 @@ name: CI
 on:
   push:
   pull_request:
-  workflow_dispatch:                        # Actions tab, "Run workflow": the only way the macOS jobs run while the repository is private
+  workflow_dispatch:                        # Actions tab, "Run workflow": a run by hand
 
 permissions:
   contents: read
@@ -54,16 +54,14 @@ jobs:
 
   test-macos:
     name: Python ${{ matrix.python-version }} on macos-latest
-    # macOS minutes count 10x against a private repository's allowance, so while the repository is private macOS runs ONLY by hand
-    # (workflow_dispatch), and only on the oldest and newest Python. When the repository is public (standard runners use no paid minutes there),
-    # restore macOS on every push and pull request: delete this `if:` line and set python-version back to ["3.10", "3.11", "3.12", "3.13", "3.14"].
-    if: github.event_name == 'workflow_dispatch'
+    # Every push and pull request: the repository is public, and standard runners use no paid minutes there. If it ever becomes private again,
+    # macOS minutes count 10x: then restrict this job to `if: github.event_name == 'workflow_dispatch'` with Python 3.10 and 3.14 only.
     runs-on: macos-latest
     timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.14"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:                                  # the same steps as test-linux (tests/test_docs.py checks that they stay the same)
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
