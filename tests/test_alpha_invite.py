@@ -43,7 +43,7 @@ def test_the_claude_desktop_config_and_test_are_the_tested_pages():
 
 
 def test_the_install_and_issue_instructions_name_this_repository_and_warn_about_keys_and_the_other_asof():
-    assert "git clone https://github.com/lucascostache/asof" in INVITE and "gh issue create --repo lucascostache/asof" in INVITE
+    assert "git clone https://github.com/strathora/asof" in INVITE and "gh issue create --repo strathora/asof" in INVITE
     assert "**Issues are public:**" in INVITE and "private" not in INVITE.lower() and "invitation" not in INVITE.lower()      # the repository is public
     assert "pip install -e '.[mcp]'" in INVITE and "do not run `pip install asof`" in INVITE
     low = INVITE.lower()

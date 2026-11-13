@@ -11,7 +11,7 @@ Thank you for trying AsOf. This page gets you to a working setup in about 20 min
 Clone the repository (step 3 uses an example folder from it) and install it with the MCP extra:
 
 ```bash
-git clone https://github.com/lucascostache/asof
+git clone https://github.com/strathora/asof
 cd asof
 python3 -m venv .venv
 .venv/bin/pip install -e '.[mcp]'
@@ -84,7 +84,7 @@ This puts AsOf between Claude and a folder of synthetic news, with the clock fix
 
 ## 4. Report what you find
 
-Open an issue in this repository: on GitHub, use the **Issues** tab and then **New issue**. With the command-line tool, run `gh issue create --repo lucascostache/asof`. **Issues are public:** anyone can read them.
+Open an issue in this repository: on GitHub, use the **Issues** tab and then **New issue**. With the command-line tool, run `gh issue create --repo strathora/asof`. **Issues are public:** anyone can read them.
 
 A useful issue has:
 

@@ -125,7 +125,7 @@ def block(name):
     return m.group(1)
 
 install = re.search(r"## Install\n\n```bash\n(.*?)```", readme, re.S).group(1)
-README_URL = "git+https://github.com/lucascostache/asof"
+README_URL = "git+https://github.com/strathora/asof"
 assert install.count(README_URL) == 1, install
 src = src if src.startswith("git+") else "git+" + src
 (out / "1_install.sh").write_text(install.replace(README_URL, src))        # the only change: install from the source under test instead of GitHub

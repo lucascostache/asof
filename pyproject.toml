@@ -12,6 +12,11 @@ license = { text = "Apache-2.0" }
 authors = [{ name = "Strathora" }]
 dependencies = []                      # standard library only
 
+[project.urls]
+Homepage = "https://www.strathora.com"
+Repository = "https://github.com/strathora/asof"
+Issues = "https://github.com/strathora/asof/issues"
+
 [project.scripts]
 strathora = "asof.cli:main"          # the command
 asof = "asof.cli:main"               # an alias of the same entry point: `asof verify` and `strathora verify` are the same command

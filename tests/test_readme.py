@@ -48,9 +48,9 @@ def test_the_summary_is_three_lines_and_says_the_three_things():
 def test_install_is_one_pip_line_from_git_and_warns_about_the_name_on_pypi():
     section = README[README.index("## Install"):README.index("## Quickstart")]
     pips = [ln for ln in section.splitlines() if ln.startswith("pip install")]
-    assert pips == ['pip install "git+https://github.com/lucascostache/asof"']                   # the public repository
+    assert pips == ['pip install "git+https://github.com/strathora/asof"']                       # the public repository
     assert "**not on PyPI**" in section and "do not `pip install asof`" in section and "Python 3.10 or newer" in section
-    assert 'pip install "strathora-asof[mcp] @ git+https://github.com/lucascostache/asof"' in README      # the MCP extra, also one line
+    assert 'pip install "strathora-asof[mcp] @ git+https://github.com/strathora/asof"' in README          # the MCP extra, also one line
     assert "<REPOSITORY URL>" not in README
     # three names, said once and matching the package: what you install, what you import, what you run
     assert "The package is called `strathora-asof`; you import it as `asof` and run it as `strathora` (the older command name `asof` still works)." in section

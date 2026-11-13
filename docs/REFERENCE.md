@@ -64,7 +64,7 @@ AsOf can sit between Claude Desktop (or any MCP client) and your data. The serve
 **1. Install and create a demo.**
 
 ```bash
-pip install "strathora-asof[mcp] @ git+https://github.com/lucascostache/asof"     # the package is `strathora-asof`; do not `pip install asof`, that name on PyPI is an unrelated project
+pip install "strathora-asof[mcp] @ git+https://github.com/strathora/asof"     # the package is `strathora-asof`; do not `pip install asof`, that name on PyPI is an unrelated project
 strathora init --demo ~/asof-demo
 ```
 

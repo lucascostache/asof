@@ -26,7 +26,7 @@ TRACKED = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, tex
 TRACKED = [f for f in TRACKED if f]
 pytestmark = pytest.mark.skipif(not TRACKED, reason="not a git checkout: the list of tracked files is unknown")
 MD = [f for f in TRACKED if f.endswith(".md")]
-REPO_URL = "https://github.com/lucascostache/asof"                                              # the public repository the install lines name
+REPO_URL = "https://github.com/strathora/asof"                                            # the public repository the install lines name
 FENCE = re.compile(r"^[ ]{0,3}```(\w*)[^\n]*\n(.*?)^[ ]{0,3}```\s*$", re.M | re.S)
 
 
@@ -311,7 +311,7 @@ def test_no_real_company_identifier_and_no_default_company_in_the_edgar_smoke_sc
     assert r.returncode == 2 and "--cik" in r.stderr and "required" in r.stderr                  # no company is chosen for the user
 
 
-ALLOWED_HOSTS = {"github.com", "127.0.0.1", "localhost","www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
+ALLOWED_HOSTS = {"github.com", "www.strathora.com", "127.0.0.1", "localhost", "www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
 
 
 def test_no_tracked_file_names_the_service_a_home_folder_or_a_real_address():
