@@ -318,7 +318,8 @@ def test_hashes_only_keeps_no_content_anywhere_only_hashes(tmp_path, capsys, cap
             blobs[f"file {f.name}"] = f.read_bytes().decode("latin-1")
     for where, text in blobs.items():
         for needle in (CANARY, CANARY.lower(), "148.2573", "150.5731", "151.7532", "155.0731", "150.5732", "150.7532", "151.0732", "0.3731", "152.0731", "0.2573"):      # the canary, and the numbers that were in the data, the order and the parameters
-            assert needle not in text, f"{needle!r} is in {where}"
+            # not preceded by a digit: a number that leaked is found (`"temperature":0.257396`), the digits of a time are not (CI recorded `20:19:00.257370Z`)
+            assert not re.search(r"(?<!\d)" + re.escape(needle), text), f"{needle!r} is in {where}"
     events = [json.loads(e.payload) for e in asof.Ledger(ledger).events()]
     hashed = sum(1 for e in events for k in e if k.endswith("_sha256"))
     assert hashed >= 25                                                                                    # the content is there as hashes: the ledger is not simply empty
