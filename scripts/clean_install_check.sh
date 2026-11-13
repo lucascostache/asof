@@ -125,9 +125,10 @@ def block(name):
     return m.group(1)
 
 install = re.search(r"## Install\n\n```bash\n(.*?)```", readme, re.S).group(1)
-assert install.count("git+<REPOSITORY URL>") == 1, install
+README_URL = "git+https://github.com/lucascostache/asof"
+assert install.count(README_URL) == 1, install
 src = src if src.startswith("git+") else "git+" + src
-(out / "1_install.sh").write_text(install.replace("git+<REPOSITORY URL>", src))        # the only change: the address the README leaves open
+(out / "1_install.sh").write_text(install.replace(README_URL, src))        # the only change: install from the source under test instead of GitHub
 (out / "2_init.sh").write_text(block("quickstart-init"))
 (out / "try_asof.py").write_text(block("quickstart-code"))
 (out / "3_verify.sh").write_text(block("quickstart-verify"))

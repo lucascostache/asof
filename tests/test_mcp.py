@@ -376,7 +376,7 @@ def test_a_client_that_stops_the_server_with_sigterm_still_gets_a_session_end_in
 
 def test_the_client_notes_say_what_was_not_tested():
     low = CLIENTS_DOC.lower()
-    for phrase in ("**no model was run**", "not tested: any mcp client application with a model in the loop", "**unverified**", "there is no network transport, no login and one session per server process",
+    for phrase in ("**no model was run**", "not tested: any other mcp client application with a model in the loop**, including claude desktop's chat tab", "**unverified**", "there is no network transport, no login and one session per server process",
                    "driven by a real model", "through a script that plays the client's part"):
         assert phrase in low, phrase
     for tool in ("set_clock", "advance_clock", "query", "get_receipt", "verify_ledger"):

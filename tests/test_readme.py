@@ -48,9 +48,10 @@ def test_the_summary_is_three_lines_and_says_the_three_things():
 def test_install_is_one_pip_line_from_git_and_warns_about_the_name_on_pypi():
     section = README[README.index("## Install"):README.index("## Quickstart")]
     pips = [ln for ln in section.splitlines() if ln.startswith("pip install")]
-    assert pips == ['pip install "git+<REPOSITORY URL>"']                                        # the address is filled in when a repository exists
+    assert pips == ['pip install "git+https://github.com/lucascostache/asof"']                   # the public repository
     assert "**not on PyPI**" in section and "do not `pip install asof`" in section and "Python 3.10 or newer" in section
-    assert 'pip install "strathora-asof[mcp] @ git+<REPOSITORY URL>"' in README                 # the MCP extra, also one line
+    assert 'pip install "strathora-asof[mcp] @ git+https://github.com/lucascostache/asof"' in README      # the MCP extra, also one line
+    assert "<REPOSITORY URL>" not in README
     # three names, said once and matching the package: what you install, what you import, what you run
     assert "The package is called `strathora-asof`; you import it as `asof` and run it as `strathora` (the older command name `asof` still works)." in section
     pyproject = (ROOT / "pyproject.toml").read_text()                                              # read as text: tomllib is not in Python 3.10
@@ -110,7 +111,7 @@ def test_what_it_doesnt_do_names_the_bypass_model_memory_and_the_rest():
                    "it trusts your timestamps", "does not read text",
                    "shows tampering; it does not prevent it", "strathora head", "not signed",
                    "not a hosted service", "no network transport, no login",
-                   "run against one live service, with one model", "**openai: not yet tested** with a key", "local mock servers only", "no mcp client application (claude desktop or another) has been run with a model",
+                   "run against one live service, with one model", "**openai: not yet tested** with a key", "local mock servers only", "one mcp client application has been run with a model", "its chat tab, and other client applications, have not been tried",
                    "streaming is not supported", "the gateway does not retry"):
         assert needle in low, needle
     assert bullets[0].startswith("* **It only locks what goes through it.**") and bullets[1].startswith("* **It cannot make a model forget.**")      # the two that matter most come first

@@ -26,6 +26,7 @@ TRACKED = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True, tex
 TRACKED = [f for f in TRACKED if f]
 pytestmark = pytest.mark.skipif(not TRACKED, reason="not a git checkout: the list of tracked files is unknown")
 MD = [f for f in TRACKED if f.endswith(".md")]
+REPO_URL = "https://github.com/lucascostache/asof"                                              # the public repository the install lines name
 FENCE = re.compile(r"^[ ]{0,3}```(\w*)[^\n]*\n(.*?)^[ ]{0,3}```\s*$", re.M | re.S)
 
 
@@ -153,7 +154,7 @@ NOT_RUN = {                                                                     
     "cd": "the reader's own folder", "cp": "copies the example folder (its contents are tested in tests/test_claude_desktop.py)", "echo": "prints a path", "export": "the reader's own keys and addresses",
     "set": "loads the reader's own key file", "npx": "another program (MCP Inspector; run by tests/test_campaign_mcp.py when it is installed)", "opencode": "another program",
     "source": "activates a virtual environment", ".": "loads the reader's own key file",
-    "gh": "GitHub's command-line tool: clones the private repository with the reader's own GitHub sign-in (docs/ALPHA_INVITE.md)",
+    "git": "clones the public repository from the network (docs/ALPHA_INVITE.md)",
 }
 SCRIPT_NEEDS = {"wrap_agent.py": "docs/pilot/examples/wrap_agent.py"}
 
@@ -234,7 +235,7 @@ def test_every_shell_line_in_every_document_is_checked_or_listed_as_not_run(tmp_
 def test_python_m_venv_and_pip_lines_name_the_package_the_way_the_project_does():
     for f, line, cmd in shell_lines():
         if "pip install" in cmd:
-            assert re.search(r"git\+PLACEHOLDER|strathora_asof-|strathora-asof\[|-e '?\.|mcp>=2", cmd), f"{f}:{line}: {cmd}"       # never `pip install asof` (an unrelated project on PyPI)
+            assert re.search(re.escape("git+" + REPO_URL) + r"|strathora_asof-|strathora-asof\[|-e '?\.|mcp>=2", cmd), f"{f}:{line}: {cmd}"       # never `pip install asof` (an unrelated project on PyPI)
             assert not re.search(r"pip install asof\b", cmd)
 
 
@@ -310,7 +311,7 @@ def test_no_real_company_identifier_and_no_default_company_in_the_edgar_smoke_sc
     assert r.returncode == 2 and "--cik" in r.stderr and "required" in r.stderr                  # no company is chosen for the user
 
 
-ALLOWED_HOSTS = {"127.0.0.1", "localhost", "www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
+ALLOWED_HOSTS = {"github.com", "127.0.0.1", "localhost","www.sec.gov", "data.sec.gov", "api.openai.com", "api.anthropic.com", "platform.openai.com", "api.meta.ai", "www.apache.org", "host", "x", "svc", "..."}
 
 
 def test_no_tracked_file_names_the_service_a_home_folder_or_a_real_address():

@@ -1,24 +1,22 @@
 # AsOf alpha: getting started
 
-Thank you for trying AsOf. This page gets you from an invitation to a working setup in about 20 minutes, and says how to report what you find.
+Thank you for trying AsOf. This page gets you to a working setup in about 20 minutes, and says how to report what you find.
 
 **What you are testing.** AsOf shows an AI agent only the data that was knowable at a time `T` you choose, so a backtest or a replay cannot see the future. Every query, tool call and model call goes into a tamper-evident ledger on your machine, and each one gets a receipt. It is v0.5 and early: names, file formats and behaviour can still change. Read [What it doesn't do](../README.md#what-it-doesnt-do) before you rely on it.
 
-**What you need.** Python 3.10 or newer, git, and access to this repository: accept the invitation GitHub sent you. Claude Desktop is optional and only used in step 3.
+**What you need.** Python 3.10 or newer and git. Claude Desktop is optional and only used in step 3.
 
 ## 1. Install
 
-The repository is private, so git has to be able to sign in to GitHub as you. The simplest way is the GitHub command-line tool: run `gh auth login` once, then:
+Clone the repository (step 3 uses an example folder from it) and install it with the MCP extra:
 
 ```bash
-gh repo clone lucascostache/asof
+git clone https://github.com/lucascostache/asof
 cd asof
 python3 -m venv .venv
 .venv/bin/pip install -e '.[mcp]'
 .venv/bin/strathora --version          # prints: strathora-asof 0.5.0
 ```
-
-Without `gh`, run `git clone` with the SSH address from the repository page (the green **Code** button, then **SSH**); that works if you have an SSH key on your GitHub account.
 
 The package is called `strathora-asof`; you import it as `asof` and run it as `strathora`. It is **not on PyPI**: do not run `pip install asof`, which installs an unrelated project with the same name.
 
@@ -61,11 +59,11 @@ It prints `OK: ... events, hash chain intact, tail anchor: ok`.
 
 This puts AsOf between Claude and a folder of synthetic news, with the clock fixed at 20 January 2023. Claude gets a `query` tool that can only see what was published by then, and it cannot move the clock.
 
-**Not yet confirmed in Claude Desktop.** The author has not run this in Claude Desktop. The server side is tested with a real MCP client; you would be the first to run it in the app. Report what you see either way.
+**Checked once in Claude Desktop, in a slightly different form.** On 2026-11-13 the shorter check in [CLAUDE_DESKTOP_CHECK.md](CLAUDE_DESKTOP_CHECK.md) (a price file instead of this news example) passed in Claude Desktop's Code tab with Claude Opus 5.5. This news example, and the Chat tab, have not been run in the app yet. Report what you see either way.
 
 1. Copy the example folder: `cp -R docs/examples/claude_desktop ~/asof-claude-test`
 2. Get the absolute path of your Python: run `echo "$PWD/.venv/bin/python"` inside the `asof` folder.
-3. Open Claude Desktop's config file: in the app, Settings, Developer, Edit Config. On macOS it is `~/Library/Application Support/Claude/claude_desktop_config.json`. **Back it up first.** Add this entry, keep any servers you already have, and replace both absolute paths:
+3. **Quit Claude Desktop** (Cmd+Q on macOS): it can overwrite a config file edited while it runs. Open its config file; on macOS it is `~/Library/Application Support/Claude/claude_desktop_config.json`. **Back it up first.** Add this entry, keep any servers you already have, and replace both absolute paths:
 
    ```json
    {
@@ -78,7 +76,7 @@ This puts AsOf between Claude and a folder of synthetic news, with the clock fix
    }
    ```
 
-4. Quit Claude Desktop completely (Cmd+Q on macOS) and open it again. In a new chat, ask: *"Use the asof tools. As of 2023-01-20, summarize news on ACME-SYN."*
+4. Open Claude Desktop again. In a new chat, ask: *"Use the asof tools. As of 2023-01-20, summarize news on ACME-SYN."*
 
 **Pass:** the summary covers only three headlines: an office opening, analysts expecting a steady quarter, and results due next week. **Fail:** it mentions beating estimates, a raised outlook or shares jumping. Those headlines were published after the clock, and the company is fictional, so a model could only know them if the lock failed.
 
@@ -86,7 +84,7 @@ This puts AsOf between Claude and a folder of synthetic news, with the clock fix
 
 ## 4. Report what you find
 
-Open an issue in this repository: on GitHub, use the **Issues** tab and then **New issue**. With the command-line tool, run `gh issue create --repo lucascostache/asof`. Only people invited to the repository can see issues.
+Open an issue in this repository: on GitHub, use the **Issues** tab and then **New issue**. With the command-line tool, run `gh issue create --repo lucascostache/asof`. **Issues are public:** anyone can read them.
 
 A useful issue has:
 
@@ -95,7 +93,7 @@ A useful issue has:
 * **Versions:** the output of `.venv/bin/strathora --version` and `python3 --version`, your operating system, and for MCP problems the client and its version, and the model.
 * **The ledger check:** the output of `strathora verify --ledger <your ledger>`, if a ledger is involved.
 
-Reports that something worked are useful too, especially in Claude Desktop (the author has not run it there), on Linux (the test suite runs there in CI, but nobody has used AsOf there by hand) and on Windows (never run).
+Reports that something worked are useful too, especially in Claude Desktop's Chat tab (only its Code tab has been tried), on Linux (the test suite runs there in CI, but nobody has used AsOf there by hand) and on Windows (never run).
 
 **Don't paste these into an issue:**
 

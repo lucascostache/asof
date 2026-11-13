@@ -64,7 +64,7 @@ AsOf can sit between Claude Desktop (or any MCP client) and your data. The serve
 **1. Install and create a demo.**
 
 ```bash
-pip install "strathora-asof[mcp] @ git+<REPOSITORY URL>"     # the package is `strathora-asof`; do not `pip install asof`, that name on PyPI is an unrelated project
+pip install "strathora-asof[mcp] @ git+https://github.com/lucascostache/asof"     # the package is `strathora-asof`; do not `pip install asof`, that name on PyPI is an unrelated project
 strathora init --demo ~/asof-demo
 ```
 
@@ -422,7 +422,7 @@ servers with dummy keys, and exit non-zero on any failure; **the author has not 
 tool definitions sent as the provider's tools, to see whether they are accepted as they are. It writes `report.json` and checks that no key, or part of one, is in the ledger, the report or its own output.
 
 `scripts/verify_all.sh` runs everything that needs no key (the test matrix, `scripts/tamper_demo.sh`, the offline demo) and then prints the exact commands for the checks that do. `scripts/tamper_demo.sh` alters one byte of a copy
-of a ledger, shows `strathora verify` fail at the event it sits in, restores the byte, and proves your ledger was never written. `docs/CLAUDE_DESKTOP.md` is the step-by-step MCP setup with three test prompts (unverified in Claude Desktop itself).
+of a ledger, shows `strathora verify` fail at the event it sits in, restores the byte, and proves your ledger was never written. `docs/CLAUDE_DESKTOP.md` is the step-by-step MCP setup with three test prompts (not yet run in Claude Desktop itself; the shorter `docs/CLAUDE_DESKTOP_CHECK.md` passed there once, on 2026-11-13, in the app's Code tab).
 
 ## Not in this package
 

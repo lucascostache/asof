@@ -12,7 +12,7 @@ It is a Python library with no dependencies, plus an optional MCP server; it run
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install "git+<REPOSITORY URL>"
+pip install "git+https://github.com/lucascostache/asof"
 ```
 
 Python 3.10 or newer (this install and the quickstart below were run on 3.10, 3.11, 3.12, 3.13 and 3.14, on macOS only). The package is called `strathora-asof`; you import it as `asof` and run it as `strathora` (the older command name `asof` still works). It is **not on PyPI**: do not `pip install asof`, that name there is an unrelated project.
@@ -75,7 +75,7 @@ strathora verify --ledger asof-demo/ledger.db
 
 It prints `OK: 16 events, hash chain intact, tail anchor: ok`. Edit an event in the ledger file and it prints `FAIL` with the number of that event.
 
-**4. Optional: put it between an agent and your data, with no code.** Install the MCP extra with `pip install "strathora-asof[mcp] @ git+<REPOSITORY URL>"`, then paste the block that step 1 printed into your MCP client's config. The agent gets a `query` tool that is locked to the clock in `asof-demo/asof.config.json`, and it cannot move that clock. [docs/MCP_CLIENTS.md](docs/MCP_CLIENTS.md) lists the clients this was run with and how they differ.
+**4. Optional: put it between an agent and your data, with no code.** Install the MCP extra with `pip install "strathora-asof[mcp] @ git+https://github.com/lucascostache/asof"`, then paste the block that step 1 printed into your MCP client's config. The agent gets a `query` tool that is locked to the clock in `asof-demo/asof.config.json`, and it cannot move that clock. [docs/MCP_CLIENTS.md](docs/MCP_CLIENTS.md) lists the clients this was run with and how they differ.
 
 To wrap your own data, tools and model, follow [docs/pilot/INSTALL.md](docs/pilot/INSTALL.md) (about 15 minutes).
 
@@ -89,7 +89,7 @@ To wrap your own data, tools and model, follow [docs/pilot/INSTALL.md](docs/pilo
 * **The ledger shows tampering; it does not prevent it.** Anyone who can rewrite the ledger file can also rewrite the anchor beside it. Store the output of `strathora head` somewhere else if you need to detect a ledger that was cut short. The ledger is not signed: it shows what was asked and served, not who asked.
 * **It is not a hosted service.** The MCP server runs as a local process for one user. There is no network transport, no login and no separation between users.
 * **It shares its import name with an unrelated package.** You install `strathora-asof` and import `asof`. A different project on PyPI is also called `asof`. If both are installed in the same environment their files can overwrite each other, and `import asof` may load the wrong one. Use a separate virtual environment, and check with `strathora --version`.
-* **It has been run against one live service, with one model.** On 2026-11-11 and 2026-11-12 the Anthropic adapter was run against the live API: single calls and their receipts, real provider errors, a seven-turn agent loop that used the MCP server's tools (with an instruction to move the clock planted in the data it was served; the clock did not move), and a provider-side tool allowed on purpose, which flagged the run ([docs/LIVE_TEST.md](docs/LIVE_TEST.md)). **OpenAI: not yet tested** with a key. The SEC filings source is tested against local mock servers only. No MCP client application (Claude Desktop or another) has been run with a model. Streaming is not supported, and the gateway does not retry. For everything else, the first real use will be the first real test.
+* **It has been run against one live service, with one model.** On 2026-11-11 and 2026-11-12 the Anthropic adapter was run against the live API: single calls and their receipts, real provider errors, a seven-turn agent loop that used the MCP server's tools (with an instruction to move the clock planted in the data it was served; the clock did not move), and a provider-side tool allowed on purpose, which flagged the run ([docs/LIVE_TEST.md](docs/LIVE_TEST.md)). **OpenAI: not yet tested** with a key. The SEC filings source is tested against local mock servers only. One MCP client application has been run with a model: on 2026-11-13 the check in [docs/CLAUDE_DESKTOP_CHECK.md](docs/CLAUDE_DESKTOP_CHECK.md) passed in Claude Desktop (version 5.11492.2, its Code tab, Claude Opus 5.5); its Chat tab, and other client applications, have not been tried. Streaming is not supported, and the gateway does not retry. For everything else, the first real use will be the first real test.
 * **It loads each source into memory, whole.** A session with a 1,000,000-row CSV file took over a minute to load and about 1.6 GB of memory on one laptop; a replay of 10,000 clock steps wrote an 824 MB ledger until the lists of withheld records were switched off (`max_listed_blocked`, below). The numbers, from one run on one machine, are in [docs/BASELINE.md](docs/BASELINE.md). The test suite runs on Linux and macOS in CI; people have used it by hand only on macOS, and Windows is untested.
 
 A longer list, with what each limit means in practice: [docs/pilot/LIMITATIONS.md](docs/pilot/LIMITATIONS.md).

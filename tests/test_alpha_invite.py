@@ -38,11 +38,13 @@ def test_the_claude_desktop_config_and_test_are_the_tested_pages():
     assert "As of 2023-01-20, summarize news on ACME-SYN." in INVITE and "As of 2023-01-20, summarize news on ACME-SYN." in DESKTOP
     for word in ("office opening", "steady quarter", "beating estimates", "raised outlook"):
         assert word in INVITE and word in DESKTOP, word
-    assert "Not yet confirmed in Claude Desktop" in INVITE and "UNVERIFIED in Claude Desktop" in DESKTOP
+    assert "Checked once in Claude Desktop, in a slightly different form." in INVITE and "Code tab" in INVITE and "UNVERIFIED in Claude Desktop" in DESKTOP
+    assert "This news example, and the Chat tab, have not been run in the app yet." in INVITE                 # what passed is not overstated
 
 
 def test_the_install_and_issue_instructions_name_this_repository_and_warn_about_keys_and_the_other_asof():
-    assert "gh repo clone lucascostache/asof" in INVITE and "gh issue create --repo lucascostache/asof" in INVITE
+    assert "git clone https://github.com/lucascostache/asof" in INVITE and "gh issue create --repo lucascostache/asof" in INVITE
+    assert "**Issues are public:**" in INVITE and "private" not in INVITE.lower() and "invitation" not in INVITE.lower()      # the repository is public
     assert "pip install -e '.[mcp]'" in INVITE and "do not run `pip install asof`" in INVITE
     low = INVITE.lower()
     assert "api key" in low and "a ledger stores what was served" in low

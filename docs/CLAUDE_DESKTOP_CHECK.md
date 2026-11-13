@@ -1,6 +1,6 @@
 # Claude Desktop: a ten-minute check to run yourself
 
-Nobody has yet run AsOf inside Claude Desktop. The server side of everything below is tested automatically (`tests/test_campaign_mcp.py` drives the same server with the same config and checks the same answers); what is not known is how the app presents the tools and what its model does with them. This page is the check. It uses invented data for a fictional company, `ACME-SYN`: a model cannot remember prices that never existed, so if a later price shows up in an answer, the lock failed.
+**Run once, and passed:** on 2026-11-13 every line of this check was correct in Claude Desktop 5.11492.2 with Claude Opus 5.5 ([the results](#results-of-the-run-on-2026-11-13)). It was run in the app's **Code tab**; the Chat tab has not been tried. The server side of everything below is tested automatically (`tests/test_campaign_mcp.py` drives the same server with the same config and checks the same answers); what is not known is how the app presents the tools and what its model does with them. This page is the check. It uses invented data for a fictional company, `ACME-SYN`: a model cannot remember prices that never existed, so if a later price shows up in an answer, the lock failed.
 
 ## 1. Set up (3 minutes)
 
@@ -27,7 +27,7 @@ It writes `prices.csv` (six closes, 18 to 25 January 2023), `asof.config.json` (
 ```
 <!-- desktop-check-config:end -->
 
-Open Claude Desktop's config file (Settings, Developer, Edit Config; on macOS it is `~/Library/Application Support/Claude/claude_desktop_config.json`). **Copy the file somewhere first.** Add the `asof` entry that the command printed (keep any servers already there), save, quit Claude Desktop completely (Cmd+Q) and open it again.
+**Quit Claude Desktop first** (Cmd+Q): on 2026-11-13 the app overwrote a config that was edited while it was running. Then open its config file (on macOS `~/Library/Application Support/Claude/claude_desktop_config.json`; in the app it is Settings, Developer, Edit Config). **Copy the file somewhere first.** Add the `asof` entry that the command printed (keep any servers already there), save, quit Claude Desktop completely (Cmd+Q) and open it again.
 
 **Check before going on:** in a new chat the tools list shows `query`, `tool_call`, `get_receipt`, `verify_ledger`, `ledger_head`, `set_clock` and `advance_clock`. If it does not, see the last section.
 
@@ -103,6 +103,19 @@ sqlite3 ~/asof-desktop-check/ledger.db "select seq, type from events where type 
 | `strathora verify` says OK | | |
 
 Claude Desktop version: ‹›   Model: ‹›   Date: ‹›
+
+### Results of the run on 2026-11-13
+
+Claude Desktop 5.11492.2, Claude Opus 5.5, in the app's Code tab, with the server Claude Desktop launched from its config file.
+
+| | Result | Notes |
+|---|---|---|
+| The seven tools appeared | Correct | `query`, `tool_call`, `get_receipt`, `verify_ledger`, `ledger_head`, `set_clock`, `advance_clock` |
+| Prompt 1: 150.0 on 2023-01-20, nothing later | Correct | `query` served 147.0, 148.0 and 150.0 (18 to 20 January) |
+| Prompt 2: the clock move was refused | Correct | `set_clock` and `advance_clock` both answered "the clock is owned by the operator: this server does not allow the model to move it"; a new query still gave 150.0 |
+| Prompt 3: the receipt has the eight fields and no `blocked` | Correct | exactly `call_id`, `kind`, `target`, `as_of`, `served`, `served_timing`, `served_ids`, `ledger_hash` |
+| `strathora receipt` shows `blocked: future=3` | Correct | `served 3`, `blocked: future=3` |
+| `strathora verify` says OK | Correct | `OK: 22 events, hash chain intact, tail anchor: ok`; two `clock_refused` events and no `clock_advance` |
 
 ## If the tools do not appear
 
